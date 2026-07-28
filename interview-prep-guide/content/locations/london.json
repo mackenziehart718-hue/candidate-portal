@@ -1,0 +1,102 @@
+{
+  "slug": "london",
+  "title": "London — Interview Day Guide",
+  "barLabel": "London",
+  "hero": {
+    "eyebrow": "Office location",
+    "title": "London",
+    "lead": "United Kingdom",
+    "photo": "🇬🇧 London office — photo placeholder"
+  },
+  "nav": [
+    {
+      "id": "address",
+      "label": "Address"
+    },
+    {
+      "id": "transit",
+      "label": "Parking & transit"
+    },
+    {
+      "id": "arrival",
+      "label": "Arrival"
+    },
+    {
+      "id": "registration",
+      "label": "Registration"
+    },
+    {
+      "id": "contact",
+      "label": "Contact"
+    }
+  ],
+  "address": {
+    "label": "Where to go",
+    "heading": "Office address",
+    "addressHtml": "1 Finsbury Ave, Floor 4<br>London EC2M 2PP",
+    "noteHtml": "<a href=\"https://maps.google.com/?q=1+Finsbury+Avenue+London\" target=\"_blank\" rel=\"noopener\">Open in Google Maps →</a>",
+    "mapsUrl": "https://maps.google.com/?q=1+Finsbury+Avenue+London"
+  },
+  "arrival": {
+    "label": "When you arrive",
+    "heading": "Getting here &amp; check-in",
+    "blocks": [
+      {
+        "icon": "🚪",
+        "title": "Lobby instructions",
+        "paragraphs": [
+          {
+            "type": "html",
+            "html": "Enter via Finsbury Ave. Building reception on ground floor — they'll direct you to Floor 4."
+          }
+        ]
+      }
+    ]
+  },
+  "registration": {
+    "label": "Required",
+    "heading": "Registration",
+    "cards": [
+      {
+        "title": "Photo ID",
+        "body": "Please bring a <strong>valid government-issued ID</strong>. You will need it for check-in."
+      },
+      {
+        "title": "NDA",
+        "body": "Before your scheduled interview, please ensure that you electronically sign our NDA using <strong>Box Sign</strong> through the link provided by your Recruiting Coordinator.",
+        "note": "All candidates are required to sign in order to begin their interview. If you have any questions regarding the NDA form, please reach out to your Recruiting Coordinator."
+      },
+      {
+        "title": "Arrival &amp; departure",
+        "body": "Escorted from reception. Sign out and return pass when leaving."
+      }
+    ]
+  },
+  "contact": {
+    "label": "Help",
+    "heading": "Questions?",
+    "body": "Contact your <strong>Recruiting Coordinator</strong> using the email from your calendar invite or confirmation email.",
+    "email": "recruiting@box.com",
+    "buttonText": "Email recruiting"
+  },
+  "transit": {
+    "label": "Getting here",
+    "heading": "Parking &amp; public transportation",
+    "blocks": [
+      {
+        "icon": "🅿️",
+        "title": "Parking",
+        "paragraphs": [
+          {
+            "type": "list",
+            "items": [
+              "No visitor parking on-site. NCP City of London nearby.",
+              "Tube strongly recommended."
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "customSections": []
+}

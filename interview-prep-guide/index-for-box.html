@@ -1,0 +1,884 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>Interview Prep Guide — Box</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" />
+  <style>
+/* ── Interview Prep Site — Box email branding ── */
+
+:root {
+  /* Primary blues (from branding deck) */
+  --brand-primary: #0061D3;
+  --brand-navy: #113053;
+  --brand-slate: #4B6E98;
+  --brand-blue-mid: #3F628A;
+  --brand-blue-light: #91C2FD;
+  --brand-blue-pale: #F0F7FF;
+
+  /* Accent palette */
+  --accent-cyan: #00AFF0;
+  --accent-green: #24C17F;
+  --accent-gold: #F4B219;
+  --accent-coral: #EC3657;
+  --accent-purple: #9F3DEC;
+  --accent-magenta: #FC56FF;
+  --accent-peach: #EBAF83;
+
+  /* Neutrals */
+  --bg: #F0F7FF;
+  --card: #FFFFFF;
+  --text: #212121;
+  --muted: #757575;
+  --border: #D0D0D0;
+
+  /* Semantic tints */
+  --success-bg: #E8FAF3;
+  --success-border: #24C17F;
+  --success-text: #0D5C3E;
+  --warn-bg: #FFF8E8;
+  --warn-border: #F4B219;
+  --warn-text: #6B4E0A;
+
+  --radius: 12px;
+  --shadow: 0 2px 12px rgba(17, 48, 83, 0.08);
+  --max-width: 1000px;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+h1, h2, h3, .section-label, .site-bar .logo, .btn {
+  font-weight: 600;
+}
+
+a { color: var(--brand-primary); text-decoration: none; }
+a:hover { color: var(--brand-navy); }
+
+/* ── Top bar ── */
+.site-bar {
+  background: var(--card);
+  border-bottom: 1px solid var(--border);
+  padding: 0.65rem 1.5rem;
+  font-size: 0.85rem;
+}
+
+.site-bar-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.site-bar .logo { color: var(--text); }
+.site-bar .logo span { color: var(--brand-primary); }
+
+.back-link {
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+/* ── Hero ── */
+.hero {
+  background: linear-gradient(135deg, var(--brand-navy) 0%, var(--brand-slate) 45%, var(--brand-primary) 100%);
+  color: #fff;
+  padding: 3rem 1.5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Decorative color orbs */
+.hero::before,
+.hero::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(60px);
+  opacity: 0.35;
+  pointer-events: none;
+}
+
+.hero::before {
+  width: 280px;
+  height: 280px;
+  background: var(--accent-magenta);
+  top: -80px;
+  right: 10%;
+}
+
+.hero::after {
+  width: 220px;
+  height: 220px;
+  background: var(--accent-cyan);
+  bottom: -60px;
+  left: 5%;
+}
+
+.hero-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+.hero.hero-single .hero-inner {
+  grid-template-columns: 1fr 1fr;
+}
+
+.hero-text .eyebrow {
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent-cyan);
+  margin-bottom: 0.5rem;
+}
+
+.hero-text h1 {
+  font-size: clamp(1.85rem, 4vw, 2.5rem);
+  font-weight: 600;
+  line-height: 1.15;
+  margin-bottom: 0.85rem;
+}
+
+.hero-text .lead {
+  font-size: 1.05rem;
+  opacity: 0.94;
+  max-width: 32rem;
+}
+
+.hero-graphic {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-graphic svg { width: 100%; max-width: 320px; height: auto; }
+
+.hero-photo {
+  border-radius: var(--radius);
+  overflow: hidden;
+  aspect-ratio: 16/10;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+  opacity: 0.95;
+}
+
+/* ── Nav ── */
+.page-nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--card);
+  border-bottom: 1px solid var(--border);
+  padding: 0.7rem 1.5rem;
+  box-shadow: var(--shadow);
+}
+
+.page-nav-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+}
+
+.page-nav a {
+  font-size: 0.86rem;
+  font-weight: 500;
+  padding: 0.4rem 0.7rem;
+  border-radius: 6px;
+  color: var(--brand-slate);
+  transition: background 0.15s, color 0.15s;
+}
+
+.page-nav a:hover {
+  background: var(--brand-blue-pale);
+  color: var(--brand-primary);
+}
+
+/* ── Main ── */
+main {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 2rem 1.5rem 3rem;
+}
+
+section { margin-bottom: 2.75rem; scroll-margin-top: 4rem; }
+
+.section-label {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--brand-slate);
+  margin-bottom: 0.3rem;
+}
+
+section h2 {
+  font-size: 1.45rem;
+  font-weight: 600;
+  margin-bottom: 0.65rem;
+  color: var(--brand-navy);
+}
+
+.section-intro {
+  color: var(--muted);
+  margin-bottom: 1.25rem;
+  max-width: 40rem;
+}
+
+/* ── Cards & grids ── */
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.25rem 1.4rem;
+  box-shadow: var(--shadow);
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 1rem;
+}
+
+.callout {
+  border-radius: var(--radius);
+  padding: 1.1rem 1.3rem;
+  margin-bottom: 1.25rem;
+  font-size: 0.93rem;
+}
+
+.callout-info {
+  background: var(--brand-blue-pale);
+  border: 1px solid var(--brand-blue-light);
+  color: var(--brand-navy);
+}
+
+.callout-warn {
+  background: var(--warn-bg);
+  border-left: 4px solid var(--accent-gold);
+  border-top: 1px solid var(--warn-border);
+  border-right: 1px solid var(--warn-border);
+  border-bottom: 1px solid var(--warn-border);
+  color: var(--warn-text);
+}
+
+/* ── Prep checklist ── */
+.prep-list { list-style: none; display: flex; flex-direction: column; gap: 0.65rem; }
+
+.prep-item {
+  display: flex;
+  gap: 0.85rem;
+  align-items: flex-start;
+  padding: 1rem 1.15rem;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+
+.prep-num {
+  flex-shrink: 0;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--brand-primary);
+  color: #fff;
+  font-size: 0.78rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.prep-item h3 { font-size: 0.94rem; font-weight: 600; margin-bottom: 0.15rem; }
+.prep-item p { font-size: 0.87rem; color: var(--muted); }
+
+/* ── Two-col tips ── */
+.tips-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1rem;
+}
+
+.tip-card h3 { font-size: 0.94rem; font-weight: 600; margin-bottom: 0.35rem; }
+.tip-card p { font-size: 0.87rem; color: var(--muted); }
+
+/* ── Resource links ── */
+.resource-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  transition: border-color 0.15s, box-shadow 0.15s, transform 0.15s;
+  box-shadow: var(--shadow);
+  color: inherit;
+}
+
+.resource-card:hover {
+  border-color: var(--brand-primary);
+  box-shadow: 0 6px 20px rgba(0, 97, 211, 0.12);
+  transform: translateY(-2px);
+}
+
+.resource-card .icon {
+  width: 38px;
+  height: 38px;
+  border-radius: 8px;
+  background: var(--brand-blue-pale);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.15rem;
+}
+
+.resource-card h3 { font-size: 0.96rem; font-weight: 600; }
+.resource-card p { font-size: 0.86rem; color: var(--muted); }
+.resource-card .link-hint { font-size: 0.8rem; font-weight: 600; color: var(--brand-primary); margin-top: auto; }
+
+/* ── Location cards ── */
+.location-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.25rem;
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  transition: border-color 0.15s, box-shadow 0.15s, transform 0.15s;
+  box-shadow: var(--shadow);
+}
+
+.location-card:hover {
+  border-color: var(--brand-blue-light);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(17, 48, 83, 0.1);
+}
+
+.location-card .loc-icon { font-size: 1.5rem; }
+.location-card h3 { font-size: 1rem; font-weight: 600; }
+.location-card p { font-size: 0.84rem; color: var(--muted); }
+.location-card .arrow { font-size: 0.8rem; font-weight: 600; color: var(--brand-primary); margin-top: 0.25rem; }
+
+.location-card.virtual {
+  border-style: dashed;
+  background: var(--brand-blue-pale);
+}
+
+/* ── Video ── */
+.video-wrap {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%;
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: var(--brand-navy);
+  box-shadow: var(--shadow);
+  border: 2px solid var(--brand-blue-light);
+}
+
+.video-wrap iframe {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  border: 0;
+}
+
+.video-caption { margin-top: 0.7rem; font-size: 0.86rem; color: var(--muted); }
+
+/* ── Info blocks (location pages) ── */
+.info-block {
+  display: grid;
+  grid-template-columns: 36px 1fr;
+  gap: 0.85rem;
+  padding: 1.1rem 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.info-block:last-child { border-bottom: none; }
+
+.info-block .info-icon { font-size: 1.25rem; line-height: 1.4; }
+.info-block h3 { font-size: 0.95rem; font-weight: 600; margin-bottom: 0.25rem; color: var(--brand-navy); }
+.info-block p, .info-block ul { font-size: 0.88rem; color: var(--muted); }
+.info-block ul { margin: 0.35rem 0 0 1.1rem; }
+.info-block li { margin-bottom: 0.25rem; }
+
+.address-card {
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+.address-card a { font-weight: 600; }
+
+/* ── FAQ ── */
+details {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  margin-bottom: 0.45rem;
+}
+
+details summary {
+  padding: 0.95rem 1.1rem;
+  font-weight: 600;
+  font-size: 0.93rem;
+  cursor: pointer;
+  list-style: none;
+  color: var(--brand-navy);
+}
+
+details summary::-webkit-details-marker { display: none; }
+details summary::after { content: "+"; float: right; color: var(--brand-slate); font-weight: 400; }
+details[open] summary::after { content: "−"; }
+details[open] summary { color: var(--brand-primary); }
+
+details .answer {
+  padding: 0 1.1rem 0.95rem;
+  font-size: 0.88rem;
+  color: var(--muted);
+  border-top: 1px solid var(--border);
+  padding-top: 0.7rem;
+}
+
+/* ── Contact ── */
+.contact-bar {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.25rem 1.4rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.contact-bar p { font-size: 0.9rem; color: var(--muted); }
+.contact-bar strong { color: var(--text); }
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.55rem 1rem;
+  background: var(--brand-primary);
+  color: #fff !important;
+  font-size: 0.86rem;
+  font-weight: 600;
+  border-radius: 8px;
+  transition: background 0.15s;
+}
+
+.btn:hover { background: var(--brand-navy); }
+
+footer {
+  text-align: center;
+  padding: 2rem 1.5rem;
+  font-size: 0.8rem;
+  color: var(--muted);
+  border-top: 1px solid var(--border);
+  background: var(--card);
+}
+
+/* ── Values scrolling wheel ── */
+.values-section { overflow: hidden; }
+
+.values-track {
+  position: relative;
+  mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+}
+
+.values-wheel {
+  display: flex;
+  gap: 0.75rem;
+  width: max-content;
+  animation: values-scroll 45s linear infinite;
+  padding: 0.25rem 0;
+}
+
+.values-wheel:hover { animation-play-state: paused; }
+
+.value-chip {
+  flex-shrink: 0;
+  padding: 0.65rem 1.1rem;
+  background: var(--card);
+  border: 1px solid var(--brand-blue-light);
+  border-radius: 999px;
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: var(--brand-navy);
+  white-space: nowrap;
+  box-shadow: var(--shadow);
+}
+
+@keyframes values-scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.subsection-title {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--brand-navy);
+  margin: 1rem 0 0.5rem;
+}
+
+.subsection-title:first-child { margin-top: 0; }
+
+@media (max-width: 720px) {
+  .hero-inner,
+  .hero.hero-single .hero-inner { grid-template-columns: 1fr; }
+  .hero-graphic { display: none; }
+  .hero { padding: 2rem 1.25rem; }
+  main { padding: 1.5rem 1.25rem 2rem; }
+}
+  </style>
+</head>
+<body>
+
+  <div class="site-bar">
+    <div class="site-bar-inner">
+      <div class="logo"><span>Box</span> Interview Prep</div>
+      <span style="color: var(--muted); font-size: 0.82rem;">For candidates with scheduled interviews</span>
+    </div>
+  </div>
+
+  <div style="background:#FFF8E8;border-bottom:1px solid #F4B219;padding:0.6rem 1.5rem;font-size:0.85rem;color:#633806;text-align:center;">
+    <strong>Box preview note:</strong> Location page links require the full site hosted on Netlify. This file is the standalone hub for Box storage/preview.
+  </div>
+
+  <header class="hero">
+    <div class="hero-inner">
+      <div class="hero-text">
+        <p class="eyebrow">Welcome</p>
+        <h1>We're excited to meet you.</h1>
+        <p class="lead">
+          Thank you for interviewing with Box. This guide helps you learn about our
+          company, prepare with confidence, and find day-of instructions for your
+          interview location.
+        </p>
+      </div>
+      <div class="hero-graphic" aria-hidden="true">
+        <svg viewBox="0 0 320 280" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="40" y="60" width="240" height="160" rx="12" fill="rgba(255,255,255,0.1)" stroke="rgba(145,194,253,0.5)" stroke-width="2"/>
+          <circle cx="160" cy="120" r="36" fill="rgba(0,175,240,0.35)"/>
+          <path d="M130 155 Q160 175 190 155" stroke="#91C2FD" stroke-width="3" fill="none" stroke-linecap="round"/>
+          <rect x="70" y="200" width="80" height="8" rx="4" fill="rgba(255,255,255,0.35)"/>
+          <rect x="70" y="215" width="120" height="6" rx="3" fill="rgba(255,255,255,0.2)"/>
+          <circle cx="250" cy="80" r="24" fill="rgba(252,86,255,0.45)"/>
+          <circle cx="70" cy="100" r="16" fill="rgba(36,193,127,0.4)"/>
+          <circle cx="280" cy="200" r="18" fill="rgba(244,178,25,0.45)"/>
+        </svg>
+      </div>
+    </div>
+  </header>
+
+  <nav class="page-nav" aria-label="Page sections">
+    <div class="page-nav-inner">
+      <a href="#welcome">Welcome</a>
+      <a href="#prepare">Prepare</a>
+      <a href="#dress">Dress &amp; Bring</a>
+      <a href="#links">Links</a>
+      <a href="#video">Video</a>
+      <a href="#values">Values</a>
+      <a href="#locations">Locations</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+
+  <main>
+
+    <section id="welcome">
+      <p class="section-label">About us</p>
+      <h2>A quick hello from Box</h2>
+      <p class="section-intro">
+        Box powers how the world works together — connecting people with their most
+        important information through secure, intelligent content management. Our
+        interviews are a two-way conversation: we want to learn about you, and we
+        hope you'll learn about us.
+      </p>
+      <div class="callout callout-info">
+        <strong>Day-of logistics</strong> (parking, check-in, NDA, lunch) live on your
+        <strong>office location page</strong> below. Your calendar invite has your exact
+        date, time, and interviewers.
+      </div>
+      <div class="card">
+        <p style="color: var(--muted); font-size: 0.93rem;">
+          Founded in 2005 and headquartered in Redwood City, California, Box serves
+          nearly 100,000 organizations globally — including 70% of the Fortune 500.
+          We're building a workplace where people bring their authentic selves to work,
+          collaborate across teams, and create experiences that blow our customers' minds.
+        </p>
+      </div>
+    </section>
+
+    <section id="prepare">
+      <p class="section-label">Before your interview</p>
+      <h2>How to best prepare</h2>
+      <p class="section-intro">Even 15–20 minutes here goes a long way. Focus on what fits your role.</p>
+
+      <ol class="prep-list">
+        <li class="prep-item">
+          <span class="prep-num">1</span>
+          <div>
+            <h3>Re-read the job description</h3>
+            <p>Review responsibilities and required skills. Think of 1–2 real examples from your experience for each major area.</p>
+          </div>
+        </li>
+        <li class="prep-item">
+          <span class="prep-num">2</span>
+          <div>
+            <h3>Review your work</h3>
+            <p>Be ready to walk through a project you're proud of — your role, challenges, and what you learned. Bring samples only if your recruiter requested them.</p>
+          </div>
+        </li>
+        <li class="prep-item">
+          <span class="prep-num">3</span>
+          <div>
+            <h3>Learn about us</h3>
+            <p>Skim the links below — our careers site, product overview, values, and Aaron's video. Genuine curiosity matters more than memorizing facts.</p>
+          </div>
+        </li>
+        <li class="prep-item">
+          <span class="prep-num">4</span>
+          <div>
+            <h3>Prepare your questions</h3>
+            <p>Bring 3–5 questions about the team, the role, how we work, and what success looks like in the first 90 days.</p>
+          </div>
+        </li>
+        <li class="prep-item">
+          <span class="prep-num">5</span>
+          <div>
+            <h3>Logistics</h3>
+            <p>
+              <strong>In-person:</strong> open your location page below for address, parking, check-in, and NDA instructions.<br />
+              <strong>Virtual:</strong> test camera/mic, find a quiet space, and join 2–3 minutes early via your calendar link.
+            </p>
+          </div>
+        </li>
+      </ol>
+    </section>
+
+    <section id="dress">
+      <p class="section-label">Interview day</p>
+      <h2>Dress code &amp; what to bring</h2>
+      <div class="tips-grid">
+        <div class="card tip-card">
+          <h3>Dress code</h3>
+          <p>Business casual — wear what makes you comfortable. Most candidates choose slacks or jeans with a collared shirt or blouse. No suit required unless you prefer one.</p>
+        </div>
+        <div class="card tip-card">
+          <h3>What to bring (in-person)</h3>
+          <p>A valid government-issued photo ID (required for check-in). Notebook and pen are welcome. Only bring a laptop or portfolio if your recruiter requested it.</p>
+        </div>
+        <div class="card tip-card">
+          <h3>Virtual interviews</h3>
+          <p>Laptop or desktop with stable internet, camera, and microphone. Headphones recommended. Have your resume handy as a reference.</p>
+        </div>
+        <div class="card tip-card">
+          <h3>Timing</h3>
+          <p>Arrive 10 minutes early in person. For virtual, join 2–3 minutes before your scheduled start. Running late? Email your Recruiting Coordinator right away.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="links">
+      <p class="section-label">Explore</p>
+      <h2>Helpful links</h2>
+      <p class="section-intro">Resources to help you learn about Box before your interview.</p>
+      <div class="card-grid">
+        <a class="resource-card" href="https://www.box.com/about-us" target="_blank" rel="noopener">
+          <span class="icon">🏢</span>
+          <h3>About us</h3>
+          <p>Our mission, leadership, and company story.</p>
+          <span class="link-hint">box.com/about-us →</span>
+        </a>
+        <a class="resource-card" href="https://careers.box.com/en/" target="_blank" rel="noopener">
+          <span class="icon">💼</span>
+          <h3>Careers site</h3>
+          <p>Culture, benefits, values, and life at Box.</p>
+          <span class="link-hint">careers.box.com →</span>
+        </a>
+        <a class="resource-card" href="https://www.box.com/products" target="_blank" rel="noopener">
+          <span class="icon">🚀</span>
+          <h3>Product</h3>
+          <p>What we build and who we serve.</p>
+          <span class="link-hint">box.com/products →</span>
+        </a>
+        <a class="resource-card" href="https://blog.box.com" target="_blank" rel="noopener">
+          <span class="icon">📰</span>
+          <h3>Blog</h3>
+          <p>News, product updates, and thought leadership.</p>
+          <span class="link-hint">blog.box.com →</span>
+        </a>
+        <a class="resource-card" href="https://www.box.com/ai/trust" target="_blank" rel="noopener">
+          <span class="icon">🤖</span>
+          <h3>Box AI &amp; LLM policy</h3>
+          <p>How Box uses AI responsibly and protects customer data.</p>
+          <span class="link-hint">box.com/ai/trust →</span>
+        </a>
+        <a class="resource-card" href="https://www.glassdoor.com/Overview/Working-at-Box-EI_IE3481.11,14.htm" target="_blank" rel="noopener">
+          <span class="icon">⭐</span>
+          <h3>Glassdoor</h3>
+          <p>Employee reviews and interview experiences at Box.</p>
+          <span class="link-hint">View on Glassdoor →</span>
+        </a>
+      </div>
+    </section>
+
+    <section id="video">
+      <p class="section-label">Hear from our CEO</p>
+      <h2>A message from Aaron</h2>
+      <p class="section-intro">Aaron Levie, Box co-founder and CEO, on what we're building and why it matters.</p>
+      <div class="video-wrap">
+        <iframe
+          src="https://www.youtube.com/embed/VIDEO_ID_HERE"
+          title="A message from Aaron Levie, Box CEO"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        ></iframe>
+      </div>
+      <p class="video-caption">Replace <code>VIDEO_ID_HERE</code> with your Aaron video embed ID before publishing.</p>
+    </section>
+
+    <section id="values" class="values-section">
+      <p class="section-label">Our culture</p>
+      <h2>Box values</h2>
+      <p class="section-intro">These principles guide how we work together every day. Hover to pause the scroll.</p>
+      <div class="values-track" aria-label="Box company values">
+        <div class="values-wheel">
+          <span class="value-chip">Blow our customers' minds</span>
+          <span class="value-chip">Take risks. Fail fast. GSD.</span>
+          <span class="value-chip">10x it!</span>
+          <span class="value-chip">Be an owner. It's your company.</span>
+          <span class="value-chip">Bring your (____) self to work</span>
+          <span class="value-chip">Be candid and assume good intent</span>
+          <span class="value-chip">Make mom proud</span>
+          <!-- duplicate set for seamless loop -->
+          <span class="value-chip">Blow our customers' minds</span>
+          <span class="value-chip">Take risks. Fail fast. GSD.</span>
+          <span class="value-chip">10x it!</span>
+          <span class="value-chip">Be an owner. It's your company.</span>
+          <span class="value-chip">Bring your (____) self to work</span>
+          <span class="value-chip">Be candid and assume good intent</span>
+          <span class="value-chip">Make mom proud</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="locations">
+      <p class="section-label">Office locations</p>
+      <h2>Find your location</h2>
+      <p class="section-intro">
+        Select the office where you're interviewing (or Virtual if your loop is on Zoom).
+        Each page has address, parking, check-in, registration, and day-of FAQs.
+      </p>
+
+      <div class="card-grid">
+        <a class="location-card" href="locations/redwood-city.html">
+          <span class="loc-icon">📍</span>
+          <h3>Redwood City</h3>
+          <p>HQ · California, USA</p>
+          <span class="arrow">View instructions →</span>
+        </a>
+        <a class="location-card" href="locations/san-francisco.html">
+          <span class="loc-icon">📍</span>
+          <h3>San Francisco</h3>
+          <p>California, USA</p>
+          <span class="arrow">View instructions →</span>
+        </a>
+        <a class="location-card" href="locations/chicago.html">
+          <span class="loc-icon">📍</span>
+          <h3>Chicago</h3>
+          <p>Illinois, USA</p>
+          <span class="arrow">View instructions →</span>
+        </a>
+        <a class="location-card" href="locations/austin.html">
+          <span class="loc-icon">📍</span>
+          <h3>Austin</h3>
+          <p>Texas, USA</p>
+          <span class="arrow">View instructions →</span>
+        </a>
+        <a class="location-card" href="locations/new-york-city.html">
+          <span class="loc-icon">📍</span>
+          <h3>New York City</h3>
+          <p>New York, USA</p>
+          <span class="arrow">View instructions →</span>
+        </a>
+        <a class="location-card" href="locations/amsterdam.html">
+          <span class="loc-icon">📍</span>
+          <h3>Amsterdam</h3>
+          <p>Netherlands</p>
+          <span class="arrow">View instructions →</span>
+        </a>
+        <a class="location-card" href="locations/london.html">
+          <span class="loc-icon">📍</span>
+          <h3>London</h3>
+          <p>United Kingdom</p>
+          <span class="arrow">View instructions →</span>
+        </a>
+        <a class="location-card" href="locations/warsaw.html">
+          <span class="loc-icon">📍</span>
+          <h3>Warsaw</h3>
+          <p>Poland</p>
+          <span class="arrow">View instructions →</span>
+        </a>
+        <a class="location-card virtual" href="locations/virtual.html">
+          <span class="loc-icon">💻</span>
+          <h3>Virtual (Zoom)</h3>
+          <p>Remote interview via Zoom</p>
+          <span class="arrow">View instructions →</span>
+        </a>
+      </div>
+    </section>
+
+    <section id="contact">
+      <p class="section-label">Questions?</p>
+      <h2>Contact your Recruiting Coordinator</h2>
+      <div class="contact-bar">
+        <p>
+          Your Recruiting Coordinator is your best point of contact for scheduling,
+          logistics, and interview prep.<br />
+          Use the email address from your calendar invite or confirmation email.
+        </p>
+        <a class="btn" href="mailto:recruiting@box.com">Email recruiting</a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>© 2026 Box · <a href="https://careers.box.com/en/">Careers</a></p>
+    <p style="margin-top: 0.4rem;">This page is for candidates with scheduled interviews only.</p>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,150 @@
+{
+  "slug": "redwood-city",
+  "title": "Redwood City — Box Interview Day Guide",
+  "barLabel": "Redwood City, CA (HQ)",
+  "hero": {
+    "eyebrow": "Office location",
+    "title": "Redwood City, CA",
+    "lead": "Box Headquarters",
+    "photo": "900 Jefferson — Box HQ lobby (photo placeholder)"
+  },
+  "nav": [
+    {
+      "id": "address",
+      "label": "Address"
+    },
+    {
+      "id": "transit",
+      "label": "Parking & transit"
+    },
+    {
+      "id": "arrival",
+      "label": "Arrival"
+    },
+    {
+      "id": "registration",
+      "label": "Registration"
+    },
+    {
+      "id": "contact",
+      "label": "Contact"
+    }
+  ],
+  "address": {
+    "label": "Where to go",
+    "heading": "Office address",
+    "addressHtml": "<strong>900 Middlefield Rd</strong><br>Redwood City, CA 94063",
+    "noteHtml": "<strong>Interview building:</strong> You will interview in <strong>900 Jefferson</strong>, which features the large Box logo in the lobby. While our mailing address references Jefferson, the employee garage is accessed via Middlefield (see parking below).",
+    "mapsUrl": "https://maps.google.com/?q=900+Jefferson+Ave+Redwood+City+CA+94063"
+  },
+  "transit": {
+    "label": "Getting here",
+    "heading": "Parking & public transportation",
+    "blocks": [
+      {
+        "icon": "🚗",
+        "title": "Driving & parking",
+        "paragraphs": [
+          {
+            "type": "html",
+            "html": "The garage entrance is located between our two Box buildings at the intersection of <strong>Middlefield Road &amp; Jefferson Avenue</strong>.Note: While our mailing address is 900 Jefferson, the employee garage is accessed via <strong>900 Middlefield</strong>.Even if the garage sign says <strong>FULL</strong>, it is for employee access only — which includes candidates and visitors with authorized access. At the garage entrance, press the <strong>Security</strong> button to speak with our Security team. Notify them that you have an interview with Box and they will admit you."
+          }
+        ]
+      },
+      {
+        "icon": "🚆",
+        "title": "Public transportation",
+        "paragraphs": [
+          {
+            "type": "html",
+            "html": "We are conveniently located next to the <strong>Redwood City Caltrain station</strong> for those who prefer to take Caltrain."
+          }
+        ]
+      }
+    ]
+  },
+  "arrival": {
+    "label": "When you arrive",
+    "heading": "Getting to the lobby & check-in",
+    "blocks": [
+      {
+        "icon": "🛗",
+        "title": "Getting to the lobby",
+        "paragraphs": [
+          {
+            "type": "html",
+            "html": "<strong>Important:</strong> You will need to use the <strong>guest/public elevator</strong> to reach the lobby. Only Box employees have access to the other designated elevators.Press the <strong>\"G\"</strong> button once in the public elevator.Once on the ground floor, <strong>exit the building</strong> and proceed straight to Box's lobby front doors."
+          }
+        ]
+      },
+      {
+        "icon": "✅",
+        "title": "Check-in",
+        "paragraphs": [
+          {
+            "type": "html",
+            "html": "Upon entering, check in with reception and let them know <strong>who you are meeting with first</strong>.Your interviewer will meet you in the lobby, give you a quick office tour, then help you get started with your interviews."
+          }
+        ]
+      }
+    ]
+  },
+  "registration": {
+    "label": "Required",
+    "heading": "Registration",
+    "cards": [
+      {
+        "title": "Photo ID",
+        "body": "Please bring a <strong>valid government-issued ID</strong>. You will need it for check-in.",
+        "note": ""
+      },
+      {
+        "title": "NDA",
+        "body": "Before your scheduled interview, please ensure that you electronically sign our NDA using <strong>Box Sign</strong> through the link provided by your Recruiting Coordinator.",
+        "note": "All candidates are required to sign in order to begin their interview. If you have any questions regarding the NDA form, please reach out to your Recruiting Coordinator."
+      },
+      {
+        "title": "Arrival & departure",
+        "body": "Your interviewer or host will escort you during your visit. When you are finished, return any visitor badge to reception before you leave the building.",
+        "note": ""
+      }
+    ]
+  },
+  "contact": {
+    "label": "Help",
+    "heading": "Questions?",
+    "body": "Contact your <strong>Recruiting Coordinator</strong> using the email from your calendar invite or confirmation email.",
+    "email": "recruiting@box.com",
+    "buttonText": "Email recruiting"
+  },
+  "customSections": [
+    {
+      "id": "cs-ms4z94g2",
+      "navLabel": "Lunch",
+      "label": "During your interview",
+      "heading": "Lunch",
+      "intro": "",
+      "blocks": [
+        {
+          "icon": "🌮",
+          "title": "Ordering food",
+          "paragraphs": [
+            {
+              "type": "html",
+              "html": "You will be sent a link to order food from a restaurant of your choice via food delivery app by your coordinator. A Boxer will bring it to you when it's delivered."
+            }
+          ],
+          "body": "You will be sent a link to order food from a restaurant of your choice via food delivery app by your coordinator. A Boxer will bring it to you when it's delivered."
+        }
+      ]
+    }
+  ],
+  "sectionOrder": [
+    "address",
+    "transit",
+    "arrival",
+    "registration",
+    "custom:cs-ms4z94g2",
+    "contact"
+  ]
+}

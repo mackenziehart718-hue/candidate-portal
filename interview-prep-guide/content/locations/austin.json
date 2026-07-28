@@ -1,0 +1,102 @@
+{
+  "slug": "austin",
+  "title": "Austin — Interview Day Guide",
+  "barLabel": "Austin",
+  "hero": {
+    "eyebrow": "Office location",
+    "title": "Austin",
+    "lead": "Texas, USA",
+    "photo": "🤠 Austin office — photo placeholder"
+  },
+  "nav": [
+    {
+      "id": "address",
+      "label": "Address"
+    },
+    {
+      "id": "transit",
+      "label": "Parking & transit"
+    },
+    {
+      "id": "arrival",
+      "label": "Arrival"
+    },
+    {
+      "id": "registration",
+      "label": "Registration"
+    },
+    {
+      "id": "contact",
+      "label": "Contact"
+    }
+  ],
+  "address": {
+    "label": "Where to go",
+    "heading": "Office address",
+    "addressHtml": "600 Congress Ave, Suite 1400<br>Austin, TX 78701",
+    "noteHtml": "<a href=\"https://maps.google.com/?q=600+Congress+Ave+Austin+TX\" target=\"_blank\" rel=\"noopener\">Open in Google Maps →</a>",
+    "mapsUrl": "https://maps.google.com/?q=600+Congress+Ave+Austin+TX"
+  },
+  "arrival": {
+    "label": "When you arrive",
+    "heading": "Getting here &amp; check-in",
+    "blocks": [
+      {
+        "icon": "🚪",
+        "title": "Lobby instructions",
+        "paragraphs": [
+          {
+            "type": "html",
+            "html": "Main entrance on Congress Ave. Elevators to Suite 1400 — check in at front desk."
+          }
+        ]
+      }
+    ]
+  },
+  "registration": {
+    "label": "Required",
+    "heading": "Registration",
+    "cards": [
+      {
+        "title": "Photo ID",
+        "body": "Please bring a <strong>valid government-issued ID</strong>. You will need it for check-in."
+      },
+      {
+        "title": "NDA",
+        "body": "Before your scheduled interview, please ensure that you electronically sign our NDA using <strong>Box Sign</strong> through the link provided by your Recruiting Coordinator.",
+        "note": "All candidates are required to sign in order to begin their interview. If you have any questions regarding the NDA form, please reach out to your Recruiting Coordinator."
+      },
+      {
+        "title": "Arrival &amp; departure",
+        "body": "Your host will meet you at reception. Return badge when departing."
+      }
+    ]
+  },
+  "contact": {
+    "label": "Help",
+    "heading": "Questions?",
+    "body": "Contact your <strong>Recruiting Coordinator</strong> using the email from your calendar invite or confirmation email.",
+    "email": "recruiting@box.com",
+    "buttonText": "Email recruiting"
+  },
+  "transit": {
+    "label": "Getting here",
+    "heading": "Parking &amp; public transportation",
+    "blocks": [
+      {
+        "icon": "🅿️",
+        "title": "Parking",
+        "paragraphs": [
+          {
+            "type": "list",
+            "items": [
+              "Congress Ave garage adjacent to building (~$15/day).",
+              "Street parking limited — garage recommended."
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "customSections": []
+}

@@ -1,0 +1,102 @@
+{
+  "slug": "chicago",
+  "title": "Chicago — Interview Day Guide",
+  "barLabel": "Chicago",
+  "hero": {
+    "eyebrow": "Office location",
+    "title": "Chicago",
+    "lead": "Illinois, USA",
+    "photo": "🌆 Chicago office — photo placeholder"
+  },
+  "nav": [
+    {
+      "id": "address",
+      "label": "Address"
+    },
+    {
+      "id": "transit",
+      "label": "Parking & transit"
+    },
+    {
+      "id": "arrival",
+      "label": "Arrival"
+    },
+    {
+      "id": "registration",
+      "label": "Registration"
+    },
+    {
+      "id": "contact",
+      "label": "Contact"
+    }
+  ],
+  "address": {
+    "label": "Where to go",
+    "heading": "Office address",
+    "addressHtml": "233 S Wacker Dr, Suite 8400<br>Chicago, IL 60606",
+    "noteHtml": "<a href=\"https://maps.google.com/?q=233+S+Wacker+Dr+Chicago+IL\" target=\"_blank\" rel=\"noopener\">Open in Google Maps →</a>",
+    "mapsUrl": "https://maps.google.com/?q=233+S+Wacker+Dr+Chicago+IL"
+  },
+  "arrival": {
+    "label": "When you arrive",
+    "heading": "Getting here &amp; check-in",
+    "blocks": [
+      {
+        "icon": "🚪",
+        "title": "Lobby instructions",
+        "paragraphs": [
+          {
+            "type": "html",
+            "html": "Enter Willis Tower via Wacker Dr. Check in at building security, then take elevators to Suite 8400."
+          }
+        ]
+      }
+    ]
+  },
+  "registration": {
+    "label": "Required",
+    "heading": "Registration",
+    "cards": [
+      {
+        "title": "Photo ID",
+        "body": "Please bring a <strong>valid government-issued ID</strong>. You will need it for check-in."
+      },
+      {
+        "title": "NDA",
+        "body": "Before your scheduled interview, please ensure that you electronically sign our NDA using <strong>Box Sign</strong> through the link provided by your Recruiting Coordinator.",
+        "note": "All candidates are required to sign in order to begin their interview. If you have any questions regarding the NDA form, please reach out to your Recruiting Coordinator."
+      },
+      {
+        "title": "Arrival &amp; departure",
+        "body": "You'll be escorted to the interview area. Check out with reception when done."
+      }
+    ]
+  },
+  "contact": {
+    "label": "Help",
+    "heading": "Questions?",
+    "body": "Contact your <strong>Recruiting Coordinator</strong> using the email from your calendar invite or confirmation email.",
+    "email": "recruiting@box.com",
+    "buttonText": "Email recruiting"
+  },
+  "transit": {
+    "label": "Getting here",
+    "heading": "Parking &amp; public transportation",
+    "blocks": [
+      {
+        "icon": "🅿️",
+        "title": "Parking",
+        "paragraphs": [
+          {
+            "type": "list",
+            "items": [
+              "Willis Tower parking garage — enter from Franklin St.",
+              "Validation available at reception — bring your ticket."
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "customSections": []
+}

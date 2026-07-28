@@ -1,0 +1,102 @@
+{
+  "slug": "amsterdam",
+  "title": "Amsterdam — Interview Day Guide",
+  "barLabel": "Amsterdam",
+  "hero": {
+    "eyebrow": "Office location",
+    "title": "Amsterdam",
+    "lead": "Netherlands",
+    "photo": "🇳🇱 Amsterdam office — photo placeholder"
+  },
+  "nav": [
+    {
+      "id": "address",
+      "label": "Address"
+    },
+    {
+      "id": "transit",
+      "label": "Parking & transit"
+    },
+    {
+      "id": "arrival",
+      "label": "Arrival"
+    },
+    {
+      "id": "registration",
+      "label": "Registration"
+    },
+    {
+      "id": "contact",
+      "label": "Contact"
+    }
+  ],
+  "address": {
+    "label": "Where to go",
+    "heading": "Office address",
+    "addressHtml": "Gustav Mahlerlaan 300<br>1082 ME Amsterdam",
+    "noteHtml": "<a href=\"https://maps.google.com/?q=Gustav+Mahlerlaan+300+Amsterdam\" target=\"_blank\" rel=\"noopener\">Open in Google Maps →</a>",
+    "mapsUrl": "https://maps.google.com/?q=Gustav+Mahlerlaan+300+Amsterdam"
+  },
+  "arrival": {
+    "label": "When you arrive",
+    "heading": "Getting here &amp; check-in",
+    "blocks": [
+      {
+        "icon": "🚪",
+        "title": "Lobby instructions",
+        "paragraphs": [
+          {
+            "type": "html",
+            "html": "Main entrance on Gustav Mahlerlaan. Reception on the ground floor."
+          }
+        ]
+      }
+    ]
+  },
+  "registration": {
+    "label": "Required",
+    "heading": "Registration",
+    "cards": [
+      {
+        "title": "Photo ID",
+        "body": "Please bring a <strong>valid government-issued ID</strong>. You will need it for check-in."
+      },
+      {
+        "title": "NDA",
+        "body": "Before your scheduled interview, please ensure that you electronically sign our NDA using <strong>Box Sign</strong> through the link provided by your Recruiting Coordinator.",
+        "note": "All candidates are required to sign in order to begin their interview. If you have any questions regarding the NDA form, please reach out to your Recruiting Coordinator."
+      },
+      {
+        "title": "Arrival &amp; departure",
+        "body": "Badge issued at reception. Return badge when you leave the building."
+      }
+    ]
+  },
+  "contact": {
+    "label": "Help",
+    "heading": "Questions?",
+    "body": "Contact your <strong>Recruiting Coordinator</strong> using the email from your calendar invite or confirmation email.",
+    "email": "recruiting@box.com",
+    "buttonText": "Email recruiting"
+  },
+  "transit": {
+    "label": "Getting here",
+    "heading": "Parking &amp; public transportation",
+    "blocks": [
+      {
+        "icon": "🅿️",
+        "title": "Parking",
+        "paragraphs": [
+          {
+            "type": "list",
+            "items": [
+              "P+R Amsterdam Zuid or garage at The Edge building.",
+              "Street parking limited in Zuidas business district."
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "customSections": []
+}

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Interview Prep Editor — Box</title>
+  <link rel="stylesheet" href="editor.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-left">
+      <strong>Box Interview Prep</strong>
+      <span class="badge">Editor</span>
+    </div>
+    <div class="topbar-right">
+      <span id="status" class="status">Ready</span>
+      <button type="button" id="btn-rebuild" class="btn btn-secondary">Rebuild HTML</button>
+      <button type="button" id="btn-save" class="btn btn-primary">Save changes</button>
+    </div>
+  </header>
+
+  <div class="layout">
+    <aside class="sidebar">
+      <p class="sidebar-label">Pages</p>
+      <nav id="page-list"></nav>
+    </aside>
+
+    <section class="editor-panel">
+      <div class="panel-tabs">
+        <button type="button" class="tab active" data-tab="form">Form editor</button>
+        <button type="button" class="tab" data-tab="json">JSON (advanced)</button>
+      </div>
+      <div id="form-view" class="panel-body"></div>
+      <div id="json-view" class="panel-body hidden">
+        <textarea id="json-editor" spellcheck="false"></textarea>
+      </div>
+    </section>
+
+    <section class="preview-panel" id="preview-panel">
+      <div class="preview-header">
+        <span>Live preview</span>
+        <div class="preview-controls">
+          <div class="preview-mode-toggle" role="group" aria-label="Preview device size">
+            <button type="button" class="preview-mode-btn active" data-preview-mode="desktop" title="Desktop preview">Desktop</button>
+            <button type="button" class="preview-mode-btn" data-preview-mode="mobile" title="Mobile preview (390px)">Mobile</button>
+          </div>
+          <button type="button" id="btn-refresh-preview" class="btn btn-secondary btn-sm">Refresh</button>
+        </div>
+      </div>
+      <div class="preview-stage">
+        <div class="preview-frame" id="preview-frame">
+          <iframe id="preview" title="Page preview"></iframe>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <script src="rich-text.js"></script>
+  <script src="editor.js"></script>
+</body>
+</html>

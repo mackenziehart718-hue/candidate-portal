@@ -1,0 +1,103 @@
+{
+  "slug": "virtual",
+  "title": "Virtual (Zoom) — Interview Day Guide",
+  "barLabel": "Virtual (Zoom)",
+  "hero": {
+    "eyebrow": "Office location",
+    "title": "Virtual (Zoom)",
+    "lead": "Remote interview",
+    "photo": "💻 Virtual interview"
+  },
+  "nav": [
+    {
+      "id": "address",
+      "label": "Address"
+    },
+    {
+      "id": "zoom",
+      "label": "Zoom setup"
+    },
+    {
+      "id": "arrival",
+      "label": "Arrival"
+    },
+    {
+      "id": "registration",
+      "label": "Registration"
+    },
+    {
+      "id": "contact",
+      "label": "Contact"
+    }
+  ],
+  "address": {
+    "label": "Where to go",
+    "heading": "Office address",
+    "addressHtml": "No physical address — join via the Zoom link in your calendar invite.",
+    "noteHtml": "",
+    "mapsUrl": ""
+  },
+  "arrival": {
+    "label": "When you arrive",
+    "heading": "Getting here &amp; check-in",
+    "blocks": []
+  },
+  "registration": {
+    "label": "Required",
+    "heading": "Registration",
+    "cards": [
+      {
+        "title": "🪪 Photo ID",
+        "body": "Government-issued photo ID is required for identity verification if requested by your recruiter. No ID = we may need to reschedule."
+      },
+      {
+        "title": "📄 NDA",
+        "body": "No physical NDA. If required, your recruiter will send a DocuSign link ahead of time."
+      },
+      {
+        "title": "🚪 Arrival &amp; departure",
+        "body": "When your interview block ends, you can leave the Zoom call. Your recruiter will share next steps by email."
+      }
+    ]
+  },
+  "contact": {
+    "label": "Help",
+    "heading": "Questions?",
+    "body": "Contact your <strong>Recruiting Coordinator</strong> using the email from your calendar invite or confirmation email.",
+    "email": "recruiting@box.com",
+    "buttonText": "Email recruiting"
+  },
+  "zoom": {
+    "label": "Before you join",
+    "heading": "Zoom setup",
+    "blocks": [
+      {
+        "icon": "🔗",
+        "title": "Your meeting link",
+        "paragraphs": [
+          {
+            "type": "html",
+            "html": "Use the Zoom link in your <strong>calendar invite only</strong>. Do not share it publicly. Each session may use the same or different links — follow your schedule."
+          }
+        ]
+      },
+      {
+        "icon": "🎥",
+        "title": "Tech checklist",
+        "paragraphs": [
+          {
+            "type": "list",
+            "items": [
+              "Download Zoom ahead of time (zoom.us/download)",
+              "Test camera and microphone",
+              "Use headphones to reduce echo",
+              "Find a quiet, well-lit space",
+              "Join 2–3 minutes early — you'll wait in the waiting room"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "customSections": []
+}
