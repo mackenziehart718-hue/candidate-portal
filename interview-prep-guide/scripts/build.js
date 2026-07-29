@@ -156,6 +156,15 @@ ${locationCards}
     </section>`,
 
     faq: renderFaqSection(data.faqs),
+
+    contact: `
+    <section id="contact"${sectionStyleAttr(data.contact)}>
+      <h2>${esc(data.contact.heading)}</h2>
+      <p class="section-intro">
+        ${data.contact.body}
+      </p>
+      <a class="btn" href="mailto:${esc(data.contact.email)}">${esc(data.contact.buttonText)}</a>
+    </section>`,
   };
 
   const mainSections = sectionOrder

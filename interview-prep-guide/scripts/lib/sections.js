@@ -3,6 +3,7 @@ const INDEX_SECTION_NAV = {
   prepare: 'Before',
   faq: 'Day-of',
   locations: 'Locations',
+  contact: 'Contact',
 };
 
 const INDEX_SECTION_LABELS = {
@@ -10,6 +11,7 @@ const INDEX_SECTION_LABELS = {
   prepare: 'How to prepare',
   faq: 'FAQs',
   locations: 'Location cards',
+  contact: 'Contact',
 };
 
 const DEFAULT_INDEX_SECTION_ORDER = [
@@ -17,6 +19,7 @@ const DEFAULT_INDEX_SECTION_ORDER = [
   'prepare',
   'faq',
   'locations',
+  'contact',
 ];
 
 const LOCATION_SECTION_NAV = {

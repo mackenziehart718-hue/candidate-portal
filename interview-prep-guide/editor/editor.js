@@ -9,6 +9,7 @@ const INDEX_SECTIONS = {
   prepare: 'How to prepare',
   faq: 'FAQs',
   locations: 'Location cards',
+  contact: 'Contact',
 };
 
 const DEFAULT_INDEX_ORDER = Object.keys(INDEX_SECTIONS);
@@ -396,6 +397,14 @@ function renderIndexForm(data) {
         richField('Answer', `faqs.items.${i}.answer`, item.answer),
       styleFields('faqs', data.faqs?.style)
     ),
+
+    contact: () => `<fieldset data-section="contact"><legend>Contact</legend>
+      ${styleFields('contact', data.contact.style)}
+      ${field('Heading', 'contact.heading', data.contact.heading)}
+      ${richField('Body', 'contact.body', data.contact.body)}
+      ${field('Email', 'contact.email', data.contact.email)}
+      ${field('Button text', 'contact.buttonText', data.contact.buttonText)}
+    </fieldset>`,
   };
 
   let html = renderSectionSorter(data.sectionOrder, getIndexLabels(data));
