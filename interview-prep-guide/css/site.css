@@ -201,7 +201,7 @@ a:hover { color: var(--brand-navy); }
 
 .gradient-title {
   font-size: 64px;
-  font-weight: 800;
+  font-weight: 600;
   line-height: 1.1;
   background: linear-gradient(90deg, #E8935F 0%, #E893C0 45%, #8C93E3 100%);
   -webkit-background-clip: text;
@@ -330,7 +330,7 @@ section h2 {
 
 .page-index section h2 {
   font-size: 36px;
-  font-weight: 700;
+  font-weight: 500;
   color: #151F26;
   margin-bottom: 1.25rem;
 }
