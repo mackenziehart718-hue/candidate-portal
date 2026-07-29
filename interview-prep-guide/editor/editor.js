@@ -7,13 +7,8 @@ let previewMode = sessionStorage.getItem('prep-editor-preview-mode') || 'desktop
 const INDEX_SECTIONS = {
   welcome: 'Welcome',
   prepare: 'How to prepare',
-  dress: 'Dress & bring',
-  links: 'Helpful links',
-  video: 'Video',
-  values: 'Box values',
-  locations: 'Location cards',
   faq: 'FAQs',
-  contact: 'Contact',
+  locations: 'Location cards',
 };
 
 const DEFAULT_INDEX_ORDER = Object.keys(INDEX_SECTIONS);
@@ -115,6 +110,7 @@ function blockBodyHtml(block) {
 function infoBlocksEditor(sectionKey, section, legend) {
   if (!section) return '';
   let html = `<fieldset data-section="${sectionKey}"><legend>${legend}</legend>
+    ${styleFields(sectionKey, section.style)}
     ${field('Heading', `${sectionKey}.heading`, section.heading)}`;
   (section.blocks || []).forEach((b, bi) => {
     html += `<div class="item-card">
@@ -211,6 +207,35 @@ function field(label, key, value = '', opts = {}) {
     <label for="${id}">${label}</label>
     ${input}
     ${hint ? `<p class="field-hint">${hint}</p>` : ''}
+  </div>`;
+}
+
+const FONT_WEIGHTS = [
+  ['', 'Default'],
+  ['300', 'Light (300)'],
+  ['400', 'Normal (400)'],
+  ['500', 'Medium (500)'],
+  ['600', 'Semibold (600)'],
+  ['700', 'Bold (700)'],
+];
+
+function styleFields(sectionKey, style = {}) {
+  const color = style?.color || '#212121';
+  const weight = style?.fontWeight || '';
+  const colorId = `f-${sectionKey}-style-color`.replace(/\./g, '-');
+  const weightId = `f-${sectionKey}-style-weight`.replace(/\./g, '-');
+  const options = FONT_WEIGHTS.map(
+    ([value, label]) => `<option value="${value}"${weight === value ? ' selected' : ''}>${label}</option>`
+  ).join('');
+  return `<div class="field-row">
+    <div class="field">
+      <label for="${colorId}">Text color</label>
+      <input type="color" id="${colorId}" data-path="${sectionKey}.style.color" value="${escapeAttr(color)}" />
+    </div>
+    <div class="field">
+      <label for="${weightId}">Font weight</label>
+      <select id="${weightId}" data-path="${sectionKey}.style.fontWeight">${options}</select>
+    </div>
   </div>`;
 }
 
@@ -317,8 +342,8 @@ function bindFormInputs() {
   });
 }
 
-function listEditor(label, items, renderItem, onReorder) {
-  let html = `<fieldset><legend>${label}</legend><div class="list-editor" data-list="${label}">`;
+function listEditor(label, items, renderItem, extraHtml = '') {
+  let html = `<fieldset><legend>${label}</legend>${extraHtml}<div class="list-editor" data-list="${label}">`;
   items.forEach((item, i) => {
     html += `<div class="item-card" data-index="${i}">`;
     html += `<div class="item-card-header"><span>Item ${i + 1}</span><div class="item-actions">`;
@@ -338,11 +363,11 @@ function renderIndexForm(data) {
 
   const sectionForms = {
     welcome: () => `<fieldset data-section="welcome"><legend>Welcome</legend>
-      ${field('Section label', 'welcome.label', data.welcome.label)}
+      ${styleFields('welcome', data.welcome.style)}
       ${field('Heading', 'welcome.heading', data.welcome.heading)}
       ${richField('Intro', 'welcome.intro', data.welcome.intro)}
-      ${richField('Callout', 'welcome.calloutHtml', data.welcome.calloutHtml)}
-      ${richField('Company blurb', 'welcome.cardText', data.welcome.cardText)}
+      ${field('Button text', 'welcome.buttonText', data.welcome.buttonText)}
+      ${field('Button URL', 'welcome.buttonUrl', data.welcome.buttonUrl)}
     </fieldset>`,
 
     prepare: () => listEditor(
@@ -350,37 +375,8 @@ function renderIndexForm(data) {
       data.prepare.steps,
       (item, i) =>
         field('Title', `prepare.steps.${i}.title`, item.title) +
-        richField('Body', `prepare.steps.${i}.body`, item.body)
-    ),
-
-    dress: () => listEditor(
-      'Dress & bring tips',
-      data.dress.tips,
-      (item, i) =>
-        field('Title', `dress.tips.${i}.title`, item.title) +
-        richField('Body', `dress.tips.${i}.body`, item.body)
-    ),
-
-    links: () => listEditor(
-      'Helpful links',
-      data.links.items,
-      (item, i) =>
-        field('Icon (emoji)', `links.items.${i}.icon`, item.icon) +
-        field('Title', `links.items.${i}.title`, item.title) +
-        field('Description', `links.items.${i}.description`, item.description) +
-        field('URL', `links.items.${i}.url`, item.url) +
-        field('Link hint', `links.items.${i}.hint`, item.hint)
-    ),
-
-    video: () => `<fieldset data-section="video"><legend>Video</legend>
-      ${field('YouTube video ID', 'video.youtubeId', data.video.youtubeId, { hint: 'Just the ID, e.g. dQw4w9WgXcQ' })}
-      ${field('Intro', 'video.intro', data.video.intro, { textarea: true })}
-    </fieldset>`,
-
-    values: () => listEditor(
-      'Box values',
-      data.values.items,
-      (item, i) => field('Value', `values.items.${i}`, item, { path: `values.items.${i}` })
+        richField('Body', `prepare.steps.${i}.body`, item.body),
+      styleFields('prepare', data.prepare.style)
     ),
 
     locations: () => listEditor(
@@ -388,9 +384,8 @@ function renderIndexForm(data) {
       data.locations.items,
       (item, i) =>
         field('Slug (filename)', `locations.items.${i}.slug`, item.slug) +
-        field('Title', `locations.items.${i}.title`, item.title) +
-        field('Subtitle', `locations.items.${i}.subtitle`, item.subtitle) +
-        field('Icon', `locations.items.${i}.icon`, item.icon)
+        field('Title', `locations.items.${i}.title`, item.title),
+      styleFields('locations', data.locations.style)
     ),
 
     faq: () => listEditor(
@@ -398,20 +393,14 @@ function renderIndexForm(data) {
       data.faqs?.items || [],
       (item, i) =>
         field('Question', `faqs.items.${i}.question`, item.question) +
-        richField('Answer', `faqs.items.${i}.answer`, item.answer)
+        richField('Answer', `faqs.items.${i}.answer`, item.answer),
+      styleFields('faqs', data.faqs?.style)
     ),
-
-    contact: () => `<fieldset data-section="contact"><legend>Contact</legend>
-      ${richField('Body', 'contact.body', data.contact.body)}
-      ${field('Email', 'contact.email', data.contact.email)}
-      ${field('Button text', 'contact.buttonText', data.contact.buttonText)}
-    </fieldset>`,
   };
 
   let html = renderSectionSorter(data.sectionOrder, getIndexLabels(data));
 
   html += `<fieldset data-section="hero"><legend>Hero (fixed at top)</legend>
-    ${field('Eyebrow', 'hero.eyebrow', data.hero.eyebrow)}
     ${field('Headline', 'hero.heading', data.hero.heading)}
     ${richField('Lead text', 'hero.lead', data.hero.lead)}
   </fieldset>`;
@@ -434,8 +423,8 @@ function renderCustomSectionForm(section, si) {
   const prefix = `customSections.${si}`;
   let html = `<fieldset data-section="custom-${section.id}"><legend>${escapeAttr(section.heading || 'Custom section')}
     <button type="button" class="danger" style="float:right;font-size:0.75rem" data-action="remove-custom" data-i="${si}">Remove section</button></legend>
+    ${styleFields(prefix, section.style)}
     ${field('Nav label', `${prefix}.navLabel`, section.navLabel)}
-    ${field('Section label', `${prefix}.label`, section.label)}
     ${field('Heading', `${prefix}.heading`, section.heading)}
     ${richField('Intro', `${prefix}.intro`, section.intro || '')}`;
   (section.blocks || []).forEach((b, bi) => {
@@ -457,6 +446,7 @@ function renderLocationForm(data) {
 
   const sectionForms = {
     address: () => `<fieldset data-section="address"><legend>Address</legend>
+      ${styleFields('address', data.address.style)}
       ${richField('Address', 'address.addressHtml', data.address.addressHtml, 'Use Enter for line breaks')}
       ${richField('Note', 'address.noteHtml', data.address.noteHtml || '')}
       ${field('Google Maps URL', 'address.mapsUrl', data.address.mapsUrl || '')}
@@ -473,10 +463,12 @@ function renderLocationForm(data) {
       (item, i) =>
         field('Title', `registration.cards.${i}.title`, item.title) +
         richField('Body', `registration.cards.${i}.body`, item.body) +
-        richField('Note (optional)', `registration.cards.${i}.note`, item.note || '')
+        richField('Note (optional)', `registration.cards.${i}.note`, item.note || ''),
+      styleFields('registration', data.registration.style)
     ),
 
     contact: () => `<fieldset data-section="contact"><legend>Contact</legend>
+      ${styleFields('contact', data.contact.style)}
       ${richField('Body', 'contact.body', data.contact.body)}
       ${field('Email', 'contact.email', data.contact.email)}
     </fieldset>`,
@@ -564,18 +556,12 @@ function bindListActions(isIndex) {
         content.customSections[Number(btn.dataset.si)].blocks.splice(Number(btn.dataset.bi), 1);
       } else if (action === 'add') {
         if (legend === 'How to prepare') content.prepare.steps.push({ title: '', body: '' });
-        else if (legend === 'Dress & bring tips') content.dress.tips.push({ title: '', body: '' });
-        else if (legend === 'Helpful links') content.links.items.push({ icon: '🔗', title: '', description: '', url: '', hint: '' });
-        else if (legend === 'Box values') content.values.items.push('New value');
-        else if (legend === 'Location cards') content.locations.items.push({ slug: 'new-location', title: '', subtitle: '', icon: '📍', virtual: false });
+        else if (legend === 'Location cards') content.locations.items.push({ slug: 'new-location', title: '', virtual: false });
         else if (legend === 'Registration cards') content.registration.cards.push({ title: '', body: '' });
         else if (legend === 'FAQs (shared for all locations)') content.faqs.items.push({ question: '', answer: '' });
       } else if (action === 'remove') {
         const lists = {
           'How to prepare': content.prepare.steps,
-          'Dress & bring tips': content.dress.tips,
-          'Helpful links': content.links.items,
-          'Box values': content.values.items,
           'Location cards': content.locations.items,
           'Registration cards': content.registration.cards,
           'FAQs (shared for all locations)': content.faqs?.items,
@@ -584,9 +570,6 @@ function bindListActions(isIndex) {
       } else if (action === 'up' || action === 'down') {
         const lists = {
           'How to prepare': content.prepare.steps,
-          'Dress & bring tips': content.dress.tips,
-          'Helpful links': content.links.items,
-          'Box values': content.values.items,
           'Location cards': content.locations.items,
           'Registration cards': content.registration.cards,
           'FAQs (shared for all locations)': content.faqs?.items,

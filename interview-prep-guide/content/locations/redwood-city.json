@@ -3,7 +3,6 @@
   "title": "Redwood City — Box Interview Day Guide",
   "barLabel": "Redwood City, CA (HQ)",
   "hero": {
-    "eyebrow": "Office location",
     "title": "Redwood City, CA",
     "lead": "Box Headquarters",
     "photo": "900 Jefferson — Box HQ lobby (photo placeholder)"
@@ -31,15 +30,13 @@
     }
   ],
   "address": {
-    "label": "Where to go",
-    "heading": "Office address",
+    "heading": "Where to go",
     "addressHtml": "<strong>900 Middlefield Rd</strong><br>Redwood City, CA 94063",
     "noteHtml": "<strong>Interview building:</strong> You will interview in <strong>900 Jefferson</strong>, which features the large Box logo in the lobby. While our mailing address references Jefferson, the employee garage is accessed via Middlefield (see parking below).",
     "mapsUrl": "https://maps.google.com/?q=900+Jefferson+Ave+Redwood+City+CA+94063"
   },
   "transit": {
-    "label": "Getting here",
-    "heading": "Parking & public transportation",
+    "heading": "Getting here",
     "blocks": [
       {
         "icon": "🚗",
@@ -64,8 +61,7 @@
     ]
   },
   "arrival": {
-    "label": "When you arrive",
-    "heading": "Getting to the lobby & check-in",
+    "heading": "When you arrive",
     "blocks": [
       {
         "icon": "🛗",
@@ -90,8 +86,7 @@
     ]
   },
   "registration": {
-    "label": "Required",
-    "heading": "Registration",
+    "heading": "Required",
     "cards": [
       {
         "title": "Photo ID",
@@ -111,8 +106,7 @@
     ]
   },
   "contact": {
-    "label": "Help",
-    "heading": "Questions?",
+    "heading": "Help",
     "body": "Contact your <strong>Recruiting Coordinator</strong> using the email from your calendar invite or confirmation email.",
     "email": "recruiting@box.com",
     "buttonText": "Email recruiting"
@@ -121,8 +115,7 @@
     {
       "id": "cs-ms4z94g2",
       "navLabel": "Lunch",
-      "label": "During your interview",
-      "heading": "Lunch",
+      "heading": "During your interview",
       "intro": "",
       "blocks": [
         {

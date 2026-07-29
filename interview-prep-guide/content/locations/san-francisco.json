@@ -3,7 +3,6 @@
   "title": "San Francisco — Interview Day Guide",
   "barLabel": "San Francisco",
   "hero": {
-    "eyebrow": "Office location",
     "title": "San Francisco",
     "lead": "California, USA",
     "photo": "🌉 SF office — photo placeholder"
@@ -31,15 +30,13 @@
     }
   ],
   "address": {
-    "label": "Where to go",
-    "heading": "Office address",
+    "heading": "Where to go",
     "addressHtml": "500 Howard St, Suite 200<br>San Francisco, CA 94105",
     "noteHtml": "<a href=\"https://maps.google.com/?q=500+Howard+St+San+Francisco+CA\" target=\"_blank\" rel=\"noopener\">Open in Google Maps →</a>",
     "mapsUrl": "https://maps.google.com/?q=500+Howard+St+San+Francisco+CA"
   },
   "arrival": {
-    "label": "When you arrive",
-    "heading": "Getting here &amp; check-in",
+    "heading": "When you arrive",
     "blocks": [
       {
         "icon": "🚪",
@@ -54,8 +51,7 @@
     ]
   },
   "registration": {
-    "label": "Required",
-    "heading": "Registration",
+    "heading": "Required",
     "cards": [
       {
         "title": "Photo ID",
@@ -73,15 +69,13 @@
     ]
   },
   "contact": {
-    "label": "Help",
-    "heading": "Questions?",
+    "heading": "Help",
     "body": "Contact your <strong>Recruiting Coordinator</strong> using the email from your calendar invite or confirmation email.",
     "email": "recruiting@box.com",
     "buttonText": "Email recruiting"
   },
   "transit": {
-    "label": "Getting here",
-    "heading": "Parking &amp; public transportation",
+    "heading": "Getting here",
     "blocks": [
       {
         "icon": "🅿️",

@@ -3,7 +3,6 @@
   "title": "New York City — Interview Day Guide",
   "barLabel": "New York City",
   "hero": {
-    "eyebrow": "Office location",
     "title": "New York City",
     "lead": "New York, USA",
     "photo": "🗽 NYC office — photo placeholder"
@@ -31,15 +30,13 @@
     }
   ],
   "address": {
-    "label": "Where to go",
-    "heading": "Office address",
+    "heading": "Where to go",
     "addressHtml": "1350 Broadway, 4th Floor<br>New York, NY 10018",
     "noteHtml": "<a href=\"https://maps.google.com/?q=1350+Broadway+New+York+NY\" target=\"_blank\" rel=\"noopener\">Open in Google Maps →</a>",
     "mapsUrl": "https://maps.google.com/?q=1350+Broadway+New+York+NY"
   },
   "arrival": {
-    "label": "When you arrive",
-    "heading": "Getting here &amp; check-in",
+    "heading": "When you arrive",
     "blocks": [
       {
         "icon": "🚪",
@@ -54,8 +51,7 @@
     ]
   },
   "registration": {
-    "label": "Required",
-    "heading": "Registration",
+    "heading": "Required",
     "cards": [
       {
         "title": "Photo ID",
@@ -73,15 +69,13 @@
     ]
   },
   "contact": {
-    "label": "Help",
-    "heading": "Questions?",
+    "heading": "Help",
     "body": "Contact your <strong>Recruiting Coordinator</strong> using the email from your calendar invite or confirmation email.",
     "email": "recruiting@box.com",
     "buttonText": "Email recruiting"
   },
   "transit": {
-    "label": "Getting here",
-    "heading": "Parking &amp; public transportation",
+    "heading": "Getting here",
     "blocks": [
       {
         "icon": "🅿️",

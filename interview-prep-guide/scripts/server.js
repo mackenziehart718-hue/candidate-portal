@@ -96,6 +96,7 @@ function previewHtml(id) {
     let html = buildIndex(data);
     html = html.replace('href="css/site.css"', 'href="/css/site.css"');
     html = html.replace(/href="locations\//g, 'href="/locations/');
+    html = html.replace('src="js/nav-dialkit.js"', 'src="/js/nav-dialkit.js"');
     return html;
   }
   const data = JSON.parse(fs.readFileSync(contentPath('locations', `${id}.json`), 'utf8'));
@@ -146,6 +147,7 @@ const server = http.createServer(async (req, res) => {
         html = buildIndex(data);
         html = html.replace('href="css/site.css"', 'href="/css/site.css"');
         html = html.replace(/href="locations\//g, 'href="/locations/');
+        html = html.replace('src="js/nav-dialkit.js"', 'src="/js/nav-dialkit.js"');
       } else {
         html = buildLocation(data);
         html = html.replace('href="../css/site.css"', 'href="/css/site.css"');
@@ -172,7 +174,7 @@ const server = http.createServer(async (req, res) => {
     }
 
     // Static: site assets for preview
-    if (url.pathname.startsWith('/css/') || url.pathname.startsWith('/locations/')) {
+    if (url.pathname.startsWith('/css/') || url.pathname.startsWith('/locations/') || url.pathname.startsWith('/js/')) {
       const siteFile = path.join(ROOT, url.pathname);
       serveStatic(siteFile, res);
       return;

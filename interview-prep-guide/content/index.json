@@ -6,58 +6,52 @@
     "tagline": "For candidates with scheduled interviews"
   },
   "hero": {
-    "eyebrow": "Welcome",
-    "heading": "We're excited to meet you.",
-    "lead": "Thank you for interviewing with Box. This guide helps you learn about our company, prepare with confidence, and find day-of instructions for your interview location."
+    "heading": "Candidate guide",
+    "lead": "Thanks for interviewing! Learn about how to prepare for our interviews."
   },
   "sectionOrder": [
     "welcome",
     "prepare",
-    "locations",
-    "dress",
-    "links",
-    "video",
-    "values",
     "faq",
-    "contact"
+    "locations"
   ],
   "welcome": {
-    "label": "About us",
-    "heading": "A quick hello from Box",
-    "intro": "Box powers how the world works together — connecting people with their most important information through secure, intelligent content management. Our interviews are a two-way conversation: we want to learn about you, and we hope you'll learn about us.",
-    "calloutHtml": "<strong>Day-of logistics</strong> (parking, check-in, NDA, lunch) live on your\n        <strong>office location page</strong> below. Your calendar invite has your exact\n        date, time, and interviewers.",
-    "cardText": "Founded in 2005 and headquartered in Redwood City, California, Box serves nearly 100,000 organizations globally — including 70% of the Fortune 500. We're building a workplace where people bring their authentic selves to work, collaborate across teams, and create experiences that blow our customers' minds."
+    "heading": "About us",
+    "intro": "Box powers how the world works together — connecting people with their most important information through secure, intelligent content management. Our interviews are a two-way conversation: we want to learn about you, and we're here to answer any questions you have about Life at Box!",
+    "style": {
+      "color": "#212121",
+      "fontWeight": ""
+    },
+    "buttonText": "Learn about Life at Box",
+    "buttonUrl": "https://careers.box.com/en/"
   },
   "prepare": {
-    "label": "Before your interview",
-    "heading": "How to best prepare",
-    "intro": "Even 15–20 minutes here goes a long way. Focus on what fits your role.",
+    "heading": "Before your interview",
     "steps": [
       {
-        "title": "Re-read the job description",
-        "body": "Review responsibilities and required skills. Think of 1–2 real examples from your experience for each major area."
-      },
-      {
         "title": "Review your work",
-        "body": "Be ready to walk through a project you're proud of — your role, challenges, and what you learned. Bring samples only if your recruiter requested them."
+        "body": "Review responsibilities and required skills listed in the job description. Think of 1–2 real examples from your experience for each major area."
       },
       {
         "title": "Learn about us",
-        "body": "Skim the links below — our careers site, product overview, values, and Aaron's video. Genuine curiosity matters more than memorizing facts."
+        "body": "Skim the links below — our careers site, product overview, and values. Genuine curiosity matters more than memorizing facts."
       },
       {
-        "title": "Prepare your questions",
+        "title": "Prepare questions",
         "body": "Bring 3–5 questions about the team, the role, how we work, and what success looks like in the first 90 days."
       },
       {
-        "title": "Logistics",
-        "body": "<strong>In-person:</strong> open your location page below for address, parking, check-in, and NDA instructions.<br /> <strong>Virtual:</strong> test camera/mic, find a quiet space, and join 2–3 minutes early via your calendar link."
+        "title": "Get excited",
+        "body": "Remember that you're in the running for a reason. We're looking forward to getting to know you more!"
       }
-    ]
+    ],
+    "style": {
+      "color": "#212121",
+      "fontWeight": ""
+    }
   },
   "dress": {
-    "label": "Interview day",
-    "heading": "Dress code &amp; what to bring",
+    "heading": "Interview day",
     "tips": [
       {
         "title": "Dress code",
@@ -75,11 +69,14 @@
         "title": "Timing",
         "body": "Arrive 10 minutes early in person. For virtual, join 2–3 minutes before your scheduled start. Running late? Email your Recruiting Coordinator right away."
       }
-    ]
+    ],
+    "style": {
+      "color": "#212121",
+      "fontWeight": ""
+    }
   },
   "links": {
-    "label": "Explore",
-    "heading": "Helpful links",
+    "heading": "Explore",
     "intro": "Resources to help you learn about Box before your interview.",
     "items": [
       {
@@ -124,19 +121,25 @@
         "description": "Employee reviews and interview experiences at Box.",
         "hint": "View on Glassdoor →"
       }
-    ]
+    ],
+    "style": {
+      "color": "#212121",
+      "fontWeight": ""
+    }
   },
   "video": {
-    "label": "Hear from our CEO",
-    "heading": "A message from Aaron",
+    "heading": "Hear from our CEO",
     "intro": "Aaron Levie, Box co-founder and CEO, on what we're building and why it matters.",
     "youtubeId": "VIDEO_ID_HERE",
     "caption": "Replace VIDEO_ID_HERE with your Aaron video embed ID before publishing.",
-    "iframeTitle": "A message from Aaron Levie, Box CEO"
+    "iframeTitle": "A message from Aaron Levie, Box CEO",
+    "style": {
+      "color": "#212121",
+      "fontWeight": ""
+    }
   },
   "values": {
-    "label": "Our culture",
-    "heading": "Box values",
+    "heading": "Our values",
     "intro": "These principles guide how we work together every day. Hover to pause the scroll.",
     "items": [
       "Blow our customers' minds",
@@ -146,84 +149,75 @@
       "Bring your (____) self to work",
       "Be candid and assume good intent",
       "Make mom proud"
-    ]
+    ],
+    "style": {
+      "color": "#212121",
+      "fontWeight": ""
+    }
   },
   "locations": {
-    "label": "Office locations",
-    "heading": "Find your location",
-    "intro": "Select the office where you're interviewing (or Virtual if your loop is on Zoom). Each page has address, parking, check-in, registration.",
+    "heading": "Getting to your interview",
     "items": [
       {
         "slug": "redwood-city",
         "virtual": false,
-        "icon": "📍",
-        "title": "Redwood City",
-        "subtitle": "HQ · California, USA"
+        "title": "Redwood City HQ"
       },
       {
         "slug": "san-francisco",
         "virtual": false,
-        "icon": "📍",
-        "title": "San Francisco",
-        "subtitle": "California, USA"
+        "title": "San Francisco"
       },
       {
         "slug": "chicago",
         "virtual": false,
-        "icon": "📍",
-        "title": "Chicago",
-        "subtitle": "Illinois, USA"
+        "title": "Chicago"
       },
       {
         "slug": "austin",
         "virtual": false,
-        "icon": "📍",
-        "title": "Austin",
-        "subtitle": "Texas, USA"
+        "title": "Austin"
       },
       {
         "slug": "new-york-city",
         "virtual": false,
-        "icon": "📍",
-        "title": "New York City",
-        "subtitle": "New York, USA"
+        "title": "NYC"
       },
       {
         "slug": "amsterdam",
         "virtual": false,
-        "icon": "📍",
-        "title": "Amsterdam",
-        "subtitle": "Netherlands"
+        "title": "Amsterdam"
       },
       {
         "slug": "london",
         "virtual": false,
-        "icon": "📍",
-        "title": "London",
-        "subtitle": "United Kingdom"
+        "title": "London"
       },
       {
         "slug": "warsaw",
         "virtual": false,
-        "icon": "📍",
-        "title": "Warsaw",
-        "subtitle": "Poland"
+        "title": "Warsaw"
       },
       {
         "slug": "virtual",
         "virtual": true,
-        "icon": "💻",
-        "title": "Virtual (Zoom)",
-        "subtitle": "Remote interview via Zoom"
+        "title": "Virtual (Zoom)"
       }
-    ]
+    ],
+    "style": {
+      "color": "#212121",
+      "fontWeight": ""
+    }
   },
   "contact": {
-    "label": "Questions?",
-    "heading": "Contact your Recruiting Coordinator",
-    "body": "Your Recruiting Coordinator is your best point of contact for scheduling, logistics, and interview prep.<br /> Use the email address from your calendar invite or confirmation email.",
+    "heading": "Questions?",
+    "body": "Your Recruiting Coordinator is your best point of contact for scheduling, logistics, and interview prep.<br> Use the email address from your calendar invite or confirmation email.",
     "email": "recruiting@box.com",
-    "buttonText": "Email recruiting"
+    "buttonText": "Email recruiting",
+    "style": {
+      "color": "#212121",
+      "fontWeight": ""
+    }
   },
   "footer": {
     "year": 2026,
@@ -231,26 +225,33 @@
     "note": "This page is for candidates with scheduled interviews only."
   },
   "faqs": {
-    "label": "Day-of",
-    "heading": "FAQs",
+    "heading": "Day-of interview FAQ",
     "items": [
       {
-        "question": "Lunch",
+        "question": "Will there be a lunch interview?",
         "answer": "If your interview loop includes lunch, your Recruiting Coordinator will confirm the details in advance. Please share any dietary restrictions with your coordinator as early as possible."
       },
       {
-        "question": "Technology &amp; what to bring",
+        "question": "What do I bring?",
         "answer": "Bring a valid government ID (in-person). A notebook and pen are welcome. Only bring a laptop if your recruiter requested a presentation. Please keep your phone on silent during interviews."
       },
       {
-        "question": "Reasonable accommodation request",
+        "question": "I need a reasonable accommodation request",
         "answer": "Box is committed to providing reasonable accommodations for candidates. If you need an accommodation for your interview, please contact your <strong>Recruiting Coordinator</strong> as soon as possible so we can support you."
       },
       {
         "question": "What if I'm running late?",
         "answer": "Contact your Recruiting Coordinator immediately. We'll do our best to adjust, but some sessions may need to be rescheduled."
+      },
+      {
+        "question": "What do I wear?",
+        "answer": "Business casual — wear what makes you comfortable. Most candidates choose slacks or jeans with a collared shirt or blouse. No suit required unless you prefer one."
       }
-    ]
+    ],
+    "style": {
+      "color": "#212121",
+      "fontWeight": ""
+    }
   },
   "customSections": []
 }

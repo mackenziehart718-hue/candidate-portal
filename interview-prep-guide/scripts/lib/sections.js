@@ -1,37 +1,22 @@
 const INDEX_SECTION_NAV = {
-  welcome: 'Welcome',
-  prepare: 'Prepare',
-  dress: 'Dress & Bring',
-  links: 'Links',
-  video: 'Video',
-  values: 'Values',
+  welcome: 'About',
+  prepare: 'Before',
+  faq: 'Day-of',
   locations: 'Locations',
-  faq: 'FAQ',
-  contact: 'Contact',
 };
 
 const INDEX_SECTION_LABELS = {
   welcome: 'Welcome',
   prepare: 'How to prepare',
-  dress: 'Dress & bring',
-  links: 'Helpful links',
-  video: 'Video',
-  values: 'Box values',
-  locations: 'Location cards',
   faq: 'FAQs',
-  contact: 'Contact',
+  locations: 'Location cards',
 };
 
 const DEFAULT_INDEX_SECTION_ORDER = [
   'welcome',
   'prepare',
-  'dress',
-  'links',
-  'video',
-  'values',
-  'locations',
   'faq',
-  'contact',
+  'locations',
 ];
 
 const LOCATION_SECTION_NAV = {
@@ -127,9 +112,8 @@ function buildIndexNav(sectionOrder, data) {
   getIndexCustomSections(data).forEach((s) => {
     labels[customSectionId(s)] = s.navLabel || s.heading || 'More';
   });
-  return sectionOrder
-    .map((id) => `      <a href="#${id.replace('custom:', 'custom-')}">${labels[id] || id}</a>`)
-    .join('\n');
+  const links = sectionOrder.map((id) => `      <a href="#${id.replace('custom:', 'custom-')}">${labels[id] || id}</a>`);
+  return ['      <a href="#top">Video</a>', ...links].join('\n');
 }
 
 function buildLocationNav(sectionOrder, data) {
