@@ -213,6 +213,7 @@ a:hover { color: var(--brand-navy); }
   font-size: 1.15rem;
   color: #151F26;
   max-width: 34rem;
+  text-wrap: balance;
 }
 
 .hero-image {
