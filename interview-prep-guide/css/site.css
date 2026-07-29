@@ -453,6 +453,19 @@ section h2 {
 
 .location-photo-card h3 { font-size: 0.95rem; font-weight: 700; }
 
+.loc-arrow {
+  display: inline-block;
+  opacity: 0;
+  transform: translateX(-4px);
+  transition: opacity 0.15s ease, transform 0.15s ease;
+}
+
+.location-photo-card:hover .loc-arrow,
+.location-photo-card:focus-visible .loc-arrow {
+  opacity: 1;
+  transform: translateX(0);
+}
+
 /* ── Info blocks (location pages) ── */
 .info-block {
   display: grid;

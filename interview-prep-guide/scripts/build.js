@@ -115,7 +115,7 @@ function buildIndex(data) {
     .map(
       (l) => `        <a class="location-photo-card" href="locations/${esc(l.slug)}.html">
           <div class="photo-placeholder photo-placeholder--soft" aria-hidden="true"></div>
-          <h3>${esc(l.title)}</h3>
+          <h3>${esc(l.title)} <span class="loc-arrow" aria-hidden="true">&rarr;</span></h3>
         </a>`
     )
     .join('\n');
