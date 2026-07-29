@@ -200,7 +200,7 @@ a:hover { color: var(--brand-navy); }
 }
 
 .gradient-title {
-  font-size: 80px;
+  font-size: 64px;
   font-weight: 800;
   line-height: 1.1;
   background: linear-gradient(90deg, #E8935F 0%, #E893C0 45%, #8C93E3 100%);
