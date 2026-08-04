@@ -141,6 +141,22 @@ a:hover { color: var(--brand-navy); }
   grid-template-columns: 1fr 1fr;
 }
 
+.hero.hero-single {
+  background: transparent;
+  color: var(--muted);
+}
+
+.hero.hero-single::before,
+.hero.hero-single::after { display: none; }
+
+.hero.hero-single .hero-text h1 { color: var(--brand-navy); }
+
+.hero.hero-single .hero-photo {
+  background: rgba(255, 255, 255, 0.6);
+  border: 1px solid var(--border);
+  color: var(--muted);
+}
+
 .hero-text .eyebrow {
   font-size: 0.78rem;
   font-weight: 600;
