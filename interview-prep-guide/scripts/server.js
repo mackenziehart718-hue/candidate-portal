@@ -97,12 +97,14 @@ function previewHtml(id) {
     html = html.replace('href="css/site.css"', 'href="/css/site.css"');
     html = html.replace(/href="locations\//g, 'href="/locations/');
     html = html.replace('src="js/nav-dialkit.js"', 'src="/js/nav-dialkit.js"');
+    html = html.replace('src="js/nav-scroll.js"', 'src="/js/nav-scroll.js"');
     return html;
   }
   const data = JSON.parse(fs.readFileSync(contentPath('locations', `${id}.json`), 'utf8'));
   let html = buildLocation(data);
   html = html.replace('href="../css/site.css"', 'href="/css/site.css"');
   html = html.replace('href="../index.html"', 'href="/api/preview/index"');
+  html = html.replace('src="../js/nav-scroll.js"', 'src="/js/nav-scroll.js"');
   return html;
 }
 
@@ -148,10 +150,12 @@ const server = http.createServer(async (req, res) => {
         html = html.replace('href="css/site.css"', 'href="/css/site.css"');
         html = html.replace(/href="locations\//g, 'href="/locations/');
         html = html.replace('src="js/nav-dialkit.js"', 'src="/js/nav-dialkit.js"');
+        html = html.replace('src="js/nav-scroll.js"', 'src="/js/nav-scroll.js"');
       } else {
         html = buildLocation(data);
         html = html.replace('href="../css/site.css"', 'href="/css/site.css"');
         html = html.replace('href="../index.html"', 'href="/api/preview/index"');
+        html = html.replace('src="../js/nav-scroll.js"', 'src="/js/nav-scroll.js"');
       }
       send(res, 200, html, 'text/html');
       return;

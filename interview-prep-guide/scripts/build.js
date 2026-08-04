@@ -208,6 +208,7 @@ ${mainSections}
     <p style="margin-top: 0.4rem;">${esc(data.footer.note)}</p>
   </footer>
 
+  <script src="js/nav-scroll.js" defer></script>
   <script src="js/nav-dialkit.js" defer></script>
 </body>
 </html>
@@ -358,6 +359,7 @@ ${mainSections}
     <p><a href="../index.html">← Back to main prep guide</a></p>
   </footer>
 
+  <script src="../js/nav-scroll.js" defer></script>
 </body>
 </html>
 `;
