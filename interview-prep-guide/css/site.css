@@ -46,7 +46,12 @@ body {
   font-optical-sizing: auto;
   font-weight: 400;
   font-size: 18px;
-  background: var(--bg);
+  background:
+    radial-gradient(circle at 85% 90%, #C7DCFC 0%, transparent 55%),
+    radial-gradient(circle at 8% 45%, #F3D9EE 0%, transparent 45%),
+    radial-gradient(circle at 50% 5%, #FFFFFF 0%, transparent 50%),
+    #DFEBFE;
+  background-attachment: fixed;
   color: var(--text);
   line-height: 1.6;
 }
@@ -60,7 +65,7 @@ a:hover { color: var(--brand-navy); }
 
 /* ── Top bar ── */
 .site-bar {
-  background: var(--card);
+  background: transparent;
   border-bottom: 1px solid var(--border);
   padding: 0.65rem 1.5rem;
   font-size: 0.85rem;
@@ -181,7 +186,7 @@ a:hover { color: var(--brand-navy); }
 
 /* ── Centered hero (main hub) ── */
 .hero.hero-centered {
-  background: #fff;
+  background: transparent;
   color: var(--text);
   padding: 2.5rem 1.5rem 3rem;
   overflow: visible;
@@ -203,7 +208,7 @@ a:hover { color: var(--brand-navy); }
   font-size: 64px;
   font-weight: 600;
   line-height: 1.1;
-  background: linear-gradient(90deg, #E8935F 0%, #E893C0 45%, #8C93E3 100%);
+  background: linear-gradient(90deg, #D2A24A 0%, #D67A93 25%, #B15FDB 50%, #6C6FE8 75%, #4FAEEB 100%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -212,7 +217,7 @@ a:hover { color: var(--brand-navy); }
 .hero-centered .lead {
   font-size: 1.15rem;
   color: #151F26;
-  max-width: 34rem;
+  max-width: 40rem;
   text-wrap: balance;
 }
 
@@ -399,7 +404,7 @@ section h2 {
   width: 26px;
   height: 26px;
   border-radius: 50%;
-  background: #000;
+  background: #5153AE;
   color: #fff;
   font-size: 0.78rem;
   font-weight: 700;
@@ -515,7 +520,7 @@ section h2 {
   display: inline-flex;
   align-items: center;
   padding: 0.55rem 1rem;
-  background: var(--brand-primary);
+  background: #2586fc;
   color: #fff !important;
   font-size: 0.86rem;
   font-weight: 600;
@@ -524,7 +529,7 @@ section h2 {
   transition: background 0.15s, box-shadow 0.15s;
 }
 
-.btn:hover { background: var(--brand-navy); }
+.btn:hover { background: #013D84; }
 
 footer {
   text-align: center;
