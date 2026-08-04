@@ -85,10 +85,10 @@ function renderFaqSection(faqs) {
   if (!faqs?.items?.length) return '';
   const items = faqs.items
     .map(
-      (f) => `      <div class="faq-item">
-        <h3>${esc(f.question)}</h3>
+      (f) => `      <details class="faq-item">
+        <summary>${esc(f.question)}</summary>
         <p>${f.answer}</p>
-      </div>`
+      </details>`
     )
     .join('\n');
   return `
@@ -195,7 +195,19 @@ ${navLinks}
     <div class="hero-inner">
       <h1 class="gradient-title">${esc(data.hero.heading)}</h1>
       <p class="lead">${esc(data.hero.lead)}</p>
-      <div class="hero-image photo-placeholder" aria-hidden="true"></div>
+      ${
+        data.video?.youtubeId && data.video.youtubeId !== 'VIDEO_ID_HERE'
+          ? `<div class="hero-image video-embed">
+        <iframe
+          src="https://www.youtube.com/embed/${esc(data.video.youtubeId)}"
+          title="${esc(data.video.iframeTitle || data.video.heading || 'Video')}"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+          loading="lazy"
+        ></iframe>
+      </div>`
+          : `<div class="hero-image photo-placeholder" aria-hidden="true"></div>`
+      }
     </div>
   </header>
 

@@ -12,8 +12,8 @@
   "sectionOrder": [
     "welcome",
     "prepare",
-    "faq",
     "locations",
+    "faq",
     "contact"
   ],
   "welcome": {

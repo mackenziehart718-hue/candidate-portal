@@ -228,6 +228,22 @@ a:hover { color: var(--brand-navy); }
   margin-top: 0.5rem;
 }
 
+.video-embed {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  background: #000;
+  box-shadow: var(--shadow);
+}
+
+.video-embed iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
 /* ── Nav ── */
 :root {
   --nav-bg-opacity: 0.92;
@@ -404,7 +420,7 @@ section h2 {
   width: 26px;
   height: 26px;
   border-radius: 50%;
-  background: #9f3fed;
+  background: #4825C2;
   color: #fff;
   font-size: 0.78rem;
   font-weight: 700;
@@ -496,9 +512,36 @@ section h2 {
 .address-card a { font-weight: 600; }
 
 /* ── FAQ ── */
-.faq-plain { display: flex; flex-direction: column; gap: 1.5rem; }
-.faq-item h3 { font-size: 1rem; font-weight: 700; margin-bottom: 0.3rem; }
-.faq-item p { font-size: 0.93rem; color: var(--muted); }
+.faq-plain { display: flex; flex-direction: column; gap: 0.75rem; }
+
+.faq-item { border-bottom: 1px solid var(--border); padding-bottom: 0.75rem; }
+
+.faq-item summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  list-style: none;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 700;
+  padding: 0.5rem 0;
+}
+
+.faq-item summary::-webkit-details-marker { display: none; }
+
+.faq-item summary::after {
+  content: '+';
+  flex-shrink: 0;
+  font-size: 1.3rem;
+  font-weight: 400;
+  color: var(--muted);
+  transition: transform 0.2s ease;
+}
+
+.faq-item[open] summary::after { transform: rotate(45deg); }
+
+.faq-item p { font-size: 0.93rem; color: var(--muted); margin-top: 0.4rem; }
 
 /* ── Contact ── */
 .contact-bar {
