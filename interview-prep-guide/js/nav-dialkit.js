@@ -8,7 +8,7 @@
   var root = document.documentElement;
 
   var CONTROLS = [
-    { key: '--nav-bg-opacity', label: 'Background opacity', type: 'range', min: 0, max: 1, step: 0.01, default: 0.92, unit: '' },
+    { key: '--nav-bg-opacity', label: 'Background opacity', type: 'range', min: 0, max: 1, step: 0.01, default: 1, unit: '' },
     { key: '--nav-blur', label: 'Backdrop blur', type: 'range', min: 0, max: 24, step: 1, default: 8, unit: 'px' },
     { key: '--nav-gap', label: 'Link gap', type: 'range', min: 0, max: 4, step: 0.05, default: 1.75, unit: 'rem' },
     { key: '--nav-font-size', label: 'Font size', type: 'range', min: 0.7, max: 1.3, step: 0.01, default: 0.92, unit: 'rem' },

@@ -262,7 +262,7 @@ a:hover { color: var(--brand-navy); }
 
 /* ── Nav ── */
 :root {
-  --nav-bg-opacity: 0.92;
+  --nav-bg-opacity: 1;
   --nav-blur: 8px;
   --nav-gap: 1.75rem;
   --nav-font-size: 0.92rem;
