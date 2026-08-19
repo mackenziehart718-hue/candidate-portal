@@ -1,11 +1,11 @@
 {
   "slug": "virtual",
-  "title": "Virtual (Zoom) — Interview Day Guide",
+  "title": "Virtual (Zoom) \u2014 Interview Day Guide",
   "barLabel": "Virtual (Zoom)",
   "hero": {
     "title": "Virtual (Zoom)",
     "lead": "Remote interview",
-    "photo": "💻 Virtual interview"
+    "photo": "\ud83d\udcbb Virtual interview"
   },
   "nav": [
     {
@@ -31,52 +31,68 @@
   ],
   "address": {
     "heading": "Where to go",
-    "addressHtml": "No physical address — join via the Zoom link in your calendar invite.",
+    "addressHtml": "No physical address \u2014 join via the Zoom link in your calendar invite.",
     "noteHtml": "",
-    "mapsUrl": ""
+    "mapsUrl": "",
+    "style": {
+      "color": "#212121",
+      "fontWeight": ""
+    }
   },
   "arrival": {
     "heading": "When you arrive",
-    "blocks": []
+    "blocks": [],
+    "style": {
+      "color": "#212121",
+      "fontWeight": ""
+    }
   },
   "registration": {
     "heading": "Required",
     "cards": [
       {
-        "title": "🪪 Photo ID",
+        "title": "\ud83e\udeaa Photo ID",
         "body": "Government-issued photo ID is required for identity verification if requested by your recruiter. No ID = we may need to reschedule."
       },
       {
-        "title": "📄 NDA",
+        "title": "\ud83d\udcc4 NDA",
         "body": "No physical NDA. If required, your recruiter will send a DocuSign link ahead of time."
       },
       {
-        "title": "🚪 Arrival &amp; departure",
+        "title": "\ud83d\udeaa Arrival &amp; departure",
         "body": "When your interview block ends, you can leave the Zoom call. Your recruiter will share next steps by email."
       }
-    ]
+    ],
+    "style": {
+      "color": "#212121",
+      "fontWeight": ""
+    }
   },
   "contact": {
-    "heading": "Help",
-    "body": "Contact your <strong>Recruiting Coordinator</strong> using the email from your calendar invite or confirmation email.",
+    "heading": "Questions?",
+    "body": "Got a question we didn't cover? Reach out to your Recruiter and Recruiting Coordinator.",
     "email": "recruiting@box.com",
-    "buttonText": "Email recruiting"
+    "buttonText": "Email recruiting",
+    "style": {
+      "color": "#212121",
+      "fontWeight": ""
+    }
   },
   "zoom": {
     "heading": "Before you join",
     "blocks": [
       {
-        "icon": "🔗",
+        "icon": "\ud83d\udd17",
         "title": "Your meeting link",
         "paragraphs": [
           {
             "type": "html",
-            "html": "Use the Zoom link in your <strong>calendar invite only</strong>. Do not share it publicly. Each session may use the same or different links — follow your schedule."
+            "html": "Use the Zoom link in your <strong>calendar invite only</strong>. Do not share it publicly. Each session may use the same or different links \u2014 follow your schedule."
           }
         ]
       },
       {
-        "icon": "🎥",
+        "icon": "\ud83c\udfa5",
         "title": "Tech checklist",
         "paragraphs": [
           {
@@ -86,12 +102,16 @@
               "Test camera and microphone",
               "Use headphones to reduce echo",
               "Find a quiet, well-lit space",
-              "Join 2–3 minutes early — you'll wait in the waiting room"
+              "Join 2\u20133 minutes early \u2014 you'll wait in the waiting room"
             ]
           }
         ]
       }
-    ]
+    ],
+    "style": {
+      "color": "#212121",
+      "fontWeight": ""
+    }
   },
   "customSections": []
 }

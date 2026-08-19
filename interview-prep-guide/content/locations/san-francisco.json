@@ -1,11 +1,11 @@
 {
   "slug": "san-francisco",
-  "title": "San Francisco — Interview Day Guide",
+  "title": "San Francisco \u2014 Interview Day Guide",
   "barLabel": "San Francisco",
   "hero": {
     "title": "San Francisco",
     "lead": "California, USA",
-    "photo": "🌉 SF office — photo placeholder"
+    "photo": "\ud83c\udf09 SF office \u2014 photo placeholder"
   },
   "nav": [
     {
@@ -32,14 +32,18 @@
   "address": {
     "heading": "Where to go",
     "addressHtml": "500 Howard St, Suite 200<br>San Francisco, CA 94105",
-    "noteHtml": "<a href=\"https://maps.google.com/?q=500+Howard+St+San+Francisco+CA\" target=\"_blank\" rel=\"noopener\">Open in Google Maps →</a>",
-    "mapsUrl": "https://maps.google.com/?q=500+Howard+St+San+Francisco+CA"
+    "noteHtml": "<a href=\"https://maps.google.com/?q=500+Howard+St+San+Francisco+CA\" target=\"_blank\" rel=\"noopener\">Open in Google Maps \u2192</a>",
+    "mapsUrl": "https://maps.google.com/?q=500+Howard+St+San+Francisco+CA",
+    "style": {
+      "color": "#212121",
+      "fontWeight": ""
+    }
   },
   "arrival": {
     "heading": "When you arrive",
     "blocks": [
       {
-        "icon": "🚪",
+        "icon": "\ud83d\udeaa",
         "title": "Lobby instructions",
         "paragraphs": [
           {
@@ -48,7 +52,11 @@
           }
         ]
       }
-    ]
+    ],
+    "style": {
+      "color": "#212121",
+      "fontWeight": ""
+    }
   },
   "registration": {
     "heading": "Required",
@@ -66,31 +74,43 @@
         "title": "Arrival &amp; departure",
         "body": "A team member will escort you from the lobby. Return your badge at the front desk when leaving."
       }
-    ]
+    ],
+    "style": {
+      "color": "#212121",
+      "fontWeight": ""
+    }
   },
   "contact": {
-    "heading": "Help",
-    "body": "Contact your <strong>Recruiting Coordinator</strong> using the email from your calendar invite or confirmation email.",
+    "heading": "Questions?",
+    "body": "Got a question we didn't cover? Reach out to your Recruiter and Recruiting Coordinator.",
     "email": "recruiting@box.com",
-    "buttonText": "Email recruiting"
+    "buttonText": "Email recruiting",
+    "style": {
+      "color": "#212121",
+      "fontWeight": ""
+    }
   },
   "transit": {
     "heading": "Getting here",
     "blocks": [
       {
-        "icon": "🅿️",
+        "icon": "\ud83c\udd7f\ufe0f",
         "title": "Parking",
         "paragraphs": [
           {
             "type": "list",
             "items": [
               "No on-site parking. Nearest garages: 5th & Mission Garage, Moscone Center Garage.",
-              "Typical cost: $20–35 for a half day. Allow extra time to park and walk."
+              "Typical cost: $20\u201335 for a half day. Allow extra time to park and walk."
             ]
           }
         ]
       }
-    ]
+    ],
+    "style": {
+      "color": "#212121",
+      "fontWeight": ""
+    }
   },
   "customSections": []
 }

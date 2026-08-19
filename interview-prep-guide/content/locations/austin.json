@@ -1,11 +1,11 @@
 {
   "slug": "austin",
-  "title": "Austin — Interview Day Guide",
+  "title": "Austin \u2014 Interview Day Guide",
   "barLabel": "Austin",
   "hero": {
     "title": "Austin",
     "lead": "Texas, USA",
-    "photo": "🤠 Austin office — photo placeholder"
+    "photo": "\ud83e\udd20 Austin office \u2014 photo placeholder"
   },
   "nav": [
     {
@@ -32,23 +32,31 @@
   "address": {
     "heading": "Where to go",
     "addressHtml": "600 Congress Ave, Suite 1400<br>Austin, TX 78701",
-    "noteHtml": "<a href=\"https://maps.google.com/?q=600+Congress+Ave+Austin+TX\" target=\"_blank\" rel=\"noopener\">Open in Google Maps →</a>",
-    "mapsUrl": "https://maps.google.com/?q=600+Congress+Ave+Austin+TX"
+    "noteHtml": "<a href=\"https://maps.google.com/?q=600+Congress+Ave+Austin+TX\" target=\"_blank\" rel=\"noopener\">Open in Google Maps \u2192</a>",
+    "mapsUrl": "https://maps.google.com/?q=600+Congress+Ave+Austin+TX",
+    "style": {
+      "color": "#212121",
+      "fontWeight": ""
+    }
   },
   "arrival": {
     "heading": "When you arrive",
     "blocks": [
       {
-        "icon": "🚪",
+        "icon": "\ud83d\udeaa",
         "title": "Lobby instructions",
         "paragraphs": [
           {
             "type": "html",
-            "html": "Main entrance on Congress Ave. Elevators to Suite 1400 — check in at front desk."
+            "html": "Main entrance on Congress Ave. Elevators to Suite 1400 \u2014 check in at front desk."
           }
         ]
       }
-    ]
+    ],
+    "style": {
+      "color": "#212121",
+      "fontWeight": ""
+    }
   },
   "registration": {
     "heading": "Required",
@@ -66,31 +74,43 @@
         "title": "Arrival &amp; departure",
         "body": "Your host will meet you at reception. Return badge when departing."
       }
-    ]
+    ],
+    "style": {
+      "color": "#212121",
+      "fontWeight": ""
+    }
   },
   "contact": {
-    "heading": "Help",
-    "body": "Contact your <strong>Recruiting Coordinator</strong> using the email from your calendar invite or confirmation email.",
+    "heading": "Questions?",
+    "body": "Got a question we didn't cover? Reach out to your Recruiter and Recruiting Coordinator.",
     "email": "recruiting@box.com",
-    "buttonText": "Email recruiting"
+    "buttonText": "Email recruiting",
+    "style": {
+      "color": "#212121",
+      "fontWeight": ""
+    }
   },
   "transit": {
     "heading": "Getting here",
     "blocks": [
       {
-        "icon": "🅿️",
+        "icon": "\ud83c\udd7f\ufe0f",
         "title": "Parking",
         "paragraphs": [
           {
             "type": "list",
             "items": [
               "Congress Ave garage adjacent to building (~$15/day).",
-              "Street parking limited — garage recommended."
+              "Street parking limited \u2014 garage recommended."
             ]
           }
         ]
       }
-    ]
+    ],
+    "style": {
+      "color": "#212121",
+      "fontWeight": ""
+    }
   },
   "customSections": []
 }

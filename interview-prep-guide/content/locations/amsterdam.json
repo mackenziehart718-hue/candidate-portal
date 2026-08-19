@@ -1,11 +1,11 @@
 {
   "slug": "amsterdam",
-  "title": "Amsterdam — Interview Day Guide",
+  "title": "Amsterdam \u2014 Interview Day Guide",
   "barLabel": "Amsterdam",
   "hero": {
     "title": "Amsterdam",
     "lead": "Netherlands",
-    "photo": "🇳🇱 Amsterdam office — photo placeholder"
+    "photo": "\ud83c\uddf3\ud83c\uddf1 Amsterdam office \u2014 photo placeholder"
   },
   "nav": [
     {
@@ -32,14 +32,18 @@
   "address": {
     "heading": "Where to go",
     "addressHtml": "Gustav Mahlerlaan 300<br>1082 ME Amsterdam",
-    "noteHtml": "<a href=\"https://maps.google.com/?q=Gustav+Mahlerlaan+300+Amsterdam\" target=\"_blank\" rel=\"noopener\">Open in Google Maps →</a>",
-    "mapsUrl": "https://maps.google.com/?q=Gustav+Mahlerlaan+300+Amsterdam"
+    "noteHtml": "<a href=\"https://maps.google.com/?q=Gustav+Mahlerlaan+300+Amsterdam\" target=\"_blank\" rel=\"noopener\">Open in Google Maps \u2192</a>",
+    "mapsUrl": "https://maps.google.com/?q=Gustav+Mahlerlaan+300+Amsterdam",
+    "style": {
+      "color": "#212121",
+      "fontWeight": ""
+    }
   },
   "arrival": {
     "heading": "When you arrive",
     "blocks": [
       {
-        "icon": "🚪",
+        "icon": "\ud83d\udeaa",
         "title": "Lobby instructions",
         "paragraphs": [
           {
@@ -48,7 +52,11 @@
           }
         ]
       }
-    ]
+    ],
+    "style": {
+      "color": "#212121",
+      "fontWeight": ""
+    }
   },
   "registration": {
     "heading": "Required",
@@ -66,19 +74,27 @@
         "title": "Arrival &amp; departure",
         "body": "Badge issued at reception. Return badge when you leave the building."
       }
-    ]
+    ],
+    "style": {
+      "color": "#212121",
+      "fontWeight": ""
+    }
   },
   "contact": {
-    "heading": "Help",
-    "body": "Contact your <strong>Recruiting Coordinator</strong> using the email from your calendar invite or confirmation email.",
+    "heading": "Questions?",
+    "body": "Got a question we didn't cover? Reach out to your Recruiter and Recruiting Coordinator.",
     "email": "recruiting@box.com",
-    "buttonText": "Email recruiting"
+    "buttonText": "Email recruiting",
+    "style": {
+      "color": "#212121",
+      "fontWeight": ""
+    }
   },
   "transit": {
     "heading": "Getting here",
     "blocks": [
       {
-        "icon": "🅿️",
+        "icon": "\ud83c\udd7f\ufe0f",
         "title": "Parking",
         "paragraphs": [
           {
@@ -90,7 +106,11 @@
           }
         ]
       }
-    ]
+    ],
+    "style": {
+      "color": "#212121",
+      "fontWeight": ""
+    }
   },
   "customSections": []
 }

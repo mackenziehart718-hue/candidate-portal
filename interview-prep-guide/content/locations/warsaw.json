@@ -1,11 +1,11 @@
 {
   "slug": "warsaw",
-  "title": "Warsaw — Interview Day Guide",
+  "title": "Warsaw \u2014 Interview Day Guide",
   "barLabel": "Warsaw",
   "hero": {
     "title": "Warsaw",
     "lead": "Poland",
-    "photo": "🇵🇱 Warsaw office — photo placeholder"
+    "photo": "\ud83c\uddf5\ud83c\uddf1 Warsaw office \u2014 photo placeholder"
   },
   "nav": [
     {
@@ -32,23 +32,31 @@
   "address": {
     "heading": "Where to go",
     "addressHtml": "Rondo ONZ 1, 12th Floor<br>00-124 Warsaw",
-    "noteHtml": "<a href=\"https://maps.google.com/?q=Rondo+ONZ+1+Warsaw\" target=\"_blank\" rel=\"noopener\">Open in Google Maps →</a>",
-    "mapsUrl": "https://maps.google.com/?q=Rondo+ONZ+1+Warsaw"
+    "noteHtml": "<a href=\"https://maps.google.com/?q=Rondo+ONZ+1+Warsaw\" target=\"_blank\" rel=\"noopener\">Open in Google Maps \u2192</a>",
+    "mapsUrl": "https://maps.google.com/?q=Rondo+ONZ+1+Warsaw",
+    "style": {
+      "color": "#212121",
+      "fontWeight": ""
+    }
   },
   "arrival": {
     "heading": "When you arrive",
     "blocks": [
       {
-        "icon": "🚪",
+        "icon": "\ud83d\udeaa",
         "title": "Lobby instructions",
         "paragraphs": [
           {
             "type": "html",
-            "html": "Enter Rondo 1 tower. Ground floor reception — they'll direct you to Floor 12."
+            "html": "Enter Rondo 1 tower. Ground floor reception \u2014 they'll direct you to Floor 12."
           }
         ]
       }
-    ]
+    ],
+    "style": {
+      "color": "#212121",
+      "fontWeight": ""
+    }
   },
   "registration": {
     "heading": "Required",
@@ -66,31 +74,43 @@
         "title": "Arrival &amp; departure",
         "body": "Visitor badge from reception. Return badge when exiting."
       }
-    ]
+    ],
+    "style": {
+      "color": "#212121",
+      "fontWeight": ""
+    }
   },
   "contact": {
-    "heading": "Help",
-    "body": "Contact your <strong>Recruiting Coordinator</strong> using the email from your calendar invite or confirmation email.",
+    "heading": "Questions?",
+    "body": "Got a question we didn't cover? Reach out to your Recruiter and Recruiting Coordinator.",
     "email": "recruiting@box.com",
-    "buttonText": "Email recruiting"
+    "buttonText": "Email recruiting",
+    "style": {
+      "color": "#212121",
+      "fontWeight": ""
+    }
   },
   "transit": {
     "heading": "Getting here",
     "blocks": [
       {
-        "icon": "🅿️",
+        "icon": "\ud83c\udd7f\ufe0f",
         "title": "Parking",
         "paragraphs": [
           {
             "type": "list",
             "items": [
               "Underground parking at Rondo 1 building (paid).",
-              "Limited street parking — allow extra time."
+              "Limited street parking \u2014 allow extra time."
             ]
           }
         ]
       }
-    ]
+    ],
+    "style": {
+      "color": "#212121",
+      "fontWeight": ""
+    }
   },
   "customSections": []
 }

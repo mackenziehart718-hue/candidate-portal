@@ -14,6 +14,7 @@
     "prepare",
     "locations",
     "faq",
+    "links",
     "contact"
   ],
   "welcome": {
@@ -82,42 +83,42 @@
     "items": [
       {
         "url": "https://www.box.com/about-us",
-        "icon": "🏢",
+        "icon": "about us icon.svg",
         "title": "About us",
         "description": "Our mission, leadership, and company story.",
         "hint": "box.com/about-us →"
       },
       {
         "url": "https://careers.box.com/en/",
-        "icon": "💼",
+        "icon": "careers site.svg",
         "title": "Careers site",
         "description": "Culture, benefits, values, and life at Box.",
         "hint": "careers.box.com →"
       },
       {
         "url": "https://www.box.com/products",
-        "icon": "🚀",
+        "icon": "product icon.png",
         "title": "Product",
         "description": "What we build and who we serve.",
         "hint": "box.com/products →"
       },
       {
         "url": "https://blog.box.com",
-        "icon": "📰",
+        "icon": "box blog icon.svg",
         "title": "Blog",
         "description": "News, product updates, and thought leadership.",
         "hint": "blog.box.com →"
       },
       {
         "url": "https://www.box.com/ai/trust",
-        "icon": "🤖",
+        "icon": "BOX AI.svg",
         "title": "Box AI &amp; LLM policy",
         "description": "How Box uses AI responsibly and protects customer data.",
         "hint": "box.com/ai/trust →"
       },
       {
-        "url": "https://www.glassdoor.com/Overview/Working-at-Box-EI_IE3481.11,14.htm",
-        "icon": "⭐",
+        "url": "https://www.glassdoor.com/Overview/Working-at-Box-EI_IE254092.11,14.htm",
+        "icon": "glassdoor icon.svg",
         "title": "Glassdoor",
         "description": "Employee reviews and interview experiences at Box.",
         "hint": "View on Glassdoor →"

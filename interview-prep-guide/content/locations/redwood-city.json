@@ -1,11 +1,11 @@
 {
   "slug": "redwood-city",
-  "title": "Redwood City — Box Interview Day Guide",
-  "barLabel": "Redwood City, CA (HQ)",
+  "title": "Redwood City \u2014 Box Interview Day Guide",
+  "barLabel": "Redwood City (HQ)",
   "hero": {
-    "title": "Redwood City, CA",
+    "title": "Redwood City",
     "lead": "Box Headquarters",
-    "photo": "900 Jefferson — Box HQ lobby (photo placeholder)"
+    "photo": "900 Jefferson \u2014 Box HQ lobby (photo placeholder)"
   },
   "nav": [
     {
@@ -33,23 +33,27 @@
     "heading": "Where to go",
     "addressHtml": "<strong>900 Middlefield Rd</strong><br>Redwood City, CA 94063",
     "noteHtml": "<strong>Interview building:</strong> You will interview in <strong>900 Jefferson</strong>, which features the large Box logo in the lobby. While our mailing address references Jefferson, the employee garage is accessed via Middlefield (see parking below).",
-    "mapsUrl": "https://maps.google.com/?q=900+Jefferson+Ave+Redwood+City+CA+94063"
+    "mapsUrl": "https://maps.google.com/?q=900+Jefferson+Ave+Redwood+City+CA+94063",
+    "style": {
+      "color": "#212121",
+      "fontWeight": ""
+    }
   },
   "transit": {
     "heading": "Getting here",
     "blocks": [
       {
-        "icon": "🚗",
+        "icon": "\ud83d\ude97",
         "title": "Driving & parking",
         "paragraphs": [
           {
             "type": "html",
-            "html": "The garage entrance is located between our two Box buildings at the intersection of <strong>Middlefield Road &amp; Jefferson Avenue</strong>.Note: While our mailing address is 900 Jefferson, the employee garage is accessed via <strong>900 Middlefield</strong>.Even if the garage sign says <strong>FULL</strong>, it is for employee access only — which includes candidates and visitors with authorized access. At the garage entrance, press the <strong>Security</strong> button to speak with our Security team. Notify them that you have an interview with Box and they will admit you."
+            "html": "The garage entrance is located between our two Box buildings at the intersection of <strong>Middlefield Road &amp; Jefferson Avenue</strong>.Note: While our mailing address is 900 Jefferson, the employee garage is accessed via <strong>900 Middlefield</strong>.Even if the garage sign says <strong>FULL</strong>, it is for employee access only \u2014 which includes candidates and visitors with authorized access. At the garage entrance, press the <strong>Security</strong> button to speak with our Security team. Notify them that you have an interview with Box and they will admit you."
           }
         ]
       },
       {
-        "icon": "🚆",
+        "icon": "\ud83d\ude86",
         "title": "Public transportation",
         "paragraphs": [
           {
@@ -58,13 +62,17 @@
           }
         ]
       }
-    ]
+    ],
+    "style": {
+      "color": "#212121",
+      "fontWeight": ""
+    }
   },
   "arrival": {
     "heading": "When you arrive",
     "blocks": [
       {
-        "icon": "🛗",
+        "icon": "\ud83d\uded7",
         "title": "Getting to the lobby",
         "paragraphs": [
           {
@@ -74,7 +82,7 @@
         ]
       },
       {
-        "icon": "✅",
+        "icon": "\u2705",
         "title": "Check-in",
         "paragraphs": [
           {
@@ -83,7 +91,11 @@
           }
         ]
       }
-    ]
+    ],
+    "style": {
+      "color": "#212121",
+      "fontWeight": ""
+    }
   },
   "registration": {
     "heading": "Required",
@@ -103,13 +115,21 @@
         "body": "Your interviewer or host will escort you during your visit. When you are finished, return any visitor badge to reception before you leave the building.",
         "note": ""
       }
-    ]
+    ],
+    "style": {
+      "color": "#212121",
+      "fontWeight": ""
+    }
   },
   "contact": {
-    "heading": "Help",
-    "body": "Contact your <strong>Recruiting Coordinator</strong> using the email from your calendar invite or confirmation email.",
+    "heading": "Questions?",
+    "body": "Got a question we didn't cover? Reach out to your Recruiter and Recruiting Coordinator.",
     "email": "recruiting@box.com",
-    "buttonText": "Email recruiting"
+    "buttonText": "Email recruiting",
+    "style": {
+      "color": "#212121",
+      "fontWeight": ""
+    }
   },
   "customSections": [
     {
@@ -119,7 +139,7 @@
       "intro": "",
       "blocks": [
         {
-          "icon": "🌮",
+          "icon": "\ud83c\udf2e",
           "title": "Ordering food",
           "paragraphs": [
             {
@@ -129,7 +149,11 @@
           ],
           "body": "You will be sent a link to order food from a restaurant of your choice via food delivery app by your coordinator. A Boxer will bring it to you when it's delivered."
         }
-      ]
+      ],
+      "style": {
+        "color": "#212121",
+        "fontWeight": ""
+      }
     }
   ],
   "sectionOrder": [

@@ -1,6 +1,7 @@
 const INDEX_SECTION_NAV = {
   welcome: 'About',
   prepare: 'Before',
+  links: 'Explore',
   faq: 'Day-of',
   locations: 'Locations',
   contact: 'Contact',
@@ -9,6 +10,7 @@ const INDEX_SECTION_NAV = {
 const INDEX_SECTION_LABELS = {
   welcome: 'Welcome',
   prepare: 'How to prepare',
+  links: 'Helpful links',
   faq: 'FAQs',
   locations: 'Location cards',
   contact: 'Contact',
@@ -17,8 +19,9 @@ const INDEX_SECTION_LABELS = {
 const DEFAULT_INDEX_SECTION_ORDER = [
   'welcome',
   'prepare',
-  'faq',
+  'links',
   'locations',
+  'faq',
   'contact',
 ];
 

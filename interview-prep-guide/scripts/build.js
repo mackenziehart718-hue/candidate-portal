@@ -20,6 +20,28 @@ function sectionStyleAttr(section) {
   return parts.length ? ` style="${parts.join('; ')}"` : '';
 }
 
+/**
+ * Renders an icon field as inline SVG (recolorable via CSS currentColor),
+ * an <img> for raster files, or the raw string as-is (e.g. an emoji).
+ */
+function renderIcon(icon) {
+  if (!icon) return '';
+  const ext = path.extname(icon).toLowerCase();
+  if (ext === '.svg') {
+    const file = path.join(ROOT, 'icons', icon);
+    if (fs.existsSync(file)) {
+      return fs
+        .readFileSync(file, 'utf8')
+        .replace(/<\?xml[^?]*\?>/g, '')
+        .replace(/<!--[\s\S]*?-->/g, '')
+        .trim();
+    }
+  } else if (['.png', '.jpg', '.jpeg', '.webp'].includes(ext)) {
+    return `<img src="icons/${encodeURIComponent(icon)}" alt="" />`;
+  }
+  return icon;
+}
+
 function renderParagraphs(block) {
   return (block.paragraphs || [])
     .map((p) => {
@@ -38,11 +60,11 @@ function renderParagraphs(block) {
     .join('\n            ');
 }
 
-function renderInfoBlocks(blocks) {
+function renderInfoBlocks(blocks, showIcons = true) {
   return (blocks || [])
     .map(
-      (b) => `        <div class="info-block">
-          <span class="info-icon">${b.icon || '📍'}</span>
+      (b) => `        <div class="info-block${showIcons ? '' : ' no-icon'}">
+          ${showIcons ? `<span class="info-icon">${b.icon || '📍'}</span>` : ''}
           <div>
             <h3>${b.title || ''}</h3>
             ${renderParagraphs(b)}
@@ -65,14 +87,14 @@ ${renderInfoBlocks(section.blocks)}
 
 function renderCustomSection(entry) {
   const domId = `custom-${entry.id}`;
-  const blocks = renderInfoBlocks(entry.blocks || []);
+  const blocks = renderInfoBlocks(entry.blocks || [], false);
   const intro = entry.intro
     ? `      <p class="section-intro">${entry.intro}</p>\n`
     : '';
   const body = blocks
-    ? `      <div class="card">\n${blocks}\n      </div>`
+    ? blocks
     : entry.bodyHtml
-      ? `      <div class="card"><p>${entry.bodyHtml}</p></div>`
+      ? `      <p>${entry.bodyHtml}</p>`
       : '';
   return `
     <section id="${domId}"${sectionStyleAttr(entry)}>
@@ -120,6 +142,17 @@ function buildIndex(data) {
     )
     .join('\n');
 
+  const linkCards = (data.links?.items || [])
+    .map(
+      (l) => `        <a class="resource-card" href="${esc(l.url)}" target="_blank" rel="noopener">
+          <span class="resource-icon" aria-hidden="true">${renderIcon(l.icon)}</span>
+          <h3>${esc(l.title)}</h3>
+          <p>${esc(l.description)}</p>
+          <span class="link-hint">${esc(l.hint)}</span>
+        </a>`
+    )
+    .join('\n');
+
   const sectionOrder = getIndexSectionOrder(data);
   const navLinks = buildIndexNav(sectionOrder, data);
   const customById = Object.fromEntries(getIndexCustomSections(data).map((s) => [customSectionId(s), s]));
@@ -144,6 +177,15 @@ function buildIndex(data) {
       <h2>${esc(data.prepare.heading)}</h2>
       <div class="prep-grid">
 ${prepItems}
+      </div>
+    </section>`,
+
+    links: `
+    <section id="links"${sectionStyleAttr(data.links)}>
+      <h2>${esc(data.links.heading)}</h2>
+      <p class="section-intro">${esc(data.links.intro)}</p>
+      <div class="links-grid">
+${linkCards}
       </div>
     </section>`,
 
@@ -260,9 +302,7 @@ function buildLocation(data) {
     ? `
     <section id="transit"${sectionStyleAttr(data.transit)}>
       <h2>${esc(data.transit.heading)}</h2>
-      <div class="card">
-${renderInfoBlocks(data.transit.blocks)}
-      </div>
+${renderInfoBlocks(data.transit.blocks, false)}
     </section>`
     : '';
 
@@ -270,9 +310,7 @@ ${renderInfoBlocks(data.transit.blocks)}
     ? `
     <section id="zoom"${sectionStyleAttr(data.zoom)}>
       <h2>${esc(data.zoom.heading)}</h2>
-      <div class="card">
-${renderInfoBlocks(data.zoom.blocks)}
-      </div>
+${renderInfoBlocks(data.zoom.blocks, false)}
     </section>`
     : '';
 
@@ -280,7 +318,7 @@ ${renderInfoBlocks(data.zoom.blocks)}
     address: `
     <section id="address"${sectionStyleAttr(data.address)}>
       <h2>${esc(data.address.heading)}</h2>
-      <div class="card address-card">
+      <div class="address-card">
         <p>
           ${data.address.addressHtml}
         </p>
@@ -295,9 +333,7 @@ ${mapsLink}
     arrival: `
     <section id="arrival"${sectionStyleAttr(data.arrival)}>
       <h2>${esc(data.arrival.heading)}</h2>
-      <div class="card">
-${renderInfoBlocks(data.arrival.blocks)}
-      </div>
+${renderInfoBlocks(data.arrival.blocks, false)}
     </section>`,
 
     registration: `
@@ -311,12 +347,10 @@ ${regCards}
     contact: `
     <section id="contact"${sectionStyleAttr(data.contact)}>
       <h2>${esc(data.contact.heading)}</h2>
-      <div class="contact-bar">
-        <p>
-          ${data.contact.body}
-        </p>
-        <a class="btn" href="mailto:${esc(data.contact.email)}">${esc(data.contact.buttonText)}</a>
-      </div>
+      <p class="section-intro">
+        ${data.contact.body}
+      </p>
+      <a class="btn" href="mailto:${esc(data.contact.email)}">${esc(data.contact.buttonText)}</a>
     </section>`,
   };
 
@@ -345,6 +379,12 @@ ${regCards}
     </div>
   </div>
 
+  <nav class="page-nav" aria-label="Location sections">
+    <div class="page-nav-inner">
+${navLinks}
+    </div>
+  </nav>
+
   <header class="hero hero-single">
     <div class="hero-inner">
       <div class="hero-text">
@@ -356,12 +396,6 @@ ${regCards}
       </div>
     </div>
   </header>
-
-  <nav class="page-nav" aria-label="Location sections">
-    <div class="page-nav-inner">
-${navLinks}
-    </div>
-  </nav>
 
   <main>
 ${mainSections}
