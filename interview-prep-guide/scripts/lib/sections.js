@@ -29,6 +29,7 @@ const LOCATION_SECTION_NAV = {
   address: 'Address',
   transit: 'Parking & transit',
   zoom: 'Zoom setup',
+  gettingHere: 'Getting here',
   arrival: 'Arrival',
   registration: 'Registration',
   contact: 'Contact',
@@ -38,6 +39,7 @@ const LOCATION_SECTION_LABELS = {
   address: 'Address',
   transit: 'Parking & transit',
   zoom: 'Zoom setup',
+  gettingHere: 'Getting here',
   arrival: 'Arrival & check-in',
   registration: 'Registration cards',
   contact: 'Contact',
@@ -97,18 +99,21 @@ function getIndexSectionOrder(data) {
 }
 
 function getLocationAvailableSections(data) {
-  const ids = ['address', 'arrival', 'registration', 'contact'];
-  if (data.zoom) ids.splice(1, 0, 'zoom');
-  else if (data.transit) ids.splice(1, 0, 'transit');
+  const ids = ['address', 'registration', 'contact'];
+  if (data.zoom) ids.push('zoom');
+  else if (data.gettingHere) ids.push('gettingHere');
+  else if (data.transit) ids.push('transit');
+  if (data.arrival) ids.push('arrival');
   getLocationCustomSections(data).forEach((s) => ids.push(customSectionId(s)));
   return new Set(ids);
 }
 
 function getLocationSectionOrder(data) {
   const available = getLocationAvailableSections(data);
-  const defaultOrder = data.zoom
-    ? ['address', 'zoom', 'arrival', 'registration', 'contact']
-    : ['address', 'transit', 'arrival', 'registration', 'contact'];
+  const middle = data.zoom ? 'zoom' : data.gettingHere ? 'gettingHere' : 'transit';
+  const defaultOrder = ['address', middle];
+  if (data.arrival) defaultOrder.push('arrival');
+  defaultOrder.push('registration', 'contact');
   getLocationCustomSections(data).forEach((s) => defaultOrder.push(customSectionId(s)));
   return normalizeOrder(data.sectionOrder, available, defaultOrder);
 }
@@ -124,6 +129,9 @@ function buildIndexNav(sectionOrder, data) {
 
 function buildLocationNav(sectionOrder, data) {
   const labels = { ...LOCATION_SECTION_NAV };
+  (data.nav || []).forEach((n) => {
+    if (n && n.id && n.label) labels[n.id] = n.label;
+  });
   getLocationCustomSections(data).forEach((s) => {
     labels[customSectionId(s)] = s.navLabel || s.heading || 'More';
   });

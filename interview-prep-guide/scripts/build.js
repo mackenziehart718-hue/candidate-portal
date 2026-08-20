@@ -52,7 +52,7 @@ function renderParagraphs(block) {
       const margin = p.margin ? ` style="${p.margin}"` : p.html && p.html.includes('margin-top') ? '' : '';
       if (p.type === 'html') {
         const html = p.html || '';
-        if (/<p[\s>]|ul|ol|li|div|br/i.test(html)) return html;
+        if (/<p[\s>]|<ul|<ol|<li|<div|<br/i.test(html)) return html;
         return `<p${margin}>${html}</p>`;
       }
       return `<p>${esc(p.text)}</p>`;
@@ -87,19 +87,64 @@ ${renderInfoBlocks(section.blocks)}
 
 function renderCustomSection(entry) {
   const domId = `custom-${entry.id}`;
-  const blocks = renderInfoBlocks(entry.blocks || [], false);
   const intro = entry.intro
     ? `      <p class="section-intro">${entry.intro}</p>\n`
     : '';
-  const body = blocks
-    ? blocks
-    : entry.bodyHtml
-      ? `      <p>${entry.bodyHtml}</p>`
-      : '';
+  const blocks = entry.blocks || [];
+  let body;
+  if (blocks.length) {
+    const cards = blocks
+      .map(
+        (b) => `        <div class="card tip-card">
+          <h3>${esc(b.title || '')}</h3>
+          <div class="tip-body">${renderParagraphs(b)}</div>
+        </div>`
+      )
+      .join('\n');
+    body = `      <div class="tips-grid">
+${cards}
+      </div>`;
+  } else {
+    body = entry.bodyHtml ? `      <p>${entry.bodyHtml}</p>` : '';
+  }
   return `
     <section id="${domId}"${sectionStyleAttr(entry)}>
       <h2>${esc(entry.heading)}</h2>
 ${intro}${body}
+    </section>`;
+}
+
+function renderGettingHere(id, section) {
+  if (!section) return '';
+  const intro = section.intro
+    ? `      <p class="section-intro">${section.intro}</p>\n`
+    : '';
+  const steps = (section.items || [])
+    .map((item, i) => {
+      const hasPhoto = !!item.photoUrl;
+      const photo = hasPhoto
+        ? `<img src="../${esc(item.photoUrl)}" alt="${esc(item.photoAlt || '')}" />`
+        : '';
+      return `        <div class="step">
+          <div>
+            <div class="step-title">
+              <span class="step-num">${i + 1}</span>
+              <h3>${esc(item.title)}</h3>
+            </div>
+            <div class="step-body">
+              ${renderParagraphs(item)}
+            </div>
+          </div>
+          <div class="step-photo${hasPhoto ? '' : ' photo-placeholder photo-placeholder--soft'}">${photo}</div>
+        </div>`;
+    })
+    .join('\n');
+  return `
+    <section id="${id}"${sectionStyleAttr(section)}>
+      <h2>${esc(section.heading)}</h2>
+${intro}      <div class="steps">
+${steps}
+      </div>
     </section>`;
 }
 
@@ -314,6 +359,16 @@ ${renderInfoBlocks(data.zoom.blocks, false)}
     </section>`
     : '';
 
+  const gettingHereSection = renderGettingHere('gettingHere', data.gettingHere);
+
+  const arrivalSection = data.arrival
+    ? `
+    <section id="arrival"${sectionStyleAttr(data.arrival)}>
+      <h2>${esc(data.arrival.heading)}</h2>
+${renderInfoBlocks(data.arrival.blocks, false)}
+    </section>`
+    : '';
+
   const sectionHtml = {
     address: `
     <section id="address"${sectionStyleAttr(data.address)}>
@@ -329,12 +384,8 @@ ${mapsLink}
 
     transit: transitSection,
     zoom: zoomSection,
-
-    arrival: `
-    <section id="arrival"${sectionStyleAttr(data.arrival)}>
-      <h2>${esc(data.arrival.heading)}</h2>
-${renderInfoBlocks(data.arrival.blocks, false)}
-    </section>`,
+    gettingHere: gettingHereSection,
+    arrival: arrivalSection,
 
     registration: `
     <section id="registration"${sectionStyleAttr(data.registration)}>
@@ -360,6 +411,11 @@ ${regCards}
       return sectionHtml[id] || '';
     })
     .join('\n');
+
+  const heroHasPhoto = !!data.hero.photoUrl;
+  const heroPhoto = heroHasPhoto
+    ? `<img src="../${esc(data.hero.photoUrl)}" alt="${esc(data.hero.photoAlt || '')}" />`
+    : '';
 
   return `<!DOCTYPE html>
 <html lang="en">
@@ -392,7 +448,7 @@ ${navLinks}
         <p class="lead">${esc(data.hero.lead)}</p>
       </div>
       <div class="hero-graphic">
-        <div class="hero-photo">${esc(data.hero.photo)}</div>
+        <div class="hero-photo${heroHasPhoto ? '' : ' photo-placeholder photo-placeholder--soft'}"${heroHasPhoto ? '' : ' aria-hidden="true"'}>${heroPhoto}</div>
       </div>
     </div>
   </header>

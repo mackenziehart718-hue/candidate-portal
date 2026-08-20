@@ -1,11 +1,12 @@
 {
   "slug": "redwood-city",
-  "title": "Redwood City \u2014 Box Interview Day Guide",
+  "title": "Redwood City — Box Interview Day Guide",
   "barLabel": "Redwood City (HQ)",
   "hero": {
     "title": "Redwood City",
-    "lead": "Box Headquarters",
-    "photo": "900 Jefferson \u2014 Box HQ lobby (photo placeholder)"
+    "lead": "Our Redwood City office has been our headquarters since XXXX.",
+    "photoUrl": "images/redwood-city/team-photo.webp",
+    "photoAlt": "Box employees posing in front of the Box logo in the Redwood City HQ lobby"
   },
   "nav": [
     {
@@ -13,20 +14,16 @@
       "label": "Address"
     },
     {
-      "id": "transit",
-      "label": "Parking & transit"
-    },
-    {
-      "id": "arrival",
-      "label": "Arrival"
+      "id": "gettingHere",
+      "label": "Getting here"
     },
     {
       "id": "registration",
-      "label": "Registration"
+      "label": "Checking in"
     },
     {
       "id": "contact",
-      "label": "Contact"
+      "label": "Questions"
     }
   ],
   "address": {
@@ -39,55 +36,68 @@
       "fontWeight": ""
     }
   },
-  "transit": {
+  "gettingHere": {
     "heading": "Getting here",
-    "blocks": [
+    "intro": "If you are taking public transportation, we are conveniently located next to the Redwood City Caltrain station. If you are driving, please review the instructions below:",
+    "items": [
       {
-        "icon": "\ud83d\ude97",
-        "title": "Driving & parking",
+        "title": "Parking in the garage",
+        "photoUrl": "images/redwood-city/garage-entrance.png",
+        "photoAlt": "900 Middlefield garage entrance at the Box Redwood City HQ",
         "paragraphs": [
           {
             "type": "html",
-            "html": "The garage entrance is located between our two Box buildings at the intersection of <strong>Middlefield Road &amp; Jefferson Avenue</strong>.Note: While our mailing address is 900 Jefferson, the employee garage is accessed via <strong>900 Middlefield</strong>.Even if the garage sign says <strong>FULL</strong>, it is for employee access only \u2014 which includes candidates and visitors with authorized access. At the garage entrance, press the <strong>Security</strong> button to speak with our Security team. Notify them that you have an interview with Box and they will admit you."
+            "html": "The garage entrance is located between our two Box buildings at the intersection of <strong>Middlefield Road &amp; Jefferson Avenue</strong>."
+          },
+          {
+            "type": "html",
+            "html": "<em>Note: While our mailing address is 900 Jefferson, the employee garage is accessed via 900 Middlefield.</em>"
+          },
+          {
+            "type": "html",
+            "html": "The building you'll interview in is 900 Jefferson, which features the large Box logo in the lobby."
+          },
+          {
+            "type": "html",
+            "html": "Even if the garage sign says \"FULL\", it is for employee access only, which includes candidates and visitors with authorized access."
+          },
+          {
+            "type": "html",
+            "html": "At the garage entrance, press the Security button to speak with our Security team. Notify them that you have an interview with Box and they will admit you."
           }
         ]
       },
       {
-        "icon": "\ud83d\ude86",
-        "title": "Public transportation",
+        "title": "Taking the elevator to our lobby",
+        "photoUrl": "images/redwood-city/public-elevators.png",
+        "photoAlt": "P3 Building A public elevators signage in the parking garage",
         "paragraphs": [
           {
             "type": "html",
-            "html": "We are conveniently located next to the <strong>Redwood City Caltrain station</strong> for those who prefer to take Caltrain."
-          }
-        ]
-      }
-    ],
-    "style": {
-      "color": "#212121",
-      "fontWeight": ""
-    }
-  },
-  "arrival": {
-    "heading": "When you arrive",
-    "blocks": [
-      {
-        "icon": "\ud83d\uded7",
-        "title": "Getting to the lobby",
-        "paragraphs": [
+            "html": "<em>Important: You will still need to use the guest/public elevator to reach the lobby. Only Box employees have access to the other designated elevators.</em>"
+          },
           {
             "type": "html",
-            "html": "<strong>Important:</strong> You will need to use the <strong>guest/public elevator</strong> to reach the lobby. Only Box employees have access to the other designated elevators.Press the <strong>\"G\"</strong> button once in the public elevator.Once on the ground floor, <strong>exit the building</strong> and proceed straight to Box's lobby front doors."
+            "html": "Press the \"G\" button once in the public elevator."
           }
         ]
       },
       {
-        "icon": "\u2705",
-        "title": "Check-in",
+        "title": "Arriving to the lobby",
+        "photoUrl": "images/redwood-city/garage-elevators.png",
+        "photoAlt": "Garage elevators signage leading to the Box HQ lobby",
         "paragraphs": [
           {
             "type": "html",
-            "html": "Upon entering, check in with reception and let them know <strong>who you are meeting with first</strong>.Your interviewer will meet you in the lobby, give you a quick office tour, then help you get started with your interviews."
+            "html": "Once on the ground floor, exit the building and proceed straight to Box's lobby front doors."
+          },
+          {
+            "type": "html",
+            "html": "Upon entering, check in with reception and let them know who you are meeting with first."
+          },
+          {
+            "type": "html",
+            "html": "Upon departing, head through the double doors on the right side of reception to return to the garage elevator."
           }
         ]
       }
@@ -98,7 +108,7 @@
     }
   },
   "registration": {
-    "heading": "Required",
+    "heading": "Checking in",
     "cards": [
       {
         "title": "Photo ID",
@@ -106,13 +116,13 @@
         "note": ""
       },
       {
-        "title": "NDA",
-        "body": "Before your scheduled interview, please ensure that you electronically sign our NDA using <strong>Box Sign</strong> through the link provided by your Recruiting Coordinator.",
-        "note": "All candidates are required to sign in order to begin their interview. If you have any questions regarding the NDA form, please reach out to your Recruiting Coordinator."
+        "title": "Visitor badge",
+        "body": "Your interviewer or host will escort you during your visit. When you are finished, return any visitor badge to reception before you leave the building.",
+        "note": ""
       },
       {
-        "title": "Arrival & departure",
-        "body": "Your interviewer or host will escort you during your visit. When you are finished, return any visitor badge to reception before you leave the building.",
+        "title": "NDA",
+        "body": "Before your scheduled interview, please ensure that you electronically sign our NDA using <strong>Box Sign</strong> through the link provided by your Recruiting Coordinator.",
         "note": ""
       }
     ],
@@ -134,20 +144,36 @@
   "customSections": [
     {
       "id": "cs-ms4z94g2",
-      "navLabel": "Lunch",
-      "heading": "During your interview",
+      "navLabel": "Interviewing",
+      "heading": "During the interview",
       "intro": "",
       "blocks": [
         {
-          "icon": "\ud83c\udf2e",
-          "title": "Ordering food",
+          "title": "Laptop",
+          "paragraphs": [
+            {
+              "type": "html",
+              "html": "We offer loaner laptops. If you will need a loaner laptop, please reach out to your Recruiter and Recruiting Coordinator as soon as possible."
+            }
+          ]
+        },
+        {
+          "title": "Ordering lunch",
           "paragraphs": [
             {
               "type": "html",
               "html": "You will be sent a link to order food from a restaurant of your choice via food delivery app by your coordinator. A Boxer will bring it to you when it's delivered."
             }
-          ],
-          "body": "You will be sent a link to order food from a restaurant of your choice via food delivery app by your coordinator. A Boxer will bring it to you when it's delivered."
+          ]
+        },
+        {
+          "title": "Taking a break",
+          "paragraphs": [
+            {
+              "type": "html",
+              "html": "Please do not hesitate to ask an interviewer for a restroom break or a refreshment from the kitchen between interviews. We want you at your best!"
+            }
+          ]
         }
       ],
       "style": {
@@ -158,8 +184,7 @@
   ],
   "sectionOrder": [
     "address",
-    "transit",
-    "arrival",
+    "gettingHere",
     "registration",
     "custom:cs-ms4z94g2",
     "contact"
