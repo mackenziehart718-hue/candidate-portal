@@ -143,6 +143,7 @@ a:hover { color: var(--brand-navy); }
   max-width: var(--max-width);
   margin: 1.5rem auto 3rem;
   padding: 0 1.5rem;
+  overflow: visible;
 }
 
 .hero.hero-single::before,
@@ -429,7 +430,7 @@ section { margin-bottom: 6rem; scroll-margin-top: 4rem; }
 
 section h2 {
   font-size: 36px;
-  font-weight: 500;
+  font-weight: 700;
   color: #151F26;
   margin-bottom: 1.25rem;
 }
