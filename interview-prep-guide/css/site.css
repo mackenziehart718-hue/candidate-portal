@@ -194,6 +194,28 @@ a:hover { color: var(--brand-navy); }
   display: block;
 }
 
+/* Fixed-size hero card variant (exact px dimensions, photo fills its cell) */
+.hero.hero-single.hero-xl {
+  max-width: calc(1350px + 3rem);
+}
+
+.hero.hero-single.hero-xl .hero-inner {
+  max-width: none;
+  width: 100%;
+  height: 464px;
+  align-items: stretch;
+}
+
+.hero.hero-single.hero-xl .hero-photo {
+  aspect-ratio: auto;
+  height: 100%;
+}
+
+@media (max-width: 720px) {
+  .hero.hero-single.hero-xl .hero-inner { height: auto; align-items: normal; }
+  .hero.hero-single.hero-xl .hero-photo { aspect-ratio: 4 / 3; height: auto; }
+}
+
 .hero-text .eyebrow {
   font-size: 0.78rem;
   font-weight: 600;

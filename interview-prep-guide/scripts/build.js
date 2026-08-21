@@ -413,6 +413,7 @@ ${regCards}
     .join('\n');
 
   const heroHasPhoto = !!data.hero.photoUrl;
+  const heroXlClass = data.hero.cardWidth && data.hero.cardHeight ? ' hero-xl' : '';
   const heroPhoto = heroHasPhoto
     ? `<img src="../${esc(data.hero.photoUrl)}" alt="${esc(data.hero.photoAlt || '')}" />`
     : '';
@@ -441,7 +442,7 @@ ${navLinks}
     </div>
   </nav>
 
-  <header class="hero hero-single">
+  <header class="hero hero-single${heroXlClass}">
     <div class="hero-inner">
       <div class="hero-text">
         <h1>${esc(data.hero.title)}</h1>
