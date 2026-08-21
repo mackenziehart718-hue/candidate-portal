@@ -320,7 +320,7 @@ function buildLocation(data) {
   const customById = Object.fromEntries(getLocationCustomSections(data).map((s) => [customSectionId(s), s]));
 
   const addressNote = data.address.noteHtml
-    ? `        <p style="margin-top: 0.85rem; font-size: 0.9rem; color: var(--muted);">
+    ? `        <p style="margin-top: 0.85rem; font-size: 16px; color: var(--muted);">
           ${data.address.noteHtml}
         </p>`
     : '';
