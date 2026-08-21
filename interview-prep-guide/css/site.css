@@ -196,24 +196,35 @@ a:hover { color: var(--brand-navy); }
 
 /* Fixed-size hero card variant (exact px dimensions, photo fills its cell) */
 .hero.hero-single.hero-xl {
-  max-width: calc(1350px + 3rem);
+  max-width: calc(1080px + 3rem);
 }
 
 .hero.hero-single.hero-xl .hero-inner {
   max-width: none;
   width: 100%;
-  height: 464px;
+  height: 371.2px;
   align-items: stretch;
+  padding: 0;
+  gap: 0;
+}
+
+.hero.hero-single.hero-xl .hero-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 0 0 2.4rem;
 }
 
 .hero.hero-single.hero-xl .hero-photo {
   aspect-ratio: auto;
   height: 100%;
+  border-radius: 0 24px 24px 0;
 }
 
 @media (max-width: 720px) {
-  .hero.hero-single.hero-xl .hero-inner { height: auto; align-items: normal; }
-  .hero.hero-single.hero-xl .hero-photo { aspect-ratio: 4 / 3; height: auto; }
+  .hero.hero-single.hero-xl .hero-inner { height: auto; align-items: normal; padding: 2rem; gap: 1.5rem; }
+  .hero.hero-single.hero-xl .hero-text { display: block; padding: 0; }
+  .hero.hero-single.hero-xl .hero-photo { aspect-ratio: 4 / 3; height: auto; border-radius: 16px; }
 }
 
 .hero-text .eyebrow {
