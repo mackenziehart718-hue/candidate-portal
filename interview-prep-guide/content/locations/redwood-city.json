@@ -6,7 +6,9 @@
     "title": "Redwood City, CA (HQ)",
     "lead": "",
     "photoUrl": "images/redwood-city/team-photo.webp",
-    "photoAlt": "Box employees posing in front of the Box logo in the Redwood City HQ lobby"
+    "photoAlt": "Box employees posing in front of the Box logo in the Redwood City HQ lobby",
+    "cardWidth": 1080,
+    "cardHeight": 371.2
   },
   "nav": [
     { "id": "address", "label": "Address" },

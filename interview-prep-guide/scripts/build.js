@@ -384,7 +384,7 @@ function buildLocation(data, options = {}) {
   const customById = Object.fromEntries(getLocationCustomSections(data).map((s) => [customSectionId(s), s]));
 
   const addressNote = data.address.noteHtml
-    ? `        <p style="margin-top: 0.85rem; font-size: 0.9rem; color: var(--muted);">
+    ? `        <p style="margin-top: 0.85rem; font-size: 16px; color: var(--muted);">
           ${buildOptions.editable ? eHtml('address.noteHtml', data.address.noteHtml) : data.address.noteHtml}
         </p>`
     : '';
@@ -483,6 +483,7 @@ ${regCards}
     .join('\n');
 
   const heroHasPhoto = !!data.hero.photoUrl;
+  const heroXlClass = data.hero.cardWidth && data.hero.cardHeight ? ' hero-xl' : '';
   const heroPhoto = heroHasPhoto
     ? `<img src="../${esc(data.hero.photoUrl)}" alt="${esc(data.hero.photoAlt || '')}" />`
     : '';
@@ -511,7 +512,7 @@ ${navLinks}
     </div>
   </nav>
 
-  <header class="hero hero-single">
+  <header class="hero hero-single${heroXlClass}">
     <div class="hero-inner">
       <div class="hero-text">
         <h1>${buildOptions.editable ? eText('hero.title', data.hero.title) : esc(data.hero.title)}</h1>
