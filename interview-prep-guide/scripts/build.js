@@ -12,6 +12,49 @@ const {
   getLocationCustomSections,
 } = require('./lib/sections');
 
+let buildOptions = { editable: false };
+
+function eText(path, value) {
+  const inner = esc(value ?? '');
+  if (!buildOptions.editable) return inner;
+  return `<span class="prep-edit" contenteditable="true" data-edit-path="${path}" data-edit-type="text" spellcheck="true">${inner}</span>`;
+}
+
+function eHtml(path, value) {
+  const html = value ?? '';
+  if (!buildOptions.editable) return html;
+  return `<span class="prep-edit prep-edit-html" contenteditable="true" data-edit-path="${path}" data-edit-type="html" spellcheck="true">${html}</span>`;
+}
+
+function paragraphsToPlain(paragraphs) {
+  return (paragraphs || [])
+    .map((p) => {
+      if (p.type === 'list') return (p.items || []).join('\n');
+      return String(p.html || '')
+        .replace(/<br\s*\/?>/gi, '\n')
+        .replace(/<\/p>\s*<p>/gi, '\n')
+        .replace(/<[^>]+>/g, '')
+        .replace(/&amp;/g, '&')
+        .replace(/&lt;/g, '<')
+        .replace(/&gt;/g, '>')
+        .replace(/&quot;/g, '"')
+        .trim();
+    })
+    .filter(Boolean)
+    .join('\n\n');
+}
+
+function eParagraphs(path, paragraphs) {
+  if (!buildOptions.editable) return renderParagraphs({ paragraphs });
+  const plain = esc(paragraphsToPlain(paragraphs)).replace(/\n/g, '<br>');
+  return `<div class="prep-edit prep-edit-paragraphs" contenteditable="true" data-edit-path="${path}" data-edit-type="paragraphs" spellcheck="true">${plain}</div>`;
+}
+
+function sectionHeading(path, heading) {
+  if (!buildOptions.editable) return esc(heading);
+  return eText(path, heading);
+}
+
 function sectionStyleAttr(section) {
   const style = section?.style || {};
   const parts = [];
@@ -60,17 +103,29 @@ function renderParagraphs(block) {
     .join('\n            ');
 }
 
-function renderInfoBlocks(blocks, showIcons = true) {
+function renderInfoBlocks(blocks, showIcons = true, sectionKey = '') {
   return (blocks || [])
-    .map(
-      (b) => `        <div class="info-block${showIcons ? '' : ' no-icon'}">
-          ${showIcons ? `<span class="info-icon">${b.icon || '📍'}</span>` : ''}
+    .map((b, i) => {
+      const title =
+        buildOptions.editable && sectionKey
+          ? eText(`${sectionKey}.blocks.${i}.title`, b.title || '')
+          : b.title || '';
+      const iconContent =
+        buildOptions.editable && sectionKey
+          ? eText(`${sectionKey}.blocks.${i}.icon`, b.icon || '📍')
+          : b.icon || '📍';
+      const bodyContent =
+        buildOptions.editable && sectionKey
+          ? eParagraphs(`${sectionKey}.blocks.${i}.paragraphs`, b.paragraphs)
+          : renderParagraphs(b);
+      return `        <div class="info-block${showIcons ? '' : ' no-icon'}">
+          ${showIcons ? `<span class="info-icon">${iconContent}</span>` : ''}
           <div>
-            <h3>${b.title || ''}</h3>
-            ${renderParagraphs(b)}
+            <h3>${title}</h3>
+            ${bodyContent}
           </div>
-        </div>`
-    )
+        </div>`;
+    })
     .join('\n');
 }
 
@@ -117,7 +172,9 @@ ${intro}${body}
 function renderGettingHere(id, section) {
   if (!section) return '';
   const intro = section.intro
-    ? `      <p class="section-intro">${section.intro}</p>\n`
+    ? buildOptions.editable
+      ? `      <p class="section-intro">${eText('gettingHere.intro', section.intro)}</p>\n`
+      : `      <p class="section-intro">${section.intro}</p>\n`
     : '';
   const steps = (section.items || [])
     .map((item, i) => {
@@ -125,14 +182,20 @@ function renderGettingHere(id, section) {
       const photo = hasPhoto
         ? `<img src="../${esc(item.photoUrl)}" alt="${esc(item.photoAlt || '')}" />`
         : '';
+      const title = buildOptions.editable
+        ? eText(`gettingHere.items.${i}.title`, item.title)
+        : esc(item.title);
+      const body = buildOptions.editable
+        ? eParagraphs(`gettingHere.items.${i}.paragraphs`, item.paragraphs)
+        : renderParagraphs(item);
       return `        <div class="step">
           <div>
             <div class="step-title">
               <span class="step-num">${i + 1}</span>
-              <h3>${esc(item.title)}</h3>
+              <h3>${title}</h3>
             </div>
             <div class="step-body">
-              ${renderParagraphs(item)}
+              ${body}
             </div>
           </div>
           <div class="step-photo${hasPhoto ? '' : ' photo-placeholder photo-placeholder--soft'}">${photo}</div>
@@ -141,7 +204,7 @@ function renderGettingHere(id, section) {
     .join('\n');
   return `
     <section id="${id}"${sectionStyleAttr(section)}>
-      <h2>${esc(section.heading)}</h2>
+      <h2>${sectionHeading('gettingHere.heading', section.heading)}</h2>
 ${intro}      <div class="steps">
 ${steps}
       </div>
@@ -314,14 +377,15 @@ ${mainSections}
 `;
 }
 
-function buildLocation(data) {
+function buildLocation(data, options = {}) {
+  buildOptions = { editable: !!options.editable };
   const sectionOrder = getLocationSectionOrder(data);
   const navLinks = buildLocationNav(sectionOrder, data);
   const customById = Object.fromEntries(getLocationCustomSections(data).map((s) => [customSectionId(s), s]));
 
   const addressNote = data.address.noteHtml
     ? `        <p style="margin-top: 0.85rem; font-size: 16px; color: var(--muted);">
-          ${data.address.noteHtml}
+          ${buildOptions.editable ? eHtml('address.noteHtml', data.address.noteHtml) : data.address.noteHtml}
         </p>`
     : '';
 
@@ -332,13 +396,19 @@ function buildLocation(data) {
     : '';
 
   const regCards = (data.registration.cards || [])
-    .map((c) => {
+    .map((c, i) => {
       const note = c.note
-        ? `\n          <p style="margin-top: 0.5rem; font-size: 0.87rem; color: var(--muted);">${c.note}</p>`
+        ? `\n          <p style="margin-top: 0.5rem; font-size: 0.87rem; color: var(--muted);">${buildOptions.editable ? eHtml(`registration.cards.${i}.note`, c.note) : c.note}</p>`
         : '';
+      const title = buildOptions.editable
+        ? eText(`registration.cards.${i}.title`, c.title)
+        : esc(c.title);
+      const body = buildOptions.editable
+        ? eHtml(`registration.cards.${i}.body`, c.body)
+        : c.body;
       return `        <div class="card tip-card">
-          <h3>${esc(c.title)}</h3>
-          <div class="tip-body">${c.body}</div>${note}
+          <h3>${title}</h3>
+          <div class="tip-body">${body}</div>${note}
         </div>`;
     })
     .join('\n');
@@ -346,16 +416,16 @@ function buildLocation(data) {
   const transitSection = data.transit
     ? `
     <section id="transit"${sectionStyleAttr(data.transit)}>
-      <h2>${esc(data.transit.heading)}</h2>
-${renderInfoBlocks(data.transit.blocks, false)}
+      <h2>${sectionHeading('transit.heading', data.transit.heading)}</h2>
+${renderInfoBlocks(data.transit.blocks, false, 'transit')}
     </section>`
     : '';
 
   const zoomSection = data.zoom
     ? `
     <section id="zoom"${sectionStyleAttr(data.zoom)}>
-      <h2>${esc(data.zoom.heading)}</h2>
-${renderInfoBlocks(data.zoom.blocks, false)}
+      <h2>${sectionHeading('zoom.heading', data.zoom.heading)}</h2>
+${renderInfoBlocks(data.zoom.blocks, false, 'zoom')}
     </section>`
     : '';
 
@@ -364,18 +434,18 @@ ${renderInfoBlocks(data.zoom.blocks, false)}
   const arrivalSection = data.arrival
     ? `
     <section id="arrival"${sectionStyleAttr(data.arrival)}>
-      <h2>${esc(data.arrival.heading)}</h2>
-${renderInfoBlocks(data.arrival.blocks, false)}
+      <h2>${sectionHeading('arrival.heading', data.arrival.heading)}</h2>
+${renderInfoBlocks(data.arrival.blocks, false, 'arrival')}
     </section>`
     : '';
 
   const sectionHtml = {
     address: `
     <section id="address"${sectionStyleAttr(data.address)}>
-      <h2>${esc(data.address.heading)}</h2>
+      <h2>${sectionHeading('address.heading', data.address.heading)}</h2>
       <div class="address-card">
         <p>
-          ${data.address.addressHtml}
+          ${buildOptions.editable ? eHtml('address.addressHtml', data.address.addressHtml) : data.address.addressHtml}
         </p>
 ${addressNote}
 ${mapsLink}
@@ -389,7 +459,7 @@ ${mapsLink}
 
     registration: `
     <section id="registration"${sectionStyleAttr(data.registration)}>
-      <h2>${esc(data.registration.heading)}</h2>
+      <h2>${sectionHeading('registration.heading', data.registration.heading)}</h2>
       <div class="tips-grid">
 ${regCards}
       </div>
@@ -397,11 +467,11 @@ ${regCards}
 
     contact: `
     <section id="contact"${sectionStyleAttr(data.contact)}>
-      <h2>${esc(data.contact.heading)}</h2>
+      <h2>${sectionHeading('contact.heading', data.contact.heading)}</h2>
       <p class="section-intro">
-        ${data.contact.body}
+        ${buildOptions.editable ? eText('contact.body', data.contact.body) : data.contact.body}
       </p>
-      <a class="btn" href="mailto:${esc(data.contact.email)}">${esc(data.contact.buttonText)}</a>
+      <a class="btn" href="mailto:${esc(data.contact.email)}">${buildOptions.editable ? eText('contact.buttonText', data.contact.buttonText) : esc(data.contact.buttonText)}</a>
     </section>`,
   };
 
@@ -432,7 +502,7 @@ ${regCards}
   <div class="site-bar">
     <div class="site-bar-inner">
       <a class="back-link" href="../index.html">← Back to prep guide</a>
-      <span style="color: var(--muted); font-size: 0.82rem;">${esc(data.barLabel)}</span>
+      <span style="color: var(--muted); font-size: 0.82rem;">${buildOptions.editable ? eText('barLabel', data.barLabel) : esc(data.barLabel)}</span>
     </div>
   </div>
 
@@ -445,8 +515,8 @@ ${navLinks}
   <header class="hero hero-single${heroXlClass}">
     <div class="hero-inner">
       <div class="hero-text">
-        <h1>${esc(data.hero.title)}</h1>
-        <p class="lead">${esc(data.hero.lead)}</p>
+        <h1>${buildOptions.editable ? eText('hero.title', data.hero.title) : esc(data.hero.title)}</h1>
+        <p class="lead">${buildOptions.editable ? eText('hero.lead', data.hero.lead) : esc(data.hero.lead)}</p>
       </div>
       <div class="hero-graphic">
         <div class="hero-photo${heroHasPhoto ? '' : ' photo-placeholder photo-placeholder--soft'}"${heroHasPhoto ? '' : ' aria-hidden="true"'}>${heroPhoto}</div>
@@ -468,25 +538,49 @@ ${mainSections}
 `;
 }
 
-function buildAll() {
-  const indexData = readJson(contentPath('index.json'));
-  writeFile(path.join(ROOT, 'index.html'), buildIndex(indexData));
-  console.log('Built index.html');
+function buildAll(options = {}) {
+  const excludeSlugs = new Set(
+    Array.isArray(options.excludeSlugs) ? options.excludeSlugs.filter(Boolean) : []
+  );
+  const skipIndex = options.skipIndex === true;
+
+  let pages = 0;
+
+  if (!skipIndex) {
+    const indexData = readJson(contentPath('index.json'));
+    writeFile(path.join(ROOT, 'index.html'), buildIndex(indexData));
+    console.log('Built index.html');
+    pages += 1;
+  }
 
   const locContentDir = contentPath('locations');
   const files = fs.readdirSync(locContentDir).filter((f) => f.endsWith('.json'));
   files.forEach((f) => {
+    const slug = f.replace('.json', '');
+    if (excludeSlugs.has(slug)) {
+      console.log('Skipped', path.join('locations', `${slug}.html`));
+      return;
+    }
     const data = readJson(path.join(locContentDir, f));
-    const out = path.join(ROOT, 'locations', f.replace('.json', '.html'));
+    const out = path.join(ROOT, 'locations', `${slug}.html`);
     writeFile(out, buildLocation(data));
     console.log('Built', path.relative(ROOT, out));
+    pages += 1;
   });
 
-  return { pages: 1 + files.length };
+  return { pages, excluded: [...excludeSlugs] };
 }
 
 if (require.main === module) {
-  buildAll();
+  const excludeArg = process.argv.find((arg) => arg.startsWith('--exclude='));
+  const excludeSlugs = excludeArg
+    ? excludeArg
+        .slice('--exclude='.length)
+        .split(',')
+        .map((s) => s.trim())
+        .filter(Boolean)
+    : [];
+  buildAll({ excludeSlugs });
   console.log('Done.');
 }
 

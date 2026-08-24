@@ -1,116 +1,112 @@
 {
   "slug": "amsterdam",
-  "title": "Amsterdam \u2014 Interview Day Guide",
+  "title": "Amsterdam — Interview Day Guide",
   "barLabel": "Amsterdam",
   "hero": {
-    "title": "Amsterdam",
-    "lead": "Netherlands",
-    "photo": "\ud83c\uddf3\ud83c\uddf1 Amsterdam office \u2014 photo placeholder"
+    "title": "WeWork Amsterdam Office",
+    "lead": "",
+    "photo": "🇳🇱 Amsterdam office — photo placeholder"
   },
   "nav": [
-    {
-      "id": "address",
-      "label": "Address"
-    },
-    {
-      "id": "transit",
-      "label": "Parking & transit"
-    },
-    {
-      "id": "arrival",
-      "label": "Arrival"
-    },
-    {
-      "id": "registration",
-      "label": "Registration"
-    },
-    {
-      "id": "contact",
-      "label": "Contact"
-    }
+    { "id": "address", "label": "Address" },
+    { "id": "transit", "label": "Parking & transit" },
+    { "id": "arrival", "label": "Arrival" },
+    { "id": "registration", "label": "Registration" },
+    { "id": "contact", "label": "Contact" }
   ],
   "address": {
     "heading": "Where to go",
-    "addressHtml": "Gustav Mahlerlaan 300<br>1082 ME Amsterdam",
-    "noteHtml": "<a href=\"https://maps.google.com/?q=Gustav+Mahlerlaan+300+Amsterdam\" target=\"_blank\" rel=\"noopener\">Open in Google Maps \u2192</a>",
-    "mapsUrl": "https://maps.google.com/?q=Gustav+Mahlerlaan+300+Amsterdam",
-    "style": {
-      "color": "#212121",
-      "fontWeight": ""
-    }
+    "addressHtml": "<strong>WeWork, 5th Floor</strong><br>Stadhouderskade 5<br>1054 ES Amsterdam",
+    "noteHtml": "<a href=\"https://maps.google.com/?q=Stadhouderskade+5+Amsterdam\" target=\"_blank\" rel=\"noopener\">Open in Google Maps →</a>",
+    "mapsUrl": "https://maps.google.com/?q=Stadhouderskade+5+Amsterdam",
+    "style": { "color": "#212121", "fontWeight": "" }
+  },
+  "transit": {
+    "heading": "Getting here",
+    "blocks": [
+      {
+        "icon": "🅿️",
+        "title": "Parking",
+        "paragraphs": [
+          {
+            "type": "list",
+            "items": [
+              "Car paid parking nearby: Nassaukade, 946",
+              "Q-Park Byzantium (1 minute drive)",
+              "Bike parking: Overtoom 2-4-6, hoek Nassaukade 391, 393-394, 1054 AE Amsterdam"
+            ]
+          }
+        ]
+      },
+      {
+        "icon": "🚇",
+        "title": "Public transportation",
+        "paragraphs": [
+          {
+            "type": "list",
+            "items": [
+              "Tram lines 1, 2, 5, 11, 12 (1 minute walk)",
+              "Bus lines 284, 288 (1 minute walk)",
+              "A10 (10 minute drive)",
+              "OV-Fiets (2 minute walk)"
+            ]
+          }
+        ]
+      }
+    ],
+    "style": { "color": "#212121", "fontWeight": "" }
   },
   "arrival": {
     "heading": "When you arrive",
     "blocks": [
       {
-        "icon": "\ud83d\udeaa",
-        "title": "Lobby instructions",
+        "icon": "🚪",
+        "title": "Getting to the lobby",
         "paragraphs": [
           {
             "type": "html",
-            "html": "Main entrance on Gustav Mahlerlaan. Reception on the ground floor."
+            "html": "Please head to the main WeWork entrance from Stadhouderskade 5. Use the tablets available at the reception desk to register as a Box guest (choose your interviewer as host)."
+          }
+        ]
+      },
+      {
+        "icon": "✅",
+        "title": "Check-in",
+        "paragraphs": [
+          {
+            "type": "html",
+            "html": "Head to the main entrance. Let reception know you're here for Box, then sign in on the tablet and add your interviewer as your host."
           }
         ]
       }
     ],
-    "style": {
-      "color": "#212121",
-      "fontWeight": ""
-    }
+    "style": { "color": "#212121", "fontWeight": "" }
   },
   "registration": {
     "heading": "Required",
     "cards": [
       {
         "title": "Photo ID",
-        "body": "Please bring a <strong>valid government-issued ID</strong>. You will need it for check-in."
+        "body": "Please bring a valid government ID."
       },
       {
         "title": "NDA",
-        "body": "Before your scheduled interview, please ensure that you electronically sign our NDA using <strong>Box Sign</strong> through the link provided by your Recruiting Coordinator.",
+        "body": "Before your scheduled interview, please ensure that you electronically sign our NDA using <strong>Box Sign</strong> through the provided link.",
         "note": "All candidates are required to sign in order to begin their interview. If you have any questions regarding the NDA form, please reach out to your Recruiting Coordinator."
       },
       {
         "title": "Arrival &amp; departure",
-        "body": "Badge issued at reception. Return badge when you leave the building."
+        "body": "Your interviewer will meet you at the reception and escort you to the conference room."
       }
     ],
-    "style": {
-      "color": "#212121",
-      "fontWeight": ""
-    }
+    "style": { "color": "#212121", "fontWeight": "" }
   },
   "contact": {
     "heading": "Questions?",
     "body": "Got a question we didn't cover? Reach out to your Recruiter and Recruiting Coordinator.",
     "email": "recruiting@box.com",
     "buttonText": "Email recruiting",
-    "style": {
-      "color": "#212121",
-      "fontWeight": ""
-    }
-  },
-  "transit": {
-    "heading": "Getting here",
-    "blocks": [
-      {
-        "icon": "\ud83c\udd7f\ufe0f",
-        "title": "Parking",
-        "paragraphs": [
-          {
-            "type": "list",
-            "items": [
-              "P+R Amsterdam Zuid or garage at The Edge building.",
-              "Street parking limited in Zuidas business district."
-            ]
-          }
-        ]
-      }
-    ],
-    "style": {
-      "color": "#212121",
-      "fontWeight": ""
-    }
+    "style": { "color": "#212121", "fontWeight": "" }
   },
   "customSections": []
 }

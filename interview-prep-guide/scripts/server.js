@@ -89,7 +89,7 @@ function serveStatic(filePath, res) {
   fs.createReadStream(filePath).pipe(res);
 }
 
-function previewHtml(id) {
+function previewHtml(id, options = {}) {
   const { buildIndex, buildLocation } = getBuilder();
   if (id === 'index') {
     const data = JSON.parse(fs.readFileSync(contentPath('index.json'), 'utf8'));
@@ -102,10 +102,31 @@ function previewHtml(id) {
     return html;
   }
   const data = JSON.parse(fs.readFileSync(contentPath('locations', `${id}.json`), 'utf8'));
-  let html = buildLocation(data);
+  let html = buildLocation(data, { editable: !!options.editable });
   html = html.replace('href="../css/site.css"', 'href="/css/site.css"');
   html = html.replace('href="../index.html"', 'href="/api/preview/index"');
   html = html.replace('src="../js/nav-scroll.js"', 'src="/js/nav-scroll.js"');
+  if (options.editable) html = injectEditablePreview(html);
+  return html;
+}
+
+function injectEditablePreview(html) {
+  const cssPath = path.join(EDITOR_DIR, 'preview-edit.css');
+  const jsPath = path.join(EDITOR_DIR, 'preview-edit.js');
+  const css = fs.readFileSync(cssPath, 'utf8');
+  const js = fs.readFileSync(jsPath, 'utf8');
+  return html
+    .replace('</head>', `  <style>${css}</style>\n</head>`)
+    .replace('</body>', `  <script>${js}</script>\n</body>`);
+}
+
+function locationPreviewHtml(data, editable = false) {
+  const { buildLocation } = getBuilder();
+  let html = buildLocation(data, { editable });
+  html = html.replace('href="../css/site.css"', 'href="/css/site.css"');
+  html = html.replace('href="../index.html"', 'href="/api/preview/index"');
+  html = html.replace('src="../js/nav-scroll.js"', 'src="/js/nav-scroll.js"');
+  if (editable) html = injectEditablePreview(html);
   return html;
 }
 
@@ -136,15 +157,20 @@ const server = http.createServer(async (req, res) => {
       const body = await readBody(req);
       const file = contentFile(id);
       fs.writeFileSync(file, JSON.stringify(body, null, 2) + '\n', 'utf8');
-      getBuilder().buildAll();
-      send(res, 200, JSON.stringify({ ok: true, message: 'Saved and rebuilt HTML.' }));
+      const excludeSlugs = id === 'redwood-city' ? [] : ['redwood-city'];
+      getBuilder().buildAll({ excludeSlugs, skipIndex: true });
+      const message =
+        id === 'redwood-city'
+          ? 'Saved Redwood City JSON + HTML.'
+          : 'Saved JSON + HTML (other cities only; Redwood City unchanged).';
+      send(res, 200, JSON.stringify({ ok: true, message }));
       return;
     }
 
     if (url.pathname === '/api/preview-draft' && req.method === 'POST') {
       const body = await readBody(req);
-      const { id, data } = body;
-      const { buildIndex, buildLocation } = getBuilder();
+      const { id, data, editable } = body;
+      const { buildIndex } = getBuilder();
       let html;
       if (id === 'index') {
         html = buildIndex(data);
@@ -154,10 +180,7 @@ const server = http.createServer(async (req, res) => {
         html = html.replace('src="js/nav-scroll.js"', 'src="/js/nav-scroll.js"');
         html = html.replace(/src="icons\//g, 'src="/icons/');
       } else {
-        html = buildLocation(data);
-        html = html.replace('href="../css/site.css"', 'href="/css/site.css"');
-        html = html.replace('href="../index.html"', 'href="/api/preview/index"');
-        html = html.replace('src="../js/nav-scroll.js"', 'src="/js/nav-scroll.js"');
+        html = locationPreviewHtml(data, !!editable);
       }
       send(res, 200, html, 'text/html');
       return;
@@ -165,8 +188,9 @@ const server = http.createServer(async (req, res) => {
 
     if (url.pathname.startsWith('/api/preview/') && req.method === 'GET') {
       const id = url.pathname.split('/').pop();
+      const editable = url.searchParams.get('editable') === '1';
       try {
-        send(res, 200, previewHtml(id), 'text/html');
+        send(res, 200, previewHtml(id, { editable }), 'text/html');
       } catch {
         send(res, 404, 'Preview not found', 'text/plain');
       }
@@ -174,7 +198,9 @@ const server = http.createServer(async (req, res) => {
     }
 
     if (url.pathname === '/api/build' && req.method === 'POST') {
-      const result = getBuilder().buildAll();
+      const body = await readBody(req);
+      const excludeSlugs = Array.isArray(body.excludeSlugs) ? body.excludeSlugs : ['redwood-city'];
+      const result = getBuilder().buildAll({ excludeSlugs });
       send(res, 200, JSON.stringify({ ok: true, ...result }));
       return;
     }
@@ -205,6 +231,17 @@ const server = http.createServer(async (req, res) => {
     console.error(err);
     send(res, 500, JSON.stringify({ error: err.message }));
   }
+});
+
+server.on('error', (err) => {
+  if (err.code === 'EADDRINUSE') {
+    console.error(`\n  Port ${PORT} is already in use — the editor is probably already running.`);
+    console.error(`  Open http://localhost:${PORT} in your browser.`);
+    console.error(`  Or stop the other copy (Ctrl+C in that terminal), or run:`);
+    console.error(`  PORT=3457 npm run editor\n`);
+    process.exit(1);
+  }
+  throw err;
 });
 
 server.listen(PORT, () => {

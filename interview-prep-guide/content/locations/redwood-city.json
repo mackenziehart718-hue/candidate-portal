@@ -3,44 +3,29 @@
   "title": "Redwood City — Box Interview Day Guide",
   "barLabel": "Redwood City (HQ)",
   "hero": {
-    "title": "Redwood City",
-    "lead": "Our Redwood City office has been our headquarters since XXXX.",
+    "title": "Redwood City, CA (HQ)",
+    "lead": "",
     "photoUrl": "images/redwood-city/team-photo.webp",
     "photoAlt": "Box employees posing in front of the Box logo in the Redwood City HQ lobby",
     "cardWidth": 1080,
     "cardHeight": 371.2
   },
   "nav": [
-    {
-      "id": "address",
-      "label": "Address"
-    },
-    {
-      "id": "gettingHere",
-      "label": "Getting here"
-    },
-    {
-      "id": "registration",
-      "label": "Checking in"
-    },
-    {
-      "id": "contact",
-      "label": "Questions"
-    }
+    { "id": "address", "label": "Address" },
+    { "id": "gettingHere", "label": "Getting here" },
+    { "id": "registration", "label": "Checking in" },
+    { "id": "contact", "label": "Questions" }
   ],
   "address": {
     "heading": "Where to go",
     "addressHtml": "<strong>900 Middlefield Rd</strong><br>Redwood City, CA 94063",
     "noteHtml": "<strong>Interview building:</strong> You will interview in <strong>900 Jefferson</strong>, which features the large Box logo in the lobby. While our mailing address references Jefferson, the employee garage is accessed via Middlefield (see parking below).",
-    "mapsUrl": "https://maps.google.com/?q=900+Jefferson+Ave+Redwood+City+CA+94063",
-    "style": {
-      "color": "#212121",
-      "fontWeight": ""
-    }
+    "mapsUrl": "https://maps.google.com/?q=900+Middlefield+Rd+Redwood+City+CA+94063",
+    "style": { "color": "#212121", "fontWeight": "" }
   },
   "gettingHere": {
     "heading": "Getting here",
-    "intro": "If you are taking public transportation, we are conveniently located next to the Redwood City Caltrain station. If you are driving, please review the instructions below:",
+    "intro": "If you are driving, please review the parking instructions below. If you are taking public transportation, we are conveniently located next to the Redwood City Caltrain station.",
     "items": [
       {
         "title": "Parking in the garage",
@@ -76,72 +61,63 @@
         "paragraphs": [
           {
             "type": "html",
-            "html": "<em>Important: You will still need to use the guest/public elevator to reach the lobby. Only Box employees have access to the other designated elevators.</em>"
+            "html": "<em>Important: You will need to use the guest/public elevator to reach the lobby. Only Box employees have access to the other designated elevators.</em>"
           },
           {
             "type": "html",
             "html": "Press the \"G\" button once in the public elevator."
+          },
+          {
+            "type": "html",
+            "html": "Once on the ground floor, exit the building and proceed straight to Box's lobby front doors."
           }
         ]
       },
       {
-        "title": "Arriving to the lobby",
+        "title": "Checking in at the lobby",
         "photoUrl": "images/redwood-city/garage-elevators.png",
         "photoAlt": "Garage elevators signage leading to the Box HQ lobby",
         "paragraphs": [
-          {
-            "type": "html",
-            "html": "Once on the ground floor, exit the building and proceed straight to Box's lobby front doors."
-          },
           {
             "type": "html",
             "html": "Upon entering, check in with reception and let them know who you are meeting with first."
           },
           {
             "type": "html",
-            "html": "Upon departing, head through the double doors on the right side of reception to return to the garage elevator."
+            "html": "Your interviewer will meet you in the lobby, give you a quick office tour, then help you get started with your interviews."
           }
         ]
       }
     ],
-    "style": {
-      "color": "#212121",
-      "fontWeight": ""
-    }
+    "style": { "color": "#212121", "fontWeight": "" }
   },
   "registration": {
     "heading": "Checking in",
     "cards": [
       {
         "title": "Photo ID",
-        "body": "Please bring a <strong>valid government-issued ID</strong>. You will need it for check-in.",
-        "note": ""
-      },
-      {
-        "title": "Visitor badge",
-        "body": "Your interviewer or host will escort you during your visit. When you are finished, return any visitor badge to reception before you leave the building.",
+        "body": "Please bring a valid government ID.",
         "note": ""
       },
       {
         "title": "NDA",
-        "body": "Before your scheduled interview, please ensure that you electronically sign our NDA using <strong>Box Sign</strong> through the link provided by your Recruiting Coordinator.",
+        "body": "Before your scheduled interview, please ensure that you electronically sign our NDA using <strong>Box Sign</strong> through the provided link.",
+        "note": "All candidates are required to sign in order to begin their interview. If you have any questions regarding the NDA form, please reach out to your Recruiting Coordinator."
+      },
+      {
+        "title": "Walk-out instructions",
+        "body": "After your interviews are complete, either your last interviewer or someone on the recruiting team will meet you in the conference room and escort you back to the ground floor.",
         "note": ""
       }
     ],
-    "style": {
-      "color": "#212121",
-      "fontWeight": ""
-    }
+    "style": { "color": "#212121", "fontWeight": "" }
   },
   "contact": {
     "heading": "Questions?",
     "body": "Got a question we didn't cover? Reach out to your Recruiter and Recruiting Coordinator.",
-    "email": "recruiting@box.com",
+    "email": "rc@box.com",
     "buttonText": "Email recruiting",
-    "style": {
-      "color": "#212121",
-      "fontWeight": ""
-    }
+    "style": { "color": "#212121", "fontWeight": "" }
   },
   "customSections": [
     {
@@ -178,17 +154,8 @@
           ]
         }
       ],
-      "style": {
-        "color": "#212121",
-        "fontWeight": ""
-      }
+      "style": { "color": "#212121", "fontWeight": "" }
     }
   ],
-  "sectionOrder": [
-    "address",
-    "gettingHere",
-    "registration",
-    "custom:cs-ms4z94g2",
-    "contact"
-  ]
+  "sectionOrder": ["address", "gettingHere", "registration", "custom:cs-ms4z94g2", "contact"]
 }

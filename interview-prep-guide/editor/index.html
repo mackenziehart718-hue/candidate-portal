@@ -10,32 +10,49 @@
   <header class="topbar">
     <div class="topbar-left">
       <strong>Box Interview Prep</strong>
-      <span class="badge">Live preview</span>
+      <span class="badge">Visual editor</span>
     </div>
     <div class="topbar-right">
       <span id="status" class="status">Ready</span>
-      <button type="button" id="btn-rebuild" class="btn">Rebuild HTML</button>
+      <button type="button" id="btn-toggle-form" class="btn">Show form fields</button>
+      <button type="button" id="btn-save" class="btn btn-primary">Save changes</button>
+      <button type="button" id="btn-rebuild" class="btn">Rebuild other cities</button>
+      <button type="button" id="btn-rebuild-all" class="btn">Rebuild all cities</button>
     </div>
   </header>
 
-  <section class="preview-panel" id="preview-panel">
-    <div class="preview-header">
-      <span>Live preview</span>
-      <div class="preview-controls">
-        <div class="preview-mode-toggle" role="group" aria-label="Preview device size">
-          <button type="button" class="preview-mode-btn active" data-preview-mode="desktop" title="Desktop preview">Desktop</button>
-          <button type="button" class="preview-mode-btn" data-preview-mode="mobile" title="Mobile preview (390px)">Mobile</button>
-        </div>
-        <button type="button" id="btn-refresh-preview" class="btn btn-sm">Refresh</button>
+  <div class="workspace">
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-section">
+        <label class="sidebar-label" for="page-select">City page</label>
+        <select id="page-select" class="select"></select>
+        <p class="sidebar-hint" id="page-hint">Click text on the page preview to edit. Press Save changes when done.</p>
       </div>
-    </div>
-    <div class="preview-stage">
-      <div class="preview-frame" id="preview-frame">
-        <iframe id="preview" title="Page preview"></iframe>
-      </div>
-    </div>
-  </section>
+      <div class="sidebar-scroll" id="form-root"></div>
+    </aside>
 
+    <section class="preview-panel" id="preview-panel">
+      <div class="preview-header">
+        <span>Live preview</span>
+        <div class="preview-controls">
+          <div class="preview-mode-toggle" role="group" aria-label="Preview device size">
+            <button type="button" class="preview-mode-btn active" data-preview-mode="desktop" title="Desktop preview">Desktop</button>
+            <button type="button" class="preview-mode-btn" data-preview-mode="mobile" title="Mobile preview (390px)">Mobile</button>
+          </div>
+          <button type="button" id="btn-refresh-preview" class="btn btn-sm">Refresh</button>
+        </div>
+      </div>
+      <div class="preview-stage">
+        <div class="preview-frame" id="preview-frame">
+          <div class="preview-empty" id="preview-empty">Loading preview…</div>
+          <iframe id="preview" title="Page preview"></iframe>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <script src="rich-text.js"></script>
+  <script src="location-form.js"></script>
   <script src="editor.js"></script>
 </body>
 </html>
