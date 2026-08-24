@@ -1,0 +1,35 @@
+.prep-edit {
+  outline: 2px dashed transparent;
+  outline-offset: 3px;
+  border-radius: 4px;
+  cursor: text;
+  transition: outline-color 0.15s, background 0.15s;
+}
+
+.prep-edit:hover {
+  outline-color: rgba(0, 97, 211, 0.45);
+  background: rgba(0, 97, 211, 0.06);
+}
+
+.prep-edit:focus {
+  outline-color: #0061d3;
+  background: rgba(0, 97, 211, 0.1);
+}
+
+.prep-edit-paragraphs ul,
+.prep-edit-paragraphs p {
+  margin: 0;
+}
+
+body.prep-visual-mode::before {
+  content: 'Click any highlighted text to edit · Changes save when you click Save changes';
+  display: block;
+  position: sticky;
+  top: 0;
+  z-index: 200;
+  background: #113053;
+  color: #fff;
+  font: 600 0.78rem/1.4 Inter, system-ui, sans-serif;
+  text-align: center;
+  padding: 0.45rem 0.75rem;
+}

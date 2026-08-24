@@ -1,116 +1,126 @@
 {
   "slug": "warsaw",
-  "title": "Warsaw \u2014 Interview Day Guide",
+  "title": "Warsaw — Interview Day Guide",
   "barLabel": "Warsaw",
   "hero": {
-    "title": "Warsaw",
-    "lead": "Poland",
-    "photo": "\ud83c\uddf5\ud83c\uddf1 Warsaw office \u2014 photo placeholder"
+    "title": "Warsaw Office",
+    "lead": "",
+    "photo": "🇵🇱 Warsaw office — photo placeholder"
   },
   "nav": [
-    {
-      "id": "address",
-      "label": "Address"
-    },
-    {
-      "id": "transit",
-      "label": "Parking & transit"
-    },
-    {
-      "id": "arrival",
-      "label": "Arrival"
-    },
-    {
-      "id": "registration",
-      "label": "Registration"
-    },
-    {
-      "id": "contact",
-      "label": "Contact"
-    }
+    { "id": "address", "label": "Address" },
+    { "id": "transit", "label": "Parking & transit" },
+    { "id": "arrival", "label": "Arrival" },
+    { "id": "registration", "label": "Registration" },
+    { "id": "contact", "label": "Contact" }
   ],
   "address": {
     "heading": "Where to go",
-    "addressHtml": "Rondo ONZ 1, 12th Floor<br>00-124 Warsaw",
-    "noteHtml": "<a href=\"https://maps.google.com/?q=Rondo+ONZ+1+Warsaw\" target=\"_blank\" rel=\"noopener\">Open in Google Maps \u2192</a>",
-    "mapsUrl": "https://maps.google.com/?q=Rondo+ONZ+1+Warsaw",
-    "style": {
-      "color": "#212121",
-      "fontWeight": ""
-    }
+    "addressHtml": "<strong>Varso Tower</strong><br>Chmielna 69<br>00-801 Warsaw, Poland<br>22nd Floor",
+    "noteHtml": "<a href=\"https://maps.google.com/?q=Varso+Tower+Chmielna+69+Warsaw\" target=\"_blank\" rel=\"noopener\">Open in Google Maps →</a>",
+    "mapsUrl": "https://maps.google.com/?q=Varso+Tower+Chmielna+69+Warsaw",
+    "style": { "color": "#212121", "fontWeight": "" }
+  },
+  "transit": {
+    "heading": "Getting here",
+    "blocks": [
+      {
+        "icon": "🅿️",
+        "title": "Varso Place underground parking",
+        "paragraphs": [
+          {
+            "type": "html",
+            "html": "<strong>Address:</strong> Chmielna 71, Warszawa — located on levels -1 and -2 in Varso 1 and on level -1 in Varso 2."
+          },
+          {
+            "type": "list",
+            "items": [
+              "Monday–Friday 7:00–18:00: 10 PLN/hour",
+              "Monday–Friday 18:00–7:00: 7 PLN/hour",
+              "Pay at automatic cash registers or by card/cash at reception in the main lobby",
+              "Head to the \"F\" elevators to reach the ground floor, then right to reception"
+            ]
+          }
+        ]
+      },
+      {
+        "icon": "🅿️",
+        "title": "Private car park P-35",
+        "paragraphs": [
+          {
+            "type": "list",
+            "items": [
+              "Head to the main Varso entrance at the Chmielna/Jana Pawła II intersection",
+              "Use your QR code to access the elevators on the right of the main entrance (left of the reception)",
+              "The QR code will direct you to Box reception on the 22nd floor"
+            ]
+          }
+        ]
+      },
+      {
+        "icon": "🚗",
+        "title": "Street parking",
+        "paragraphs": [
+          {
+            "type": "html",
+            "html": "City parking spots around the building (pay in parking meter or via Skycash/your bank app — mobi Parking)."
+          }
+        ]
+      }
+    ],
+    "style": { "color": "#212121", "fontWeight": "" }
   },
   "arrival": {
     "heading": "When you arrive",
     "blocks": [
       {
-        "icon": "\ud83d\udeaa",
-        "title": "Lobby instructions",
+        "icon": "🚪",
+        "title": "Getting to the lobby",
         "paragraphs": [
           {
             "type": "html",
-            "html": "Enter Rondo 1 tower. Ground floor reception \u2014 they'll direct you to Floor 12."
+            "html": "Head to the main Varso entrance at the Chmielna/Jana Pawła II intersection. Check in with the Varso Tower ground floor reception; present your ID and let them know you are there for an interview with Box. The receptionist will provide you with a printed QR code and direct you to the appropriate elevators to access the 22nd floor where Box is located."
+          }
+        ]
+      },
+      {
+        "icon": "✅",
+        "title": "Check-in",
+        "paragraphs": [
+          {
+            "type": "html",
+            "html": "Once you arrive at the 22nd floor, please use the tablets available at the reception desk to register as a Box guest and select the name of your Recruiting Coordinator. You may be asked to sign the NDA again. Your coordinator will meet you in the lobby and help you get started with your interviews."
           }
         ]
       }
     ],
-    "style": {
-      "color": "#212121",
-      "fontWeight": ""
-    }
+    "style": { "color": "#212121", "fontWeight": "" }
   },
   "registration": {
     "heading": "Required",
     "cards": [
       {
         "title": "Photo ID",
-        "body": "Please bring a <strong>valid government-issued ID</strong>. You will need it for check-in."
+        "body": "Please bring a valid government ID."
       },
       {
         "title": "NDA",
-        "body": "Before your scheduled interview, please ensure that you electronically sign our NDA using <strong>Box Sign</strong> through the link provided by your Recruiting Coordinator.",
+        "body": "Before your scheduled interview, please ensure that you electronically sign our NDA using <strong>Box Sign</strong> through the provided link.",
         "note": "All candidates are required to sign in order to begin their interview. If you have any questions regarding the NDA form, please reach out to your Recruiting Coordinator."
       },
       {
         "title": "Arrival &amp; departure",
-        "body": "Visitor badge from reception. Return badge when exiting."
+        "body": "Please keep the printed QR code you received from the Varso Tower ground floor reception with you, as you may need it to exit through the gates on the ground floor."
       }
     ],
-    "style": {
-      "color": "#212121",
-      "fontWeight": ""
-    }
+    "style": { "color": "#212121", "fontWeight": "" }
   },
   "contact": {
     "heading": "Questions?",
     "body": "Got a question we didn't cover? Reach out to your Recruiter and Recruiting Coordinator.",
     "email": "recruiting@box.com",
     "buttonText": "Email recruiting",
-    "style": {
-      "color": "#212121",
-      "fontWeight": ""
-    }
-  },
-  "transit": {
-    "heading": "Getting here",
-    "blocks": [
-      {
-        "icon": "\ud83c\udd7f\ufe0f",
-        "title": "Parking",
-        "paragraphs": [
-          {
-            "type": "list",
-            "items": [
-              "Underground parking at Rondo 1 building (paid).",
-              "Limited street parking \u2014 allow extra time."
-            ]
-          }
-        ]
-      }
-    ],
-    "style": {
-      "color": "#212121",
-      "fontWeight": ""
-    }
+    "style": { "color": "#212121", "fontWeight": "" }
   },
   "customSections": []
 }

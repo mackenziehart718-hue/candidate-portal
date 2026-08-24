@@ -3,6 +3,8 @@
   "private": true,
   "scripts": {
     "build": "node scripts/build.js",
+    "build:content": "node scripts/build.js --exclude=redwood-city",
+    "build:all": "node scripts/build.js",
     "editor": "node scripts/server.js",
     "migrate": "node scripts/migrate.js",
     "migrate-faqs": "node scripts/migrate-faqs.js"

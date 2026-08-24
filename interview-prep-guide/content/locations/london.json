@@ -1,116 +1,110 @@
 {
   "slug": "london",
-  "title": "London \u2014 Interview Day Guide",
+  "title": "London — Interview Day Guide",
   "barLabel": "London",
   "hero": {
-    "title": "London",
-    "lead": "United Kingdom",
-    "photo": "\ud83c\uddec\ud83c\udde7 London office \u2014 photo placeholder"
+    "title": "London Office",
+    "lead": "",
+    "photo": "🇬🇧 London office — photo placeholder"
   },
   "nav": [
-    {
-      "id": "address",
-      "label": "Address"
-    },
-    {
-      "id": "transit",
-      "label": "Parking & transit"
-    },
-    {
-      "id": "arrival",
-      "label": "Arrival"
-    },
-    {
-      "id": "registration",
-      "label": "Registration"
-    },
-    {
-      "id": "contact",
-      "label": "Contact"
-    }
+    { "id": "address", "label": "Address" },
+    { "id": "transit", "label": "Parking & transit" },
+    { "id": "arrival", "label": "Arrival" },
+    { "id": "registration", "label": "Registration" },
+    { "id": "contact", "label": "Contact" }
   ],
   "address": {
     "heading": "Where to go",
-    "addressHtml": "1 Finsbury Ave, Floor 4<br>London EC2M 2PP",
-    "noteHtml": "<a href=\"https://maps.google.com/?q=1+Finsbury+Avenue+London\" target=\"_blank\" rel=\"noopener\">Open in Google Maps \u2192</a>",
-    "mapsUrl": "https://maps.google.com/?q=1+Finsbury+Avenue+London",
-    "style": {
-      "color": "#212121",
-      "fontWeight": ""
-    }
+    "addressHtml": "<strong>White Collar Factory</strong><br>15th–14th Floors<br>Old Street Yard<br>EC1Y 8AF",
+    "noteHtml": "<a href=\"https://maps.google.com/?q=White+Collar+Factory+Old+Street+Yard+London\" target=\"_blank\" rel=\"noopener\">Open in Google Maps →</a>",
+    "mapsUrl": "https://maps.google.com/?q=White+Collar+Factory+Old+Street+Yard+London",
+    "style": { "color": "#212121", "fontWeight": "" }
+  },
+  "transit": {
+    "heading": "Getting here",
+    "blocks": [
+      {
+        "icon": "🅿️",
+        "title": "Parking",
+        "paragraphs": [
+          {
+            "type": "list",
+            "items": [
+              "Street parking is available on Mallow Street (located behind the building).",
+              "Paid parking is available at NCP London Finsbury Square."
+            ]
+          }
+        ]
+      },
+      {
+        "icon": "🚇",
+        "title": "Public transportation",
+        "paragraphs": [
+          {
+            "type": "list",
+            "items": [
+              "Old Street Station: Northern Line (2 min walk)",
+              "Liverpool Street Station: Elizabeth Line, Overground, Central, Circle, Hammersmith &amp; City, Metropolitan and National Rail Services (10–15 min walk)",
+              "Liverpool Street also services lines to Heathrow Airport and Stansted Airport"
+            ]
+          }
+        ]
+      }
+    ],
+    "style": { "color": "#212121", "fontWeight": "" }
   },
   "arrival": {
     "heading": "When you arrive",
     "blocks": [
       {
-        "icon": "\ud83d\udeaa",
-        "title": "Lobby instructions",
+        "icon": "🚪",
+        "title": "Getting to the lobby",
         "paragraphs": [
           {
             "type": "html",
-            "html": "Enter via Finsbury Ave. Building reception on ground floor \u2014 they'll direct you to Floor 4."
+            "html": "When you arrive, please sign in at the reception desk on the ground floor of the White Collar Factory and state that you are visiting Box. You will be sent up to the 15th Floor where Box's reception is located."
+          }
+        ]
+      },
+      {
+        "icon": "✅",
+        "title": "Check-in",
+        "paragraphs": [
+          {
+            "type": "html",
+            "html": "Once on the 15th floor, the Box receptionist will ask you to sign in at Box and complete a visitor non-disclosure agreement, if you haven't already done so."
           }
         ]
       }
     ],
-    "style": {
-      "color": "#212121",
-      "fontWeight": ""
-    }
+    "style": { "color": "#212121", "fontWeight": "" }
   },
   "registration": {
     "heading": "Required",
     "cards": [
       {
         "title": "Photo ID",
-        "body": "Please bring a <strong>valid government-issued ID</strong>. You will need it for check-in."
+        "body": "Please bring a valid government ID."
       },
       {
         "title": "NDA",
-        "body": "Before your scheduled interview, please ensure that you electronically sign our NDA using <strong>Box Sign</strong> through the link provided by your Recruiting Coordinator.",
+        "body": "Before your scheduled interview, please ensure that you electronically sign our NDA using <strong>Box Sign</strong> through the provided link.",
         "note": "All candidates are required to sign in order to begin their interview. If you have any questions regarding the NDA form, please reach out to your Recruiting Coordinator."
       },
       {
         "title": "Arrival &amp; departure",
-        "body": "Escorted from reception. Sign out and return pass when leaving."
+        "body": "After your last interview, your interviewer will walk you to the elevator."
       }
     ],
-    "style": {
-      "color": "#212121",
-      "fontWeight": ""
-    }
+    "style": { "color": "#212121", "fontWeight": "" }
   },
   "contact": {
     "heading": "Questions?",
     "body": "Got a question we didn't cover? Reach out to your Recruiter and Recruiting Coordinator.",
     "email": "recruiting@box.com",
     "buttonText": "Email recruiting",
-    "style": {
-      "color": "#212121",
-      "fontWeight": ""
-    }
-  },
-  "transit": {
-    "heading": "Getting here",
-    "blocks": [
-      {
-        "icon": "\ud83c\udd7f\ufe0f",
-        "title": "Parking",
-        "paragraphs": [
-          {
-            "type": "list",
-            "items": [
-              "No visitor parking on-site. NCP City of London nearby.",
-              "Tube strongly recommended."
-            ]
-          }
-        ]
-      }
-    ],
-    "style": {
-      "color": "#212121",
-      "fontWeight": ""
-    }
+    "style": { "color": "#212121", "fontWeight": "" }
   },
   "customSections": []
 }
