@@ -67,7 +67,7 @@ function sectionStyleAttr(section) {
  * Renders an icon field as inline SVG (recolorable via CSS currentColor),
  * an <img> for raster files, or the raw string as-is (e.g. an emoji).
  */
-function renderIcon(icon) {
+function renderIcon(icon, assetPrefix = '') {
   if (!icon) return '';
   const ext = path.extname(icon).toLowerCase();
   if (ext === '.svg') {
@@ -79,10 +79,69 @@ function renderIcon(icon) {
         .replace(/<!--[\s\S]*?-->/g, '')
         .trim();
     }
-  } else if (['.png', '.jpg', '.jpeg', '.webp'].includes(ext)) {
-    return `<img src="icons/${encodeURIComponent(icon)}" alt="" />`;
+    return `<img src="${assetPrefix}icons/${encodeURIComponent(icon)}" alt="" />`;
+  }
+  if (['.png', '.jpg', '.jpeg', '.webp'].includes(ext)) {
+    return `<img src="${assetPrefix}icons/${encodeURIComponent(icon)}" alt="" />`;
   }
   return icon;
+}
+
+function mapsEmbedSrc(mapsUrl) {
+  if (!mapsUrl) return '';
+  try {
+    const u = new URL(mapsUrl);
+    const q = u.searchParams.get('q');
+    if (q) {
+      return `https://maps.google.com/maps?q=${encodeURIComponent(q)}&hl=en&z=16&output=embed`;
+    }
+  } catch {
+    return '';
+  }
+  return '';
+}
+
+function renderAssetIcon(icon, assetPrefix = '') {
+  if (!icon) return '';
+  if (icon.includes('/')) {
+    return `<img src="${assetPrefix}${esc(icon)}" alt="" />`;
+  }
+  return renderIcon(icon, assetPrefix);
+}
+
+function renderTipIcon(icon) {
+  return renderAssetIcon(icon, '../');
+}
+
+function renderTipCard(card, index, sectionKey) {
+  const note = card.note
+    ? `\n          <p class="tip-card-note">${buildOptions.editable && sectionKey ? eHtml(`${sectionKey}.cards.${index}.note`, card.note) : card.note}</p>`
+    : '';
+  const title =
+    buildOptions.editable && sectionKey
+      ? eText(`${sectionKey}.cards.${index}.title`, card.title)
+      : esc(card.title);
+  const body =
+    buildOptions.editable && sectionKey
+      ? eHtml(`${sectionKey}.cards.${index}.body`, card.body)
+      : card.body;
+  const iconHtml = card.icon
+    ? `          <span class="tip-card-icon" aria-hidden="true">${renderTipIcon(card.icon)}</span>\n`
+    : '';
+  return `        <div class="card tip-card">
+${iconHtml}          <h3>${title}</h3>
+          <div class="tip-body">${body}</div>${note}
+        </div>`;
+}
+
+function renderTipCardFromBlock(block) {
+  const iconHtml = block.icon
+    ? `          <span class="tip-card-icon" aria-hidden="true">${renderTipIcon(block.icon)}</span>\n`
+    : '';
+  return `        <div class="card tip-card">
+${iconHtml}          <h3>${esc(block.title || '')}</h3>
+          <div class="tip-body">${renderParagraphs(block)}</div>
+        </div>`;
 }
 
 function renderParagraphs(block) {
@@ -148,14 +207,7 @@ function renderCustomSection(entry) {
   const blocks = entry.blocks || [];
   let body;
   if (blocks.length) {
-    const cards = blocks
-      .map(
-        (b) => `        <div class="card tip-card">
-          <h3>${esc(b.title || '')}</h3>
-          <div class="tip-body">${renderParagraphs(b)}</div>
-        </div>`
-      )
-      .join('\n');
+    const cards = blocks.map((b) => renderTipCardFromBlock(b)).join('\n');
     body = `      <div class="tips-grid">
 ${cards}
       </div>`;
@@ -191,7 +243,7 @@ function renderGettingHere(id, section) {
       return `        <div class="step">
           <div>
             <div class="step-title">
-              <span class="step-num">${i + 1}</span>
+              <span class="step-num"><span class="badge-num">${i + 1}</span></span>
               <h3>${title}</h3>
             </div>
             <div class="step-body">
@@ -234,8 +286,10 @@ function buildIndex(data) {
   const prepItems = data.prepare.steps
     .map(
       (s, i) => `        <div class="prep-step">
-          <span class="prep-badge">${i + 1}</span>
-          <h3>${esc(s.title)}</h3>
+          <div class="prep-step-header">
+            <span class="prep-badge"><span class="badge-num">${i + 1}</span></span>
+            <h3>${esc(s.title)}</h3>
+          </div>
           <div class="rich-body">${s.body}</div>
         </div>`
     )
@@ -243,20 +297,21 @@ function buildIndex(data) {
 
   const locationCards = data.locations.items
     .map(
-      (l) => `        <a class="location-photo-card" href="locations/${esc(l.slug)}.html">
-          <div class="photo-placeholder photo-placeholder--soft" aria-hidden="true"></div>
-          <h3>${esc(l.title)} <span class="loc-arrow" aria-hidden="true">&rarr;</span></h3>
+      (l) => `        <a class="location-item" href="locations/${esc(l.slug)}.html">
+          <div class="location-photo-card">
+            <div class="photo-placeholder photo-placeholder--soft" aria-hidden="true"></div>
+          </div>
+          <h3>${esc(l.title)}</h3>
         </a>`
     )
     .join('\n');
 
   const linkCards = (data.links?.items || [])
     .map(
-      (l) => `        <a class="resource-card" href="${esc(l.url)}" target="_blank" rel="noopener">
-          <span class="resource-icon" aria-hidden="true">${renderIcon(l.icon)}</span>
+      (l) => `        <a class="card resource-card tip-card" href="${esc(l.url)}" target="_blank" rel="noopener">
+          <span class="tip-card-icon" aria-hidden="true">${renderAssetIcon(l.icon)}</span>
           <h3>${esc(l.title)}</h3>
-          <p>${esc(l.description)}</p>
-          <span class="link-hint">${esc(l.hint)}</span>
+          <div class="tip-body"><p>${esc(l.description)}</p></div>
         </a>`
     )
     .join('\n');
@@ -292,7 +347,7 @@ ${prepItems}
     <section id="links"${sectionStyleAttr(data.links)}>
       <h2>${esc(data.links.heading)}</h2>
       <p class="section-intro">${esc(data.links.intro)}</p>
-      <div class="links-grid">
+      <div class="tips-grid links-grid">
 ${linkCards}
       </div>
     </section>`,
@@ -384,33 +439,34 @@ function buildLocation(data, options = {}) {
   const customById = Object.fromEntries(getLocationCustomSections(data).map((s) => [customSectionId(s), s]));
 
   const addressNote = data.address.noteHtml
-    ? `        <p style="margin-top: 0.85rem; font-size: 16px; color: var(--muted);">
+    ? `        <p class="address-note">
           ${buildOptions.editable ? eHtml('address.noteHtml', data.address.noteHtml) : data.address.noteHtml}
         </p>`
     : '';
 
   const mapsLink = data.address.mapsUrl
-    ? `        <p style="margin-top: 0.75rem;">
-          <a href="${esc(data.address.mapsUrl)}" target="_blank" rel="noopener">Open in Google Maps →</a>
-        </p>`
+    ? `            <p style="margin-top: 0.75rem;">
+              <a href="${esc(data.address.mapsUrl)}" target="_blank" rel="noopener">Open in Google Maps →</a>
+            </p>`
     : '';
 
+  const mapsEmbedUrl = data.address.mapsEmbedUrl || mapsEmbedSrc(data.address.mapsUrl);
+  const addressMap = mapsEmbedUrl
+    ? `        <div class="address-map">
+          <iframe
+            title="Map to ${esc(data.hero?.title || data.address.heading || 'interview location')}"
+            src="${esc(mapsEmbedUrl)}"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            allowfullscreen
+          ></iframe>
+        </div>`
+    : '';
+
+  const addressLayoutClass = mapsEmbedUrl ? 'address-layout' : '';
+
   const regCards = (data.registration.cards || [])
-    .map((c, i) => {
-      const note = c.note
-        ? `\n          <p style="margin-top: 0.5rem; font-size: 0.87rem; color: var(--muted);">${buildOptions.editable ? eHtml(`registration.cards.${i}.note`, c.note) : c.note}</p>`
-        : '';
-      const title = buildOptions.editable
-        ? eText(`registration.cards.${i}.title`, c.title)
-        : esc(c.title);
-      const body = buildOptions.editable
-        ? eHtml(`registration.cards.${i}.body`, c.body)
-        : c.body;
-      return `        <div class="card tip-card">
-          <h3>${title}</h3>
-          <div class="tip-body">${body}</div>${note}
-        </div>`;
-    })
+    .map((c, i) => renderTipCard(c, i, 'registration'))
     .join('\n');
 
   const transitSection = data.transit
@@ -443,12 +499,14 @@ ${renderInfoBlocks(data.arrival.blocks, false, 'arrival')}
     address: `
     <section id="address"${sectionStyleAttr(data.address)}>
       <h2>${sectionHeading('address.heading', data.address.heading)}</h2>
-      <div class="address-card">
-        <p>
-          ${buildOptions.editable ? eHtml('address.addressHtml', data.address.addressHtml) : data.address.addressHtml}
-        </p>
-${addressNote}
-${mapsLink}
+      <div class="${addressLayoutClass}">
+        <div class="address-card">
+          <p class="address-line">
+            ${buildOptions.editable ? eHtml('address.addressHtml', data.address.addressHtml) : data.address.addressHtml}
+          </p>
+${addressNote}${mapsLink}
+        </div>
+${addressMap}
       </div>
     </section>`,
 
@@ -483,7 +541,7 @@ ${regCards}
     .join('\n');
 
   const heroHasPhoto = !!data.hero.photoUrl;
-  const heroXlClass = data.hero.cardWidth && data.hero.cardHeight ? ' hero-xl' : '';
+  const heroXlClass = ' hero-xl';
   const heroPhoto = heroHasPhoto
     ? `<img src="../${esc(data.hero.photoUrl)}" alt="${esc(data.hero.photoAlt || '')}" />`
     : '';
@@ -497,7 +555,7 @@ ${regCards}
   <title>${esc(data.title)}</title>
   <link rel="stylesheet" href="../css/site.css" />
 </head>
-<body>
+<body class="page-location page-${esc(data.slug)}">
 
   <div class="site-bar">
     <div class="site-bar-inner">

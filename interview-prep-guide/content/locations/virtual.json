@@ -8,17 +8,32 @@
     "photo": "💻 Virtual interview"
   },
   "nav": [
-    { "id": "address", "label": "Location" },
-    { "id": "zoom", "label": "Zoom setup" },
-    { "id": "registration", "label": "Registration" },
-    { "id": "contact", "label": "Contact" }
+    {
+      "id": "address",
+      "label": "Location"
+    },
+    {
+      "id": "zoom",
+      "label": "Zoom setup"
+    },
+    {
+      "id": "registration",
+      "label": "Registration"
+    },
+    {
+      "id": "contact",
+      "label": "Contact"
+    }
   ],
   "address": {
     "heading": "Where to join",
     "addressHtml": "Zoom link located in your Google Calendar invitation.",
     "noteHtml": "",
     "mapsUrl": "",
-    "style": { "color": "#212121", "fontWeight": "" }
+    "style": {
+      "color": "#212121",
+      "fontWeight": ""
+    }
   },
   "zoom": {
     "heading": "Preparing for your interview",
@@ -59,7 +74,10 @@
         ]
       }
     ],
-    "style": { "color": "#212121", "fontWeight": "" }
+    "style": {
+      "color": "#212121",
+      "fontWeight": ""
+    }
   },
   "registration": {
     "heading": "Required",
@@ -67,17 +85,23 @@
       {
         "title": "NDA",
         "body": "Before your scheduled interview, please ensure that you electronically sign our NDA using <strong>Box Sign</strong> through the provided link.",
-        "note": "All candidates are required to sign in order to begin their interview. If you have any questions regarding the NDA form, please reach out to your Recruiting Coordinator."
+        "note": ""
       }
     ],
-    "style": { "color": "#212121", "fontWeight": "" }
+    "style": {
+      "color": "#212121",
+      "fontWeight": ""
+    }
   },
   "contact": {
     "heading": "Questions?",
     "body": "Got a question we didn't cover? Reach out to your Recruiter and Recruiting Coordinator.",
     "email": "recruiting@box.com",
     "buttonText": "Email recruiting",
-    "style": { "color": "#212121", "fontWeight": "" }
+    "style": {
+      "color": "#212121",
+      "fontWeight": ""
+    }
   },
   "customSections": []
 }

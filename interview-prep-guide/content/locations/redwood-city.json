@@ -1,9 +1,9 @@
 {
   "slug": "redwood-city",
   "title": "Redwood City — Box Interview Day Guide",
-  "barLabel": "Redwood City (HQ)",
+  "barLabel": "Redwood City",
   "hero": {
-    "title": "Redwood City, CA (HQ)",
+    "title": "Redwood City, CA",
     "lead": "",
     "photoUrl": "images/redwood-city/team-photo.webp",
     "photoAlt": "Box employees posing in front of the Box logo in the Redwood City HQ lobby",
@@ -11,17 +11,33 @@
     "cardHeight": 371.2
   },
   "nav": [
-    { "id": "address", "label": "Address" },
-    { "id": "gettingHere", "label": "Getting here" },
-    { "id": "registration", "label": "Checking in" },
-    { "id": "contact", "label": "Questions" }
+    {
+      "id": "address",
+      "label": "Address"
+    },
+    {
+      "id": "gettingHere",
+      "label": "Getting here"
+    },
+    {
+      "id": "registration",
+      "label": "Checking in"
+    },
+    {
+      "id": "contact",
+      "label": "Questions"
+    }
   ],
   "address": {
     "heading": "Where to go",
     "addressHtml": "<strong>900 Middlefield Rd</strong><br>Redwood City, CA 94063",
     "noteHtml": "<strong>Interview building:</strong> You will interview in <strong>900 Jefferson</strong>, which features the large Box logo in the lobby. While our mailing address references Jefferson, the employee garage is accessed via Middlefield (see parking below).",
     "mapsUrl": "https://maps.google.com/?q=900+Middlefield+Rd+Redwood+City+CA+94063",
-    "style": { "color": "#212121", "fontWeight": "" }
+    "mapsEmbedUrl": "https://maps.google.com/maps?q=900+Middlefield+Rd,+Redwood+City,+CA+94063&hl=en&z=16&output=embed",
+    "style": {
+      "color": "#212121",
+      "fontWeight": ""
+    }
   },
   "gettingHere": {
     "heading": "Getting here",
@@ -35,14 +51,6 @@
           {
             "type": "html",
             "html": "The garage entrance is located between our two Box buildings at the intersection of <strong>Middlefield Road &amp; Jefferson Avenue</strong>."
-          },
-          {
-            "type": "html",
-            "html": "<em>Note: While our mailing address is 900 Jefferson, the employee garage is accessed via 900 Middlefield.</em>"
-          },
-          {
-            "type": "html",
-            "html": "The building you'll interview in is 900 Jefferson, which features the large Box logo in the lobby."
           },
           {
             "type": "html",
@@ -89,35 +97,47 @@
         ]
       }
     ],
-    "style": { "color": "#212121", "fontWeight": "" }
+    "style": {
+      "color": "#212121",
+      "fontWeight": ""
+    }
   },
   "registration": {
     "heading": "Checking in",
     "cards": [
       {
         "title": "Photo ID",
+        "icon": "images/redwood-city/icons/id-badge.png",
         "body": "Please bring a valid government ID.",
         "note": ""
       },
       {
         "title": "NDA",
+        "icon": "images/redwood-city/icons/file-pencil.png",
         "body": "Before your scheduled interview, please ensure that you electronically sign our NDA using <strong>Box Sign</strong> through the provided link.",
-        "note": "All candidates are required to sign in order to begin their interview. If you have any questions regarding the NDA form, please reach out to your Recruiting Coordinator."
+        "note": ""
       },
       {
         "title": "Walk-out instructions",
+        "icon": "images/redwood-city/icons/strategy.png",
         "body": "After your interviews are complete, either your last interviewer or someone on the recruiting team will meet you in the conference room and escort you back to the ground floor.",
         "note": ""
       }
     ],
-    "style": { "color": "#212121", "fontWeight": "" }
+    "style": {
+      "color": "#212121",
+      "fontWeight": ""
+    }
   },
   "contact": {
     "heading": "Questions?",
     "body": "Got a question we didn't cover? Reach out to your Recruiter and Recruiting Coordinator.",
     "email": "rc@box.com",
     "buttonText": "Email recruiting",
-    "style": { "color": "#212121", "fontWeight": "" }
+    "style": {
+      "color": "#212121",
+      "fontWeight": ""
+    }
   },
   "customSections": [
     {
@@ -128,6 +148,7 @@
       "blocks": [
         {
           "title": "Laptop",
+          "icon": "images/redwood-city/icons/all-devices.png",
           "paragraphs": [
             {
               "type": "html",
@@ -137,6 +158,7 @@
         },
         {
           "title": "Ordering lunch",
+          "icon": "images/redwood-city/icons/glass-full.png",
           "paragraphs": [
             {
               "type": "html",
@@ -146,6 +168,7 @@
         },
         {
           "title": "Taking a break",
+          "icon": "images/redwood-city/icons/question.png",
           "paragraphs": [
             {
               "type": "html",
@@ -154,8 +177,17 @@
           ]
         }
       ],
-      "style": { "color": "#212121", "fontWeight": "" }
+      "style": {
+        "color": "#212121",
+        "fontWeight": ""
+      }
     }
   ],
-  "sectionOrder": ["address", "gettingHere", "registration", "custom:cs-ms4z94g2", "contact"]
+  "sectionOrder": [
+    "address",
+    "gettingHere",
+    "registration",
+    "custom:cs-ms4z94g2",
+    "contact"
+  ]
 }

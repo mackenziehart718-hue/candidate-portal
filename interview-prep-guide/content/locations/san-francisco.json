@@ -1,11 +1,11 @@
 {
   "slug": "san-francisco",
-  "title": "San Francisco \u2014 Interview Day Guide",
+  "title": "San Francisco — Interview Day Guide",
   "barLabel": "San Francisco",
   "hero": {
     "title": "San Francisco",
     "lead": "California, USA",
-    "photo": "\ud83c\udf09 SF office \u2014 photo placeholder"
+    "photo": "🌉 SF office — photo placeholder"
   },
   "nav": [
     {
@@ -32,7 +32,7 @@
   "address": {
     "heading": "Where to go",
     "addressHtml": "500 Howard St, Suite 200<br>San Francisco, CA 94105",
-    "noteHtml": "<a href=\"https://maps.google.com/?q=500+Howard+St+San+Francisco+CA\" target=\"_blank\" rel=\"noopener\">Open in Google Maps \u2192</a>",
+    "noteHtml": "<a href=\"https://maps.google.com/?q=500+Howard+St+San+Francisco+CA\" target=\"_blank\" rel=\"noopener\">Open in Google Maps →</a>",
     "mapsUrl": "https://maps.google.com/?q=500+Howard+St+San+Francisco+CA",
     "style": {
       "color": "#212121",
@@ -43,7 +43,7 @@
     "heading": "When you arrive",
     "blocks": [
       {
-        "icon": "\ud83d\udeaa",
+        "icon": "🚪",
         "title": "Lobby instructions",
         "paragraphs": [
           {
@@ -68,7 +68,7 @@
       {
         "title": "NDA",
         "body": "Before your scheduled interview, please ensure that you electronically sign our NDA using <strong>Box Sign</strong> through the link provided by your Recruiting Coordinator.",
-        "note": "All candidates are required to sign in order to begin their interview. If you have any questions regarding the NDA form, please reach out to your Recruiting Coordinator."
+        "note": ""
       },
       {
         "title": "Arrival &amp; departure",
@@ -94,14 +94,14 @@
     "heading": "Getting here",
     "blocks": [
       {
-        "icon": "\ud83c\udd7f\ufe0f",
+        "icon": "🅿️",
         "title": "Parking",
         "paragraphs": [
           {
             "type": "list",
             "items": [
               "No on-site parking. Nearest garages: 5th & Mission Garage, Moscone Center Garage.",
-              "Typical cost: $20\u201335 for a half day. Allow extra time to park and walk."
+              "Typical cost: $20–35 for a half day. Allow extra time to park and walk."
             ]
           }
         ]
