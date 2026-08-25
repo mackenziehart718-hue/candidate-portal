@@ -83,42 +83,42 @@
     "items": [
       {
         "url": "https://www.box.com/about-us",
-        "icon": "about us icon.svg",
+        "icon": "images/explore/heart.png",
         "title": "About us",
         "description": "Our mission, leadership, and company story.",
         "hint": "box.com/about-us →"
       },
       {
         "url": "https://careers.box.com/en/",
-        "icon": "careers site.svg",
+        "icon": "images/explore/toolbox.png",
         "title": "Careers site",
         "description": "Culture, benefits, values, and life at Box.",
         "hint": "careers.box.com →"
       },
       {
         "url": "https://www.box.com/products",
-        "icon": "product icon.png",
+        "icon": "images/explore/product.png",
         "title": "Product",
         "description": "What we build and who we serve.",
         "hint": "box.com/products →"
       },
       {
         "url": "https://blog.box.com",
-        "icon": "box blog icon.svg",
+        "icon": "images/explore/message.png",
         "title": "Blog",
         "description": "News, product updates, and thought leadership.",
         "hint": "blog.box.com →"
       },
       {
         "url": "https://www.box.com/ai/trust",
-        "icon": "BOX AI.svg",
+        "icon": "images/explore/box-ai.png",
         "title": "Box AI &amp; LLM policy",
         "description": "How Box uses AI responsibly and protects customer data.",
         "hint": "box.com/ai/trust →"
       },
       {
         "url": "https://www.glassdoor.com/Overview/Working-at-Box-EI_IE254092.11,14.htm",
-        "icon": "glassdoor icon.svg",
+        "icon": "images/explore/paper.png",
         "title": "Glassdoor",
         "description": "Employee reviews and interview experiences at Box.",
         "hint": "View on Glassdoor →"
@@ -248,6 +248,10 @@
       {
         "question": "What do I wear?",
         "answer": "Business casual — wear what makes you comfortable. Most candidates choose slacks or jeans with a collared shirt or blouse. No suit required unless you prefer one."
+      },
+      {
+        "question": "Do I need to sign an NDA before my interview?",
+        "answer": "Before your scheduled interview, please ensure that you electronically sign our NDA using <strong>Box Sign</strong> through the link provided by your Recruiting Coordinator. All candidates are required to sign in order to begin their interview. If you have any questions regarding the NDA form, please reach out to your Recruiting Coordinator."
       }
     ],
     "style": {

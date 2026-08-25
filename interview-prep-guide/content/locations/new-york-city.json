@@ -8,18 +8,36 @@
     "photo": "🗽 NYC office — photo placeholder"
   },
   "nav": [
-    { "id": "address", "label": "Address" },
-    { "id": "transit", "label": "Parking & transit" },
-    { "id": "arrival", "label": "Arrival" },
-    { "id": "registration", "label": "Registration" },
-    { "id": "contact", "label": "Contact" }
+    {
+      "id": "address",
+      "label": "Address"
+    },
+    {
+      "id": "transit",
+      "label": "Parking & transit"
+    },
+    {
+      "id": "arrival",
+      "label": "Arrival"
+    },
+    {
+      "id": "registration",
+      "label": "Registration"
+    },
+    {
+      "id": "contact",
+      "label": "Contact"
+    }
   ],
   "address": {
     "heading": "Where to go",
     "addressHtml": "<strong>386 Park Ave S</strong><br>3rd Floor<br>New York, NY 10016",
     "noteHtml": "<a href=\"https://maps.google.com/?q=386+Park+Ave+S+New+York+NY\" target=\"_blank\" rel=\"noopener\">Open in Google Maps →</a>",
     "mapsUrl": "https://maps.google.com/?q=386+Park+Ave+S+New+York+NY",
-    "style": { "color": "#212121", "fontWeight": "" }
+    "style": {
+      "color": "#212121",
+      "fontWeight": ""
+    }
   },
   "transit": {
     "heading": "Getting here",
@@ -42,7 +60,10 @@
         ]
       }
     ],
-    "style": { "color": "#212121", "fontWeight": "" }
+    "style": {
+      "color": "#212121",
+      "fontWeight": ""
+    }
   },
   "arrival": {
     "heading": "When you arrive",
@@ -58,7 +79,10 @@
         ]
       }
     ],
-    "style": { "color": "#212121", "fontWeight": "" }
+    "style": {
+      "color": "#212121",
+      "fontWeight": ""
+    }
   },
   "registration": {
     "heading": "Required",
@@ -70,21 +94,27 @@
       {
         "title": "NDA",
         "body": "Before your scheduled interview, please ensure that you electronically sign our NDA using <strong>Box Sign</strong> through the provided link.",
-        "note": "All candidates are required to sign in order to begin their interview. If you have any questions regarding the NDA form, please reach out to your Recruiting Coordinator."
+        "note": ""
       },
       {
         "title": "Arrival &amp; departure",
         "body": "Your host will escort you to the interview area. Sign out at reception when you are finished."
       }
     ],
-    "style": { "color": "#212121", "fontWeight": "" }
+    "style": {
+      "color": "#212121",
+      "fontWeight": ""
+    }
   },
   "contact": {
     "heading": "Questions?",
     "body": "Got a question we didn't cover? Reach out to your Recruiter and Recruiting Coordinator.",
     "email": "recruiting@box.com",
     "buttonText": "Email recruiting",
-    "style": { "color": "#212121", "fontWeight": "" }
+    "style": {
+      "color": "#212121",
+      "fontWeight": ""
+    }
   },
   "customSections": []
 }
