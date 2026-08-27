@@ -18,11 +18,11 @@
     },
     {
       "id": "registration",
-      "label": "Registration"
+      "label": "Checking in"
     },
     {
       "id": "contact",
-      "label": "Contact"
+      "label": "Questions"
     }
   ],
   "address": {
@@ -80,11 +80,12 @@
     }
   },
   "registration": {
-    "heading": "Required",
+    "heading": "Checking in",
     "cards": [
       {
         "title": "NDA",
-        "body": "Before your scheduled interview, please ensure that you electronically sign our NDA using <strong>Box Sign</strong> through the provided link.",
+        "icon": "images/redwood-city/icons/file-pencil.png",
+        "body": "Before your scheduled interview, please ensure that you electronically sign our NDA using Box Sign through the link provided by your Recruiting Coordinator.",
         "note": ""
       }
     ],
@@ -96,7 +97,7 @@
   "contact": {
     "heading": "Questions?",
     "body": "Got a question we didn't cover? Reach out to your Recruiter and Recruiting Coordinator.",
-    "email": "recruiting@box.com",
+    "email": "rc@box.com",
     "buttonText": "Email recruiting",
     "style": {
       "color": "#212121",

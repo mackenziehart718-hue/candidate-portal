@@ -118,9 +118,9 @@
         "note": ""
       },
       {
-        "title": "Walk-out instructions",
-        "icon": "images/redwood-city/icons/strategy.png",
-        "body": "After your interviews are complete, either your last interviewer or someone on the recruiting team will meet you in the conference room and escort you back to the ground floor.",
+        "title": "Laptop",
+        "icon": "images/redwood-city/icons/all-devices.png",
+        "body": "Please bring a laptop if you are completing a technical assessment or presentation. If you need to borrow one, please let your Recruiting partners know. ",
         "note": ""
       }
     ],
@@ -147,18 +147,8 @@
       "intro": "",
       "blocks": [
         {
-          "title": "Laptop",
-          "icon": "images/redwood-city/icons/all-devices.png",
-          "paragraphs": [
-            {
-              "type": "html",
-              "html": "Please bring a laptop if you are completing a technical assessment or presentation. If you need to borrow one, please let your Recruiting partners know. "
-            }
-          ]
-        },
-        {
           "title": "Ordering lunch",
-          "icon": "images/redwood-city/icons/glass-full.png",
+          "icon": "images/redwood-city/icons/mug-donut.png",
           "paragraphs": [
             {
               "type": "html",
@@ -173,6 +163,16 @@
             {
               "type": "html",
               "html": "Please do not hesitate to ask an interviewer for a restroom break or a refreshment from the kitchen between interviews. We want you at your best!"
+            }
+          ]
+        },
+        {
+          "title": "Walk-out instructions",
+          "icon": "images/redwood-city/icons/strategy.png",
+          "paragraphs": [
+            {
+              "type": "html",
+              "html": "After your interviews are complete, either your last interviewer or someone on the recruiting team will meet you in the conference room and escort you back to the ground floor."
             }
           ]
         }

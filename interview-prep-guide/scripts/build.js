@@ -557,16 +557,12 @@ ${regCards}
 </head>
 <body class="page-location page-${esc(data.slug)}">
 
-  <div class="site-bar">
-    <div class="site-bar-inner">
-      <a class="back-link" href="../index.html">← Back to prep guide</a>
-      <span style="color: var(--muted); font-size: 0.82rem;">${buildOptions.editable ? eText('barLabel', data.barLabel) : esc(data.barLabel)}</span>
-    </div>
-  </div>
-
-  <nav class="page-nav" aria-label="Location sections">
+  <nav class="page-nav page-nav--location" aria-label="Location sections">
     <div class="page-nav-inner">
+      <a class="back-link page-nav-back" href="../index.html">← Back to Main Page</a>
+      <div class="page-nav-links">
 ${navLinks}
+      </div>
     </div>
   </nav>
 
