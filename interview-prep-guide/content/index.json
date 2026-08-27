@@ -7,7 +7,7 @@
   },
   "hero": {
     "heading": "Candidate guide",
-    "lead": "Thanks for interviewing! Learn about how to prepare for our interviews."
+    "lead": "We're excited to meet you in person! Learn about how to best prepare for our interviews."
   },
   "sectionOrder": [
     "welcome",
@@ -96,11 +96,11 @@
         "hint": "careers.box.com →"
       },
       {
-        "url": "https://www.box.com/products",
+        "url": "https://www.box.com/overview",
         "icon": "images/explore/product.png",
         "title": "Product",
         "description": "What we build and who we serve.",
-        "hint": "box.com/products →"
+        "hint": "box.com/overview →"
       },
       {
         "url": "https://blog.box.com",
@@ -110,11 +110,11 @@
         "hint": "blog.box.com →"
       },
       {
-        "url": "https://www.box.com/ai/trust",
+        "url": "https://careers.box.com/en/how-we-hire/ai-in-our-hiring-process/",
         "icon": "images/explore/box-ai.png",
-        "title": "Box AI &amp; LLM policy",
-        "description": "How Box uses AI responsibly and protects customer data.",
-        "hint": "box.com/ai/trust →"
+        "title": "AI Policy",
+        "description": "How Box allows for AI usage during our hiring process.",
+        "hint": "careers.box.com →"
       },
       {
         "url": "https://www.glassdoor.com/Overview/Working-at-Box-EI_IE254092.11,14.htm",
@@ -214,7 +214,7 @@
   "contact": {
     "heading": "Questions?",
     "body": "Got a question we didn't cover? Reach out to your Recruiter and Recruiting Coordinator.",
-    "email": "recruiting@box.com",
+    "email": "rc@box.com",
     "buttonText": "Email recruiting",
     "style": {
       "color": "#212121",
@@ -230,12 +230,12 @@
     "heading": "Day-of interview FAQ",
     "items": [
       {
-        "question": "Will there be a lunch interview?",
-        "answer": "If your interview loop includes lunch, your Recruiting Coordinator will confirm the details in advance. Please share any dietary restrictions with your coordinator as early as possible."
+        "question": "Will there be a lunch during my interview?",
+        "answer": "If your interview is during lunch hours, we will include a break for you to have lunch with someone from the team. The lunch break will not be treated as an interview, so please enjoy it."
       },
       {
         "question": "What do I bring?",
-        "answer": "Bring a valid government ID (in-person). A notebook and pen are welcome. Only bring a laptop if your recruiter requested a presentation. Please keep your phone on silent during interviews."
+        "answer": "Please bring a valid government ID (in-person) to verify your identity at check-in. Please bring a laptop if you are completing a technical assessment or presentation. If you need to borrow one, please let your Recruiting partners know. Some candidates may choose to bring a notebook and pen but this is optional."
       },
       {
         "question": "I need a reasonable accommodation request",
@@ -243,15 +243,15 @@
       },
       {
         "question": "What if I'm running late?",
-        "answer": "Contact your Recruiting Coordinator immediately. We'll do our best to adjust, but some sessions may need to be rescheduled."
+        "answer": "Please contact your Recruiting Coordinator immediately. We'll do our best to adjust, but some sessions may need to be rescheduled."
       },
       {
         "question": "What do I wear?",
         "answer": "Business casual — wear what makes you comfortable. Most candidates choose slacks or jeans with a collared shirt or blouse. No suit required unless you prefer one."
       },
       {
-        "question": "Do I need to sign an NDA before my interview?",
-        "answer": "Before your scheduled interview, please ensure that you electronically sign our NDA using <strong>Box Sign</strong> through the link provided by your Recruiting Coordinator. All candidates are required to sign in order to begin their interview. If you have any questions regarding the NDA form, please reach out to your Recruiting Coordinator."
+        "question": "Do I need to sign a Non-Disclosure Agreement (NDA) before my interview?",
+        "answer": "Before your scheduled interview, please ensure that you electronically sign our NDA using Box Sign through the link provided by your Recruiting Coordinator. All candidates are required to sign in order to begin their interview. If you have any questions regarding the NDA form, please reach out to your Recruiting Coordinator."
       }
     ],
     "style": {
