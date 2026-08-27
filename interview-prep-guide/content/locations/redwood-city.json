@@ -108,13 +108,13 @@
       {
         "title": "Photo ID",
         "icon": "images/redwood-city/icons/id-badge.png",
-        "body": "Please bring a valid government ID.",
+        "body": "Please bring a valid government ID (license, passport, or other government-issued ID) to verify your identity at check-in.",
         "note": ""
       },
       {
         "title": "NDA",
         "icon": "images/redwood-city/icons/file-pencil.png",
-        "body": "Before your scheduled interview, please ensure that you electronically sign our NDA using <strong>Box Sign</strong> through the provided link.",
+        "body": "Before your scheduled interview, please ensure that you electronically sign our NDA using Box Sign through the link provided by your Recruiting Coordinator.",
         "note": ""
       },
       {
@@ -152,7 +152,7 @@
           "paragraphs": [
             {
               "type": "html",
-              "html": "We offer loaner laptops. If you will need a loaner laptop, please reach out to your Recruiter and Recruiting Coordinator as soon as possible."
+              "html": "Please bring a laptop if you are completing a technical assessment or presentation. If you need to borrow one, please let your Recruiting partners know. "
             }
           ]
         },
@@ -162,7 +162,7 @@
           "paragraphs": [
             {
               "type": "html",
-              "html": "You will be sent a link to order food from a restaurant of your choice via food delivery app by your coordinator. A Boxer will bring it to you when it's delivered."
+              "html": "You will be sent a link to order food from a restaurant of your choice via food delivery app by your Recruiting Coordinator. A Boxer will bring it to you when it's delivered."
             }
           ]
         },
