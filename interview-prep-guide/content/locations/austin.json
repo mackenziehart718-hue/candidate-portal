@@ -5,7 +5,8 @@
   "hero": {
     "title": "Austin, TX",
     "lead": "",
-    "photo": "🤠 Austin office — photo placeholder"
+    "photoUrl": "images/austin/hero.jpg",
+    "photoAlt": "Box Austin office reception with moss wall and Box logo"
   },
   "nav": [
     {
@@ -32,7 +33,7 @@
   "address": {
     "heading": "Where to go",
     "addressHtml": "<strong>600 Congress Ave</strong><br>Austin, Texas 78701<br>24th Floor",
-    "noteHtml": "<a href=\"https://maps.google.com/?q=600+Congress+Ave+Austin+TX\" target=\"_blank\" rel=\"noopener\">Open in Google Maps →</a>",
+    "noteHtml": "",
     "mapsUrl": "https://maps.google.com/?q=600+Congress+Ave+Austin+TX",
     "style": {
       "color": "#212121",

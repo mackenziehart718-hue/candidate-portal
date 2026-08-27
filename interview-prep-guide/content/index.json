@@ -7,7 +7,7 @@
   },
   "hero": {
     "heading": "Candidate guide",
-    "lead": "We're excited to meet you in person! Learn about how to best prepare for our interviews."
+    "lead": "We're excited to meet you in person!\nHere's everything you need to know for your panel interview."
   },
   "sectionOrder": [
     "welcome",
@@ -20,12 +20,14 @@
   "welcome": {
     "heading": "About us",
     "intro": "Box powers how the world works together — connecting people with their most important information through secure, intelligent content management. Our interviews are a two-way conversation: we want to learn about you, and we're here to answer any questions you have about Life at Box!",
+    "imageUrl": "images/index/about-team.jpg",
+    "imageAlt": "Box employees celebrating together with blue balloons around a large BOX sign",
     "style": {
       "color": "#212121",
       "fontWeight": ""
     },
-    "buttonText": "Learn about Life at Box",
-    "buttonUrl": "https://careers.box.com/en/"
+    "buttonText": "Hear more from Aaron",
+    "buttonUrl": "https://www.linkedin.com/in/boxaaron/"
   },
   "prepare": {
     "heading": "Before your interview",
@@ -57,7 +59,7 @@
     "tips": [
       {
         "title": "Dress code",
-        "body": "Business casual — wear what makes you comfortable. Most candidates choose slacks or jeans with a collared shirt or blouse. No suit required unless you prefer one."
+        "body": "Business casual, but wear what makes you comfortable. Most candidates choose slacks or jeans with a collared shirt or blouse. No suit required unless you prefer one!"
       },
       {
         "title": "What to bring (in-person)",
@@ -163,7 +165,9 @@
       {
         "slug": "redwood-city",
         "virtual": false,
-        "title": "Redwood City HQ"
+        "title": "Redwood City HQ",
+        "imageUrl": "images/redwood-city/team-photo.webp",
+        "imageAlt": "Box employees posing in front of the Box logo in the Redwood City HQ lobby"
       },
       {
         "slug": "san-francisco",
@@ -173,12 +177,16 @@
       {
         "slug": "chicago",
         "virtual": false,
-        "title": "Chicago"
+        "title": "Chicago",
+        "imageUrl": "images/chicago/card.jpg",
+        "imageAlt": "Chicago office lounge with green wall and orange Box logo"
       },
       {
         "slug": "austin",
         "virtual": false,
-        "title": "Austin"
+        "title": "Austin",
+        "imageUrl": "images/austin/wall-art.jpg",
+        "imageAlt": "Neon wall art at the Box Austin office reading This must be the place, with cowboy boot succulent planters"
       },
       {
         "slug": "new-york-city",
@@ -193,12 +201,16 @@
       {
         "slug": "london",
         "virtual": false,
-        "title": "London"
+        "title": "London",
+        "imageUrl": "images/london/lobby.jpg",
+        "imageAlt": "Downstairs lobby at the London office with the Box teacup logo wall"
       },
       {
         "slug": "warsaw",
         "virtual": false,
-        "title": "Warsaw"
+        "title": "Warsaw",
+        "imageUrl": "images/warsaw/card.jpg",
+        "imageAlt": "Warsaw skyline with the Palace of Culture and Science"
       },
       {
         "slug": "virtual",
@@ -222,9 +234,29 @@
     }
   },
   "footer": {
-    "year": 2026,
-    "careersUrl": "https://careers.box.com/en/",
-    "note": "This page is for candidates with scheduled interviews only."
+    "logoUrl": "https://www.box.com/",
+    "social": [
+      {
+        "name": "YouTube",
+        "url": "https://www.youtube.com/user/box",
+        "icon": "youtube"
+      },
+      {
+        "name": "Box Blog",
+        "url": "https://blog.box.com/",
+        "icon": "blog"
+      },
+      {
+        "name": "X (Twitter)",
+        "url": "https://twitter.com/BoxHQ",
+        "icon": "twitter"
+      },
+      {
+        "name": "Facebook",
+        "url": "https://www.facebook.com/box",
+        "icon": "facebook"
+      }
+    ]
   },
   "faqs": {
     "heading": "Day-of interview FAQ",

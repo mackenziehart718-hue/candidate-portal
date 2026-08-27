@@ -5,7 +5,8 @@
   "hero": {
     "title": "Chicago, IL",
     "lead": "Chicago Office",
-    "photo": "🌆 Chicago office — photo placeholder"
+    "photoUrl": "images/chicago/hero.jpg",
+    "photoAlt": "Chicago office lounge with green wall and orange Box logo"
   },
   "nav": [
     {
@@ -32,7 +33,7 @@
   "address": {
     "heading": "Where to go",
     "addressHtml": "<strong>123 N. Wacker Drive</strong><br>7th Floor<br>Chicago, IL 60606",
-    "noteHtml": "<a href=\"https://maps.google.com/?q=123+N+Wacker+Drive+Chicago+IL\" target=\"_blank\" rel=\"noopener\">Open in Google Maps →</a>",
+    "noteHtml": "",
     "mapsUrl": "https://maps.google.com/?q=123+N+Wacker+Drive+Chicago+IL",
     "style": {
       "color": "#212121",

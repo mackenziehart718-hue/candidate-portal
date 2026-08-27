@@ -5,7 +5,10 @@
   "hero": {
     "title": "London Office",
     "lead": "",
-    "photo": "🇬🇧 London office — photo placeholder"
+    "photoUrl": "images/london/lobby.jpg",
+    "photoAlt": "Downstairs lobby at the London office with the Box teacup logo wall",
+    "cardWidth": 1080,
+    "cardHeight": 371.2
   },
   "nav": [
     {
@@ -32,7 +35,7 @@
   "address": {
     "heading": "Where to go",
     "addressHtml": "<strong>White Collar Factory</strong><br>15th–14th Floors<br>Old Street Yard<br>EC1Y 8AF",
-    "noteHtml": "<a href=\"https://maps.google.com/?q=White+Collar+Factory+Old+Street+Yard+London\" target=\"_blank\" rel=\"noopener\">Open in Google Maps →</a>",
+    "noteHtml": "",
     "mapsUrl": "https://maps.google.com/?q=White+Collar+Factory+Old+Street+Yard+London",
     "style": {
       "color": "#212121",

@@ -32,7 +32,7 @@
   "address": {
     "heading": "Where to go",
     "addressHtml": "<strong>WeWork, 5th Floor</strong><br>Stadhouderskade 5<br>1054 ES Amsterdam",
-    "noteHtml": "<a href=\"https://maps.google.com/?q=Stadhouderskade+5+Amsterdam\" target=\"_blank\" rel=\"noopener\">Open in Google Maps →</a>",
+    "noteHtml": "",
     "mapsUrl": "https://maps.google.com/?q=Stadhouderskade+5+Amsterdam",
     "style": {
       "color": "#212121",

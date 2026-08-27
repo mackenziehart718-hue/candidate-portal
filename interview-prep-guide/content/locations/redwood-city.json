@@ -5,8 +5,8 @@
   "hero": {
     "title": "Redwood City, CA",
     "lead": "",
-    "photoUrl": "images/redwood-city/team-photo.webp",
-    "photoAlt": "Box employees posing in front of the Box logo in the Redwood City HQ lobby",
+    "photoUrl": "images/redwood-city/hq-lobby.jpg",
+    "photoAlt": "Box HQ lobby with illuminated Box logo and reception desk",
     "cardWidth": 1080,
     "cardHeight": 371.2
   },

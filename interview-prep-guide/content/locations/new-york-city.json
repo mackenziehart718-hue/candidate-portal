@@ -32,7 +32,7 @@
   "address": {
     "heading": "Where to go",
     "addressHtml": "<strong>386 Park Ave S</strong><br>3rd Floor<br>New York, NY 10016",
-    "noteHtml": "<a href=\"https://maps.google.com/?q=386+Park+Ave+S+New+York+NY\" target=\"_blank\" rel=\"noopener\">Open in Google Maps →</a>",
+    "noteHtml": "",
     "mapsUrl": "https://maps.google.com/?q=386+Park+Ave+S+New+York+NY",
     "style": {
       "color": "#212121",

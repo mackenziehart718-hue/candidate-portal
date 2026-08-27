@@ -276,9 +276,13 @@ function migrateIndex() {
       buttonText: match(extractSection(html, 'contact'), /<a class="btn"[^>]*>([^<]*)<\/a>/),
     },
     footer: {
-      year: 2026,
-      careersUrl: 'https://careers.box.com/en/',
-      note: 'This page is for candidates with scheduled interviews only.',
+      logoUrl: 'https://www.box.com/',
+      social: [
+        { name: 'YouTube', url: 'https://www.youtube.com/user/box', icon: 'youtube' },
+        { name: 'Box Blog', url: 'https://blog.box.com/', icon: 'blog' },
+        { name: 'X (Twitter)', url: 'https://twitter.com/BoxHQ', icon: 'twitter' },
+        { name: 'Facebook', url: 'https://www.facebook.com/box', icon: 'facebook' },
+      ],
     },
   };
 }

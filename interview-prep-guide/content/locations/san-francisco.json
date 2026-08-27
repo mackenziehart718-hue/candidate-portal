@@ -32,7 +32,7 @@
   "address": {
     "heading": "Where to go",
     "addressHtml": "500 Howard St, Suite 200<br>San Francisco, CA 94105",
-    "noteHtml": "<a href=\"https://maps.google.com/?q=500+Howard+St+San+Francisco+CA\" target=\"_blank\" rel=\"noopener\">Open in Google Maps →</a>",
+    "noteHtml": "",
     "mapsUrl": "https://maps.google.com/?q=500+Howard+St+San+Francisco+CA",
     "style": {
       "color": "#212121",

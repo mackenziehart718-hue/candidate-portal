@@ -29,7 +29,7 @@
         <p class="lead"></p>
       </div>
       <div class="hero-graphic">
-        <div class="hero-photo photo-placeholder photo-placeholder--soft" aria-hidden="true"></div>
+        <div class="hero-photo"><img src="../images/austin/hero.jpg" alt="Box Austin office reception with moss wall and Box logo" /></div>
       </div>
     </div>
   </header>
@@ -43,9 +43,7 @@
           <p class="address-line">
             <strong>600 Congress Ave</strong><br>Austin, Texas 78701<br>24th Floor
           </p>
-        <p class="address-note">
-          <a href="https://maps.google.com/?q=600+Congress+Ave+Austin+TX" target="_blank" rel="noopener">Open in Google Maps →</a>
-        </p>            <p style="margin-top: 0.75rem;">
+            <p style="margin-top: 0.75rem;">
               <a href="https://maps.google.com/?q=600+Congress+Ave+Austin+TX" target="_blank" rel="noopener">Open in Google Maps →</a>
             </p>
         </div>
@@ -63,13 +61,20 @@
 
     <section id="transit" style="color: #212121">
       <h2>Getting here</h2>
-        <div class="info-block no-icon">
-          
+      <div class="steps">
+        <div class="step step--text-only">
           <div>
-            <h3>Parking</h3>
-            <p>Entry to the parking garage is on 7th St between Colorado and Congress on the right side of the road.</p>
+            <div class="step-title">
+              <span class="step-num"><span class="badge-num">1</span></span>
+              <h3>Parking</h3>
+            </div>
+            <div class="step-body">
+              <p>Entry to the parking garage is on 7th St between Colorado and Congress on the right side of the road.</p>
+            </div>
           </div>
+          
         </div>
+      </div>
     </section>
 
     <section id="arrival" style="color: #212121">
@@ -120,8 +125,34 @@
     </section>
   </main>
 
-  <footer>
-    <p><a href="../index.html">← Back to main prep guide</a></p>
+  <footer class="site-footer">
+    <div class="site-footer-inner">
+      <a class="site-footer-logo" href="https://www.box.com/" target="_blank" rel="noopener noreferrer">
+        <img src="../images/footer/box-logo-white.svg" alt="Box" height="40" />
+      </a>
+      <ul class="site-footer-socials" aria-label="Follow Box">
+        <li>
+          <a href="https://www.youtube.com/user/box" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2 31.5 31.5 0 0 0 0 12a31.5 31.5 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1A31.5 31.5 0 0 0 24 12a31.5 31.5 0 0 0-.5-5.8zM9.75 15.02V8.98L15.5 12l-5.75 3.02z"/></svg>
+          </a>
+        </li>
+        <li>
+          <a href="https://blog.box.com/" target="_blank" rel="noopener noreferrer" aria-label="Box Blog">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2zm-7 14H7v-2h5v2zm5-4H7v-2h10v2zm0-4H7V7h10v2z"/></svg>
+          </a>
+        </li>
+        <li>
+          <a href="https://twitter.com/BoxHQ" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          </a>
+        </li>
+        <li>
+          <a href="https://www.facebook.com/box" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+          </a>
+        </li>
+      </ul>
+    </div>
   </footer>
 
   <script src="../js/nav-scroll.js" defer></script>
